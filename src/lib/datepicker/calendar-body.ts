@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -16,7 +16,7 @@ import {
 } from '@angular/core';
 
 
-/**
+/*
  * An internal class that represents the data corresponding to a single calendar cell.
  * @docs-private
  */
@@ -28,7 +28,7 @@ export class MdCalendarCell {
 }
 
 
-/**
+/*
  * An internal component used to display calendar data in a table.
  * @docs-private
  */
@@ -44,37 +44,37 @@ export class MdCalendarCell {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MdCalendarBody {
-  /** The label for the table. (e.g. "Jan 2017"). */
+  /* The label for the table. (e.g. "Jan 2017"). */
   @Input() label: string;
 
-  /** The cells to display in the table. */
+  /* The cells to display in the table. */
   @Input() rows: MdCalendarCell[][];
 
-  /** The value in the table that corresponds to today. */
+  /* The value in the table that corresponds to today. */
   @Input() todayValue: number;
 
-  /** The value in the table that is currently selected. */
+  /* The value in the table that is currently selected. */
   @Input() selectedValue: number;
 
-  /** The minimum number of free cells needed to fit the label in the first row. */
+  /* The minimum number of free cells needed to fit the label in the first row. */
   @Input() labelMinRequiredCells: number;
 
-  /** The number of columns in the table. */
+  /* The number of columns in the table. */
   @Input() numCols = 7;
 
-  /** Whether to allow selection of disabled cells. */
+  /* Whether to allow selection of disabled cells. */
   @Input() allowDisabledSelection = false;
 
-  /** The cell number of the active cell in the table. */
+  /* The cell number of the active cell in the table. */
   @Input() activeCell = 0;
 
-  /**
+  /*
    * The aspect ratio (width / height) to use for the cells in the table. This aspect ratio will be
    * maintained even as the table resizes.
    */
   @Input() cellAspectRatio = 1;
 
-  /** Emits when a new value is selected. */
+  /* Emits when a new value is selected. */
   @Output() selectedValueChange = new EventEmitter<number>();
 
   _cellClicked(cell: MdCalendarCell): void {
@@ -84,7 +84,7 @@ export class MdCalendarBody {
     this.selectedValueChange.emit(cell.value);
   }
 
-  /** The number of blank cells to put at the beginning for the first row. */
+  /* The number of blank cells to put at the beginning for the first row. */
   get _firstRowOffset(): number {
     return this.rows && this.rows.length && this.rows[0].length ?
         this.numCols - this.rows[0].length : 0;

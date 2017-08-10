@@ -19,7 +19,7 @@ import {
 } from './index';
 import {OverlayContainer} from '../core/overlay/overlay-container';
 import {MdInputModule} from '../input/index';
-import {Directionality, Direction} from '../core/bidi/index';
+import {Directionality, Direction} from '@angular/cdk';
 import {Subscription} from 'rxjs/Subscription';
 import {ENTER, DOWN_ARROW, SPACE, UP_ARROW, ESCAPE} from '../core/keyboard/keycodes';
 import {MdOption} from '../core/option/option';

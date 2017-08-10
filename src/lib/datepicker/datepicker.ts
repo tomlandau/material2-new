@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -35,7 +35,7 @@ import {
   ScrollStrategy,
 } from '../core/overlay/index';
 import {ComponentPortal} from '../core/portal/portal';
-import {Directionality} from '../core/bidi/index';
+import {Directionality} from '@angular/cdk';
 import {MdDialog} from '../dialog/dialog';
 import {MdDialogRef} from '../dialog/dialog-ref';
 import {PositionStrategy} from '../core/overlay/position/position-strategy';
@@ -49,19 +49,19 @@ import {first} from '../core/rxjs/index';
 import {coerceBooleanProperty} from '@angular/cdk';
 
 
-/** Used to generate a unique ID for each datepicker instance. */
+/* Used to generate a unique ID for each datepicker instance. */
 let datepickerUid = 0;
 
-/** Injection token that determines the scroll handling while the calendar is open. */
+/* Injection token that determines the scroll handling while the calendar is open. */
 export const MD_DATEPICKER_SCROLL_STRATEGY =
     new InjectionToken<() => ScrollStrategy>('md-datepicker-scroll-strategy');
 
-/** @docs-private */
+/* @docs-private */
 export function MD_DATEPICKER_SCROLL_STRATEGY_PROVIDER_FACTORY(overlay: Overlay) {
   return () => overlay.scrollStrategies.reposition();
 }
 
-/** @docs-private */
+/* @docs-private */
 export const MD_DATEPICKER_SCROLL_STRATEGY_PROVIDER = {
   provide: MD_DATEPICKER_SCROLL_STRATEGY,
   deps: [Overlay],
@@ -69,7 +69,7 @@ export const MD_DATEPICKER_SCROLL_STRATEGY_PROVIDER = {
 };
 
 
-/**
+/*
  * Component used as the content for the datepicker dialog and popup. We use this instead of using
  * MdCalendar directly as the content so we can control the initial focus. This also gives us a
  * place to put additional features of the popup that are not part of the calendar itself in the
@@ -98,7 +98,7 @@ export class MdDatepickerContent<D> implements AfterContentInit {
     this._calendar._focusActiveCell();
   }
 
-  /**
+  /*
    * Handles keydown event on datepicker content.
    * @param event The event.
    */
@@ -114,7 +114,7 @@ export class MdDatepickerContent<D> implements AfterContentInit {
 // TODO(mmalerba): We use a component instead of a directive here so the user can use implicit
 // template reference variables (e.g. #d vs #d="mdDatepicker"). We can change this to a directive if
 // angular adds support for `exportAs: '$implicit'` on directives.
-/** Component responsible for managing the datepicker popup/dialog. */
+/* Component responsible for managing the datepicker popup/dialog. */
 @Component({
   moduleId: module.id,
   selector: 'md-datepicker, mat-datepicker',
@@ -122,7 +122,7 @@ export class MdDatepickerContent<D> implements AfterContentInit {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MdDatepicker<D> implements OnDestroy {
-  /** The date to open the calendar to initially. */
+  /* The date to open the calendar to initially. */
   @Input()
   get startAt(): D {
     // If an explicit startAt is set we start there, otherwise we start at whatever the currently
@@ -132,16 +132,16 @@ export class MdDatepicker<D> implements OnDestroy {
   set startAt(date: D) { this._startAt = date; }
   private _startAt: D;
 
-  /** The view that the calendar should start in. */
+  /* The view that the calendar should start in. */
   @Input() startView: 'month' | 'year' = 'month';
 
-  /**
+  /*
    * Whether the calendar UI is in touch mode. In touch mode the calendar opens in a dialog rather
    * than a popup and elements have more padding to allow for bigger touch targets.
    */
   @Input() touchUi = false;
 
-  /** Whether the datepicker pop-up should be disabled. */
+  /* Whether the datepicker pop-up should be disabled. */
   @Input()
   get disabled() {
     return this._disabled === undefined ? this._datepickerInput.disabled : this._disabled;
@@ -151,24 +151,24 @@ export class MdDatepicker<D> implements OnDestroy {
   }
   private _disabled: boolean;
 
-  /** Emits new selected date when selected date changes. */
+  /* Emits new selected date when selected date changes. */
   @Output() selectedChanged = new EventEmitter<D>();
 
-  /** Whether the calendar is open. */
+  /* Whether the calendar is open. */
   opened = false;
 
-  /** The id for the datepicker calendar. */
+  /* The id for the datepicker calendar. */
   id = `md-datepicker-${datepickerUid++}`;
 
-  /** The currently selected date. */
+  /* The currently selected date. */
   _selected: D | null = null;
 
-  /** The minimum selectable date. */
+  /* The minimum selectable date. */
   get _minDate(): D {
     return this._datepickerInput && this._datepickerInput.min;
   }
 
-  /** The maximum selectable date. */
+  /* The maximum selectable date. */
   get _maxDate(): D {
     return this._datepickerInput && this._datepickerInput.max;
   }
@@ -177,19 +177,19 @@ export class MdDatepicker<D> implements OnDestroy {
     return this._datepickerInput && this._datepickerInput._dateFilter;
   }
 
-  /** A reference to the overlay when the calendar is opened as a popup. */
+  /* A reference to the overlay when the calendar is opened as a popup. */
   private _popupRef: OverlayRef;
 
-  /** A reference to the dialog when the calendar is opened as a dialog. */
+  /* A reference to the dialog when the calendar is opened as a dialog. */
   private _dialogRef: MdDialogRef<any> | null;
 
-  /** A portal containing the calendar for this datepicker. */
+  /* A portal containing the calendar for this datepicker. */
   private _calendarPortal: ComponentPortal<MdDatepickerContent<D>>;
 
-  /** The input element this datepicker is associated with. */
+  /* The input element this datepicker is associated with. */
   private _datepickerInput: MdDatepickerInput<D>;
 
-  /** The element that was focused before the datepicker was opened. */
+  /* The element that was focused before the datepicker was opened. */
   private _focusedElementBeforeOpen: HTMLElement | null = null;
 
   private _inputSubscription: Subscription;
@@ -217,7 +217,7 @@ export class MdDatepicker<D> implements OnDestroy {
     }
   }
 
-  /** Selects the given date and closes the currently open popup or dialog. */
+  /* Selects the given date and closes the currently open popup or dialog. */
   _selectAndClose(date: D): void {
     let oldValue = this._selected;
     this._selected = date;
@@ -227,7 +227,7 @@ export class MdDatepicker<D> implements OnDestroy {
     this.close();
   }
 
-  /**
+  /*
    * Register an input with this datepicker.
    * @param input The datepicker input to register with this datepicker.
    */
@@ -240,7 +240,7 @@ export class MdDatepicker<D> implements OnDestroy {
         this._datepickerInput._valueChange.subscribe((value: D) => this._selected = value);
   }
 
-  /** Open the calendar. */
+  /* Open the calendar. */
   open(): void {
     if (this.opened || this.disabled) {
       return;
@@ -256,7 +256,7 @@ export class MdDatepicker<D> implements OnDestroy {
     this.opened = true;
   }
 
-  /** Close the calendar. */
+  /* Close the calendar. */
   close(): void {
     if (!this.opened) {
       return;
@@ -279,7 +279,7 @@ export class MdDatepicker<D> implements OnDestroy {
     this.opened = false;
   }
 
-  /** Open the calendar as a dialog. */
+  /* Open the calendar as a dialog. */
   private _openAsDialog(): void {
     this._dialogRef = this._dialog.open(MdDatepickerContent, {
       viewContainerRef: this._viewContainerRef,
@@ -289,7 +289,7 @@ export class MdDatepicker<D> implements OnDestroy {
     this._dialogRef.componentInstance.datepicker = this;
   }
 
-  /** Open the calendar as a popup. */
+  /* Open the calendar as a popup. */
   private _openAsPopup(): void {
     if (!this._calendarPortal) {
       this._calendarPortal = new ComponentPortal(MdDatepickerContent, this._viewContainerRef);
@@ -311,7 +311,7 @@ export class MdDatepicker<D> implements OnDestroy {
     this._popupRef.backdropClick().subscribe(() => this.close());
   }
 
-  /** Create the popup. */
+  /* Create the popup. */
   private _createPopup(): void {
     const overlayState = new OverlayState();
     overlayState.positionStrategy = this._createPopupPositionStrategy();
@@ -323,7 +323,7 @@ export class MdDatepicker<D> implements OnDestroy {
     this._popupRef = this._overlay.create(overlayState);
   }
 
-  /** Create the popup PositionStrategy. */
+  /* Create the popup PositionStrategy. */
   private _createPopupPositionStrategy(): PositionStrategy {
     return this._overlay.position()
       .connectedTo(this._datepickerInput.getPopupConnectionElementRef(),

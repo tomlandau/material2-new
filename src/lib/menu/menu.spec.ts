@@ -11,13 +11,15 @@ import {
   ViewChild
 } from '@angular/core';
 import {
-  OverlayContainer,
-  Directionality,
-  Direction,
   ESCAPE,
   RIGHT_ARROW,
   LEFT_ARROW,
-} from '../core';
+} from '../core/keyboard/keycodes';
+import {OverlayContainer} from '../core/overlay/index';
+import {
+  Directionality,
+  Direction
+} from '@angular/cdk';
 import {
   MdMenuModule,
   MdMenuTrigger,
@@ -345,7 +347,7 @@ describe('MdMenu', () => {
   });
 
   describe('overlapping trigger', () => {
-    /**
+    /*
      * This test class is used to create components containing a menu.
      * It provides helpers to reposition the trigger, open the menu,
      * and access the trigger and overlay positions.

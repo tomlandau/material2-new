@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -16,11 +16,13 @@ import {
 import {
   ComponentType,
   ComponentPortal,
+  LiveAnnouncer
+} from '@angular/cdk';
+import {
   Overlay,
   OverlayRef,
-  OverlayState,
-  LiveAnnouncer,
-} from '../core';
+  OverlayState
+} from '../core/overlay/index'
 import {PortalInjector} from '../core/portal/portal-injector';
 import {extendObject} from '../core/util/object-extend';
 import {MdSnackBarConfig, MD_SNACK_BAR_DATA} from './snack-bar-config';
@@ -29,19 +31,19 @@ import {MdSnackBarContainer} from './snack-bar-container';
 import {SimpleSnackBar} from './simple-snack-bar';
 
 
-/**
+/*
  * Service to dispatch Material Design snack bar messages.
  */
 @Injectable()
 export class MdSnackBar {
-  /**
+  /*
    * Reference to the current snack bar in the view *at this level* (in the Angular injector tree).
    * If there is a parent snack-bar service, all operations should delegate to that parent
    * via `_openedSnackBarRef`.
    */
   private _snackBarRefAtThisLevel: MdSnackBarRef<any> | null = null;
 
-  /** Reference to the currently opened snackbar at *any* level. */
+  /* Reference to the currently opened snackbar at *any* level. */
   get _openedSnackBarRef(): MdSnackBarRef<any> | null {
     const parent = this._parentSnackBar;
     return parent ? parent._openedSnackBarRef : this._snackBarRefAtThisLevel;
@@ -61,7 +63,7 @@ export class MdSnackBar {
       private _injector: Injector,
       @Optional() @SkipSelf() private _parentSnackBar: MdSnackBar) {}
 
-  /**
+  /*
    * Creates and dispatches a snack bar with a custom component for the content, removing any
    * currently opened snack bars.
    *
@@ -105,7 +107,7 @@ export class MdSnackBar {
     return this._openedSnackBarRef;
   }
 
-  /**
+  /*
    * Opens a snackbar with a message and an optional action.
    * @param message The message to show in the snackbar.
    * @param action The label for the snackbar action.
@@ -122,7 +124,7 @@ export class MdSnackBar {
     return this.openFromComponent(SimpleSnackBar, _config);
   }
 
-  /**
+  /*
    * Dismisses the currently-visible snack bar.
    */
   dismiss(): void {
@@ -131,7 +133,7 @@ export class MdSnackBar {
     }
   }
 
-  /**
+  /*
    * Attaches the snack bar container component to the overlay.
    */
   private _attachSnackBarContainer(overlayRef: OverlayRef,
@@ -142,7 +144,7 @@ export class MdSnackBar {
     return containerRef.instance;
   }
 
-  /**
+  /*
    * Places a new component as the content of the snack bar container.
    */
   private _attach<T>(component: ComponentType<T>, config: MdSnackBarConfig): MdSnackBarRef<T> {
@@ -159,7 +161,7 @@ export class MdSnackBar {
     return snackBarRef;
   }
 
-  /**
+  /*
    * Creates a new overlay and places it in the correct location.
    * @param config The user-specified snack bar config.
    */
@@ -170,7 +172,7 @@ export class MdSnackBar {
     return this._overlay.create(state);
   }
 
-  /**
+  /*
    * Creates an injector to be used inside of a snack bar component.
    * @param config Config that was used to create the snack bar.
    * @param snackBarRef Reference to the snack bar.
@@ -189,7 +191,7 @@ export class MdSnackBar {
   }
 }
 
-/**
+/*
  * Applies default options to the snackbar config.
  * @param config The configuration to which the defaults will be applied.
  * @returns The new configuration object with defaults applied.

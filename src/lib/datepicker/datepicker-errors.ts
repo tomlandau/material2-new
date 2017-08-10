@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-/** @docs-private */
+/* @docs-private */
 export function createMissingDateImplError(provider: string) {
   return Error(
       `MdDatepicker: No provider found for ${provider}. You must import one of the following ` +

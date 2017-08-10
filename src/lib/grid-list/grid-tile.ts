@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -18,7 +18,7 @@ import {
   Directive,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import {MdLine, MdLineSetter} from '../core';
+import {MdLine, MdLineSetter} from '../core/line/line';
 import {coerceToNumber} from './grid-list-measure';
 
 @Component({
@@ -39,17 +39,17 @@ export class MdGridTile {
 
   constructor(private _renderer: Renderer2, private _element: ElementRef) {}
 
-  /** Amount of rows that the grid tile takes up. */
+  /* Amount of rows that the grid tile takes up. */
   @Input()
   get rowspan() { return this._rowspan; }
   set rowspan(value) { this._rowspan = coerceToNumber(value); }
 
-  /** Amount of columns that the grid tile takes up. */
+  /* Amount of columns that the grid tile takes up. */
   @Input()
   get colspan() { return this._colspan; }
   set colspan(value) { this._colspan = coerceToNumber(value); }
 
-  /**
+  /*
    * Sets the style of the grid-tile element.  Needs to be set manually to avoid
    * "Changed after checked" errors that would occur with HostBinding.
    */
@@ -65,7 +65,7 @@ export class MdGridTile {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MdGridTileText implements AfterContentInit {
-  /**
+  /*
    *  Helper that watches the number of lines in a text area and sets
    * a class on the host element that matches the line count.
    */
@@ -79,7 +79,7 @@ export class MdGridTileText implements AfterContentInit {
   }
 }
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -89,7 +89,7 @@ export class MdGridTileText implements AfterContentInit {
 })
 export class MdGridAvatarCssMatStyler {}
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -99,7 +99,7 @@ export class MdGridAvatarCssMatStyler {}
 })
 export class MdGridTileHeaderCssMatStyler {}
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */

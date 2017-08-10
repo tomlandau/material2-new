@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -16,24 +16,24 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {MdPaginatorIntl} from './paginator-intl';
-import {MATERIAL_COMPATIBILITY_MODE} from '../core';
+import {MATERIAL_COMPATIBILITY_MODE} from '../core/compatibility/compatibility';
 
-/**
+/*
  * Change event object that is emitted when the user selects a
  * different page size or navigates to another page.
  */
 export class PageEvent {
-  /** The current page index. */
+  /* The current page index. */
   pageIndex: number;
 
-  /** The current page size */
+  /* The current page size */
   pageSize: number;
 
-  /** The current total number of items being paged */
+  /* The current total number of items being paged */
   length: number;
 }
 
-/**
+/*
  * Component to provide navigation between paged information. Displays the size of the current
  * page, user-selectable options to change that size, what items are being shown, and
  * navigational button to go to the previous or next page.
@@ -55,13 +55,13 @@ export class PageEvent {
 export class MdPaginator implements OnInit {
   private _initialized: boolean;
 
-  /** The zero-based page index of the displayed list of items. Defaulted to 0. */
+  /* The zero-based page index of the displayed list of items. Defaulted to 0. */
   @Input() pageIndex: number = 0;
 
-  /** The length of the total number of items that are being paginated. Defaulted to 0. */
+  /* The length of the total number of items that are being paginated. Defaulted to 0. */
   @Input() length: number = 0;
 
-  /** Number of items to display on a page. By default set to 50. */
+  /* Number of items to display on a page. By default set to 50. */
   @Input()
   get pageSize(): number { return this._pageSize; }
   set pageSize(pageSize: number) {
@@ -70,7 +70,7 @@ export class MdPaginator implements OnInit {
   }
   private _pageSize: number = 50;
 
-  /** The set of provided page size options to display to the user. */
+  /* The set of provided page size options to display to the user. */
   @Input()
   get pageSizeOptions(): number[] { return this._pageSizeOptions; }
   set pageSizeOptions(pageSizeOptions: number[]) {
@@ -79,10 +79,10 @@ export class MdPaginator implements OnInit {
   }
   private _pageSizeOptions: number[] = [];
 
-  /** Event emitted when the paginator changes the page size or page index. */
+  /* Event emitted when the paginator changes the page size or page index. */
   @Output() page = new EventEmitter<PageEvent>();
 
-  /** Displayed set of page size options. Will be sorted and include current page size. */
+  /* Displayed set of page size options. Will be sorted and include current page size. */
   _displayedPageSizeOptions: number[];
 
   constructor(public _intl: MdPaginatorIntl) { }
@@ -92,32 +92,32 @@ export class MdPaginator implements OnInit {
     this._updateDisplayedPageSizeOptions();
   }
 
-  /** Advances to the next page if it exists. */
+  /* Advances to the next page if it exists. */
   nextPage() {
     if (!this.hasNextPage()) { return; }
     this.pageIndex++;
     this._emitPageEvent();
   }
 
-  /** Move back to the previous page if it exists. */
+  /* Move back to the previous page if it exists. */
   previousPage() {
     if (!this.hasPreviousPage()) { return; }
     this.pageIndex--;
     this._emitPageEvent();
   }
 
-  /** Whether there is a previous page. */
+  /* Whether there is a previous page. */
   hasPreviousPage() {
     return this.pageIndex >= 1 && this.pageSize != 0;
   }
 
-  /** Whether there is a next page. */
+  /* Whether there is a next page. */
   hasNextPage() {
     const numberOfPages = Math.ceil(this.length / this.pageSize) - 1;
     return this.pageIndex < numberOfPages && this.pageSize != 0;
   }
 
-  /**
+  /*
    * Changes the page size so that the first item displayed on the page will still be
    * displayed using the new page size.
    *
@@ -135,7 +135,7 @@ export class MdPaginator implements OnInit {
     this._emitPageEvent();
   }
 
-  /**
+  /*
    * Updates the list of page size options to display to the user. Includes making sure that
    * the page size is an option and that the list is sorted.
    */
@@ -151,7 +151,7 @@ export class MdPaginator implements OnInit {
     this._displayedPageSizeOptions.sort((a, b) => a - b);
   }
 
-  /** Emits an event notifying that a change of the paginator's properties has been triggered. */
+  /* Emits an event notifying that a change of the paginator's properties has been triggered. */
   private _emitPageEvent() {
     this.page.next({
       pageIndex: this.pageIndex,

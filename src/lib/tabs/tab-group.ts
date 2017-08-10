@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -23,7 +23,7 @@ import {
   AfterContentChecked,
   OnDestroy,
 } from '@angular/core';
-import {coerceBooleanProperty} from '../core';
+import {coerceBooleanProperty} from '@angular/cdk';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 import {MdTab} from './tab';
@@ -33,26 +33,26 @@ import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/dis
 import {CanColor, mixinColor, ThemePalette} from '../core/common-behaviors/color';
 
 
-/** Used to generate unique ID's for each tab component */
+/* Used to generate unique ID's for each tab component */
 let nextId = 0;
 
-/** A simple change event emitted on focus or selection changes. */
+/* A simple change event emitted on focus or selection changes. */
 export class MdTabChangeEvent {
   index: number;
   tab: MdTab;
 }
 
-/** Possible positions for the tab header. */
+/* Possible positions for the tab header. */
 export type MdTabHeaderPosition = 'above' | 'below';
 
 // Boilerplate for applying mixins to MdTabGroup.
-/** @docs-private */
+/* @docs-private */
 export class MdTabGroupBase {
   constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
 export const _MdTabGroupMixinBase = mixinColor(mixinDisableRipple(MdTabGroupBase), 'primary');
 
-/**
+/*
  * Material design tab-group component.  Supports basic tab pairs (label + content) and includes
  * animated ink-bar, keyboard navigation, and screen reader.
  * See: https://www.google.com/design/spec/components/tabs.html
@@ -77,42 +77,42 @@ export class MdTabGroup extends _MdTabGroupMixinBase implements AfterContentInit
 
   @ViewChild('tabBodyWrapper') _tabBodyWrapper: ElementRef;
 
-  /** Whether this component has been initialized. */
+  /* Whether this component has been initialized. */
   private _isInitialized: boolean = false;
 
-  /** The tab index that should be selected after the content has been checked. */
+  /* The tab index that should be selected after the content has been checked. */
   private _indexToSelect: number | null = 0;
 
-  /** Snapshot of the height of the tab body wrapper before another tab is activated. */
+  /* Snapshot of the height of the tab body wrapper before another tab is activated. */
   private _tabBodyWrapperHeight: number = 0;
 
-  /** Subscription to tabs being added/removed. */
+  /* Subscription to tabs being added/removed. */
   private _tabsSubscription: Subscription;
 
-  /** Subscription to changes in the tab labels. */
+  /* Subscription to changes in the tab labels. */
   private _tabLabelSubscription: Subscription;
 
-  /** Whether the tab group should grow to the size of the active tab. */
+  /* Whether the tab group should grow to the size of the active tab. */
   @Input()
   get dynamicHeight(): boolean { return this._dynamicHeight; }
   set dynamicHeight(value: boolean) { this._dynamicHeight = coerceBooleanProperty(value); }
   private _dynamicHeight: boolean = false;
 
-  /** @deprecated */
+  /* @deprecated */
   @Input('md-dynamic-height')
   get _dynamicHeightDeprecated(): boolean { return this._dynamicHeight; }
   set _dynamicHeightDeprecated(value: boolean) { this._dynamicHeight = value; }
 
-  /** The index of the active tab. */
+  /* The index of the active tab. */
   @Input()
   set selectedIndex(value: number | null) { this._indexToSelect = value; }
   get selectedIndex(): number | null { return this._selectedIndex; }
   private _selectedIndex: number | null = null;
 
-  /** Position of the tab header. */
+  /* Position of the tab header. */
   @Input() headerPosition: MdTabHeaderPosition = 'above';
 
-  /** Background color of the tab group. */
+  /* Background color of the tab group. */
   @Input()
   get backgroundColor(): ThemePalette { return this._backgroundColor; }
   set backgroundColor(value: ThemePalette) {
@@ -128,15 +128,15 @@ export class MdTabGroup extends _MdTabGroupMixinBase implements AfterContentInit
   }
   private _backgroundColor: ThemePalette;
 
-  /** Output to enable support for two-way binding on `[(selectedIndex)]` */
+  /* Output to enable support for two-way binding on `[(selectedIndex)]` */
   @Output() get selectedIndexChange(): Observable<number> {
     return map.call(this.selectChange, event => event.index);
   }
 
-  /** Event emitted when focus has changed within a tab group. */
+  /* Event emitted when focus has changed within a tab group. */
   @Output() focusChange: EventEmitter<MdTabChangeEvent> = new EventEmitter<MdTabChangeEvent>();
 
-  /** Event emitted when the tab selection has changed. */
+  /* Event emitted when the tab selection has changed. */
   @Output() selectChange: EventEmitter<MdTabChangeEvent> = new EventEmitter<MdTabChangeEvent>(true);
 
   private _groupId: number;
@@ -148,7 +148,7 @@ export class MdTabGroup extends _MdTabGroupMixinBase implements AfterContentInit
     this._groupId = nextId++;
   }
 
-  /**
+  /*
    * After the content is checked, this component knows what tabs have been defined
    * and what the selected index should be. This is where we can know exactly what position
    * each tab should be in according to the new selected index, and additionally we know how
@@ -205,7 +205,7 @@ export class MdTabGroup extends _MdTabGroupMixinBase implements AfterContentInit
     }
   }
 
-  /**
+  /*
    * Waits one frame for the view to update, then updates the ink bar
    * Note: This must be run outside of the zone or it will create an infinite change detection loop.
    */
@@ -226,7 +226,7 @@ export class MdTabGroup extends _MdTabGroupMixinBase implements AfterContentInit
     return event;
   }
 
-  /**
+  /*
    * Subscribes to changes in the tab labels. This is needed, because the @Input for the label is
    * on the MdTab component, whereas the data binding is inside the MdTabGroup. In order for the
    * binding to be updated, we need to subscribe to changes in it and trigger change detection
@@ -242,17 +242,17 @@ export class MdTabGroup extends _MdTabGroupMixinBase implements AfterContentInit
     });
   }
 
-  /** Returns a unique id for each tab label element */
+  /* Returns a unique id for each tab label element */
   _getTabLabelId(i: number): string {
     return `md-tab-label-${this._groupId}-${i}`;
   }
 
-  /** Returns a unique id for each tab content element */
+  /* Returns a unique id for each tab content element */
   _getTabContentId(i: number): string {
     return `md-tab-content-${this._groupId}-${i}`;
   }
 
-  /**
+  /*
    * Sets the height of the body wrapper to the height of the activating tab if dynamic
    * height property is true.
    */
@@ -270,7 +270,7 @@ export class MdTabGroup extends _MdTabGroupMixinBase implements AfterContentInit
     }
   }
 
-  /** Removes the height of the tab body wrapper. */
+  /* Removes the height of the tab body wrapper. */
   _removeTabBodyWrapperHeight(): void {
     this._tabBodyWrapperHeight = this._tabBodyWrapper.nativeElement.clientHeight;
     this._renderer.setStyle(this._tabBodyWrapper.nativeElement, 'height', '');

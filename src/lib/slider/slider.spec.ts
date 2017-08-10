@@ -4,7 +4,7 @@ import {Component, DebugElement} from '@angular/core';
 import {By, HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
 import {MdSlider, MdSliderModule} from './index';
 import {TestGestureConfig} from './test-gesture-config';
-import {BidiModule} from '../core/bidi/index';
+import {BidiModule} from '@angular/cdk';
 import {
   DOWN_ARROW,
   END,
@@ -1370,7 +1370,7 @@ class VerticalSlider {
   invert = false;
 }
 
-/**
+/*
  * Dispatches a click event sequence (consisting of moueseenter, click) from an element.
  * Note: The mouse event truncates the position for the click.
  * @param sliderElement The md-slider element from which the event will be dispatched.
@@ -1387,7 +1387,7 @@ function dispatchClickEventSequence(sliderElement: HTMLElement, percentage: numb
   dispatchMouseEvent(sliderElement, 'click', x, y);
 }
 
-/**
+/*
  * Dispatches a slide event sequence (consisting of slidestart, slide, slideend) from an element.
  * @param sliderElement The md-slider element from which the event will be dispatched.
  * @param startPercent The percentage of the slider where the slide will begin.
@@ -1403,7 +1403,7 @@ function dispatchSlideEventSequence(sliderElement: HTMLElement, startPercent: nu
   dispatchSlideEndEvent(sliderElement, endPercent, gestureConfig);
 }
 
-/**
+/*
  * Dispatches a slide event from an element.
  * @param sliderElement The md-slider element from which the event will be dispatched.
  * @param percent The percentage of the slider where the slide will happen.
@@ -1422,7 +1422,7 @@ function dispatchSlideEvent(sliderElement: HTMLElement, percent: number,
   });
 }
 
-/**
+/*
  * Dispatches a slidestart event from an element.
  * @param sliderElement The md-slider element from which the event will be dispatched.
  * @param percent The percentage of the slider where the slide will begin.
@@ -1443,7 +1443,7 @@ function dispatchSlideStartEvent(sliderElement: HTMLElement, percent: number,
   });
 }
 
-/**
+/*
  * Dispatches a slideend event from an element.
  * @param sliderElement The md-slider element from which the event will be dispatched.
  * @param percent The percentage of the slider where the slide will end.
@@ -1462,7 +1462,7 @@ function dispatchSlideEndEvent(sliderElement: HTMLElement, percent: number,
   });
 }
 
-/**
+/*
  * Dispatches a mouseenter event from an element.
  * Note: The mouse event truncates the position for the click.
  * @param element The element from which the event will be dispatched.

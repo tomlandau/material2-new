@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -28,7 +28,7 @@ export class MdChipInput {
 
   _chipList: MdChipList;
 
-  /** Register input for chip list */
+  /* Register input for chip list */
   @Input('mdChipInputFor')
   set chipList(value: MdChipList) {
     if (value) {
@@ -37,7 +37,7 @@ export class MdChipInput {
     }
   }
 
-  /**
+  /*
    * Whether or not the chipEnd event will be emitted when the input is blurred.
    */
   @Input('mdChipInputAddOnBlur')
@@ -45,7 +45,7 @@ export class MdChipInput {
   set addOnBlur(value) { this._addOnBlur = coerceBooleanProperty(value); }
   _addOnBlur: boolean = false;
 
-  /**
+  /*
    * The list of key codes that will trigger a chipEnd event.
    *
    * Defaults to `[ENTER]`.
@@ -53,7 +53,7 @@ export class MdChipInput {
   // TODO(tinayuangao): Support Set here
   @Input('mdChipInputSeparatorKeyCodes') separatorKeyCodes: number[] = [ENTER];
 
-  /** Emitted when a chip is to be added. */
+  /* Emitted when a chip is to be added. */
   @Output('mdChipInputTokenEnd')
   chipEnd = new EventEmitter<MdChipInputEvent>();
 
@@ -68,26 +68,26 @@ export class MdChipInput {
   get matSeparatorKeyCodes() { return this.separatorKeyCodes; }
   set matSeparatorKeyCodes(v: number[]) { this.separatorKeyCodes = v; }
 
-  /** The native input element to which this directive is attached. */
+  /* The native input element to which this directive is attached. */
   protected _inputElement: HTMLInputElement;
 
   constructor(protected _elementRef: ElementRef) {
     this._inputElement = this._elementRef.nativeElement as HTMLInputElement;
   }
 
-  /** Utility method to make host definition/tests more clear. */
+  /* Utility method to make host definition/tests more clear. */
   _keydown(event?: KeyboardEvent) {
     this._emitChipEnd(event);
   }
 
-  /** Checks to see if the blur should emit the (chipEnd) event. */
+  /* Checks to see if the blur should emit the (chipEnd) event. */
   _blur() {
     if (this.addOnBlur) {
       this._emitChipEnd();
     }
   }
 
-  /** Checks to see if the (chipEnd) event needs to be emitted. */
+  /* Checks to see if the (chipEnd) event needs to be emitted. */
   _emitChipEnd(event?: KeyboardEvent) {
     if (!this._inputElement.value && !!event) {
       this._chipList._keydown(event);

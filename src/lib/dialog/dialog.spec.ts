@@ -23,7 +23,8 @@ import {SpyLocation} from '@angular/common/testing';
 import {MdDialogModule} from './index';
 import {MdDialog, MD_DIALOG_DATA} from './dialog';
 import {MdDialogContainer} from './dialog-container';
-import {OverlayContainer, ESCAPE} from '../core';
+import {OverlayContainer} from '../core/overlay/index';
+import {ESCAPE} from '../core/keyboard/keycodes';
 import {MdDialogRef} from './dialog-ref';
 import {dispatchKeyboardEvent} from '@angular/cdk/testing';
 

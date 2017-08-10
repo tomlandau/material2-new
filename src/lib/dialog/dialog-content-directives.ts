@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -10,10 +10,10 @@ import {Directive, Input, Optional, OnInit} from '@angular/core';
 import {MdDialogRef} from './dialog-ref';
 import {MdDialogContainer} from './dialog-container';
 
-/** Counter used to generate unique IDs for dialog elements. */
+/* Counter used to generate unique IDs for dialog elements. */
 let dialogElementUid = 0;
 
-/**
+/*
  * Button that will close the current dialog.
  */
 @Directive({
@@ -26,19 +26,19 @@ let dialogElementUid = 0;
   }
 })
 export class MdDialogClose {
-  /** Screenreader label for the button. */
+  /* Screenreader label for the button. */
   @Input('aria-label') ariaLabel: string = 'Close dialog';
 
-  /** Dialog close input. */
+  /* Dialog close input. */
   @Input('md-dialog-close') dialogResult: any;
 
-  /** Dialog close input for compatibility mode. */
+  /* Dialog close input for compatibility mode. */
   @Input('mat-dialog-close') set _matDialogClose(value: any) { this.dialogResult = value; }
 
   constructor(public dialogRef: MdDialogRef<any>) { }
 }
 
-/**
+/*
  * Title of a dialog element. Stays fixed to the top of the dialog when scrolling.
  */
 @Directive({
@@ -61,7 +61,7 @@ export class MdDialogTitle implements OnInit {
 }
 
 
-/**
+/*
  * Scrollable content container of a dialog.
  */
 @Directive({
@@ -72,7 +72,7 @@ export class MdDialogTitle implements OnInit {
 export class MdDialogContent { }
 
 
-/**
+/*
  * Container for the bottom action buttons in a dialog.
  * Stays fixed to the bottom when scrolling.
  */

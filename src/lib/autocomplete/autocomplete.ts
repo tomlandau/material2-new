@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -19,10 +19,10 @@ import {
   ChangeDetectorRef,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import {MdOption} from '../core';
+import {MdOption} from '../core/option/index';
 import {ActiveDescendantKeyManager} from '../core/a11y/activedescendant-key-manager';
 
-/**
+/*
  * Autocomplete IDs need to be unique across components, so this counter exists outside of
  * the component definition.
  */
@@ -44,28 +44,28 @@ export type AutocompletePositionY = 'above' | 'below';
 })
 export class MdAutocomplete implements AfterContentInit {
 
-  /** Manages active item in option list based on key events. */
+  /* Manages active item in option list based on key events. */
   _keyManager: ActiveDescendantKeyManager;
 
-  /** Whether the autocomplete panel displays above or below its trigger. */
+  /* Whether the autocomplete panel displays above or below its trigger. */
   positionY: AutocompletePositionY = 'below';
 
-  /** Whether the autocomplete panel should be visible, depending on option length. */
+  /* Whether the autocomplete panel should be visible, depending on option length. */
   showPanel = false;
 
-  /** @docs-private */
+  /* @docs-private */
   @ViewChild(TemplateRef) template: TemplateRef<any>;
 
-  /** Element for the panel containing the autocomplete options. */
+  /* Element for the panel containing the autocomplete options. */
   @ViewChild('panel') panel: ElementRef;
 
-  /** @docs-private */
+  /* @docs-private */
   @ContentChildren(MdOption) options: QueryList<MdOption>;
 
-  /** Function that maps an option's control value to its display value in the trigger. */
+  /* Function that maps an option's control value to its display value in the trigger. */
   @Input() displayWith: ((value: any) => string) | null = null;
 
-  /** Unique ID to be used by autocomplete trigger's "aria-owns" property. */
+  /* Unique ID to be used by autocomplete trigger's "aria-owns" property. */
   id: string = `md-autocomplete-${_uniqueAutocompleteIdCounter++}`;
 
   constructor(private _changeDetectorRef: ChangeDetectorRef) { }
@@ -74,7 +74,7 @@ export class MdAutocomplete implements AfterContentInit {
     this._keyManager = new ActiveDescendantKeyManager(this.options).withWrap();
   }
 
-  /**
+  /*
    * Sets the panel scrollTop. This allows us to manually scroll to display options
    * above or below the fold, as they are not actually being focused when active.
    */
@@ -84,12 +84,12 @@ export class MdAutocomplete implements AfterContentInit {
     }
   }
 
-  /** Returns the panel's scrollTop. */
+  /* Returns the panel's scrollTop. */
   _getScrollTop(): number {
     return this.panel ? this.panel.nativeElement.scrollTop : 0;
   }
 
-  /** Panel should hide itself when the option list is empty. */
+  /* Panel should hide itself when the option list is empty. */
   _setVisibility() {
     Promise.resolve().then(() => {
       this.showPanel = !!this.options.length;
@@ -97,7 +97,7 @@ export class MdAutocomplete implements AfterContentInit {
     });
   }
 
-  /** Sets a class on the panel based on its position (used to set y-offset). */
+  /* Sets a class on the panel based on its position (used to set y-offset). */
   _getClassList() {
     return {
       'mat-autocomplete-panel-below': this.positionY === 'below',

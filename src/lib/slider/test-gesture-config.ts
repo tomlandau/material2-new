@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -7,21 +7,22 @@
  */
 
 import {Injectable} from '@angular/core';
-import {GestureConfig, HammerManager} from '../core';
+import {GestureConfig} from '../core/gestures/gesture-config';
+import {HammerManager} from '../core/gestures/gesture-annotations';
 
-/**
+/*
  * An extension of GestureConfig that exposes the underlying HammerManager instances.
  * Tests can use these instances to emit fake gesture events.
  */
 @Injectable()
 export class TestGestureConfig extends GestureConfig {
-  /**
+  /*
    * A map of Hammer instances to element.
    * Used to emit events over instances for an element.
    */
   hammerInstances: Map<HTMLElement, HammerManager[]> = new Map<HTMLElement, HammerManager[]>();
 
-  /**
+  /*
    * Create a mapping of Hammer instances to element so that events can be emitted during testing.
    */
   buildHammer(element: HTMLElement) {
@@ -37,7 +38,7 @@ export class TestGestureConfig extends GestureConfig {
     return mc;
   }
 
-  /**
+  /*
    * The Angular event plugin for Hammer creates a new HammerManager instance for each listener,
    * so we need to apply our event on all instances to hit the correct listener.
    */

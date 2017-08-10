@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -25,7 +25,7 @@ import {
 } from '@angular/core';
 import {MdInkBar} from '../ink-bar';
 import {CanDisable, mixinDisabled} from '../../core/common-behaviors/disabled';
-import {MdRipple} from '../../core';
+import {MdRipple} from '../../core/ripple/index';
 import {ViewportRuler} from '../../core/overlay/position/viewport-ruler';
 import {Directionality, MD_RIPPLE_GLOBAL_OPTIONS, Platform, RippleGlobalOptions} from '../../core';
 import {CanColor, mixinColor, ThemePalette} from '../../core/common-behaviors/color';
@@ -37,13 +37,13 @@ import {merge} from 'rxjs/observable/merge';
 import {fromEvent} from 'rxjs/observable/fromEvent';
 
 // Boilerplate for applying mixins to MdTabNav.
-/** @docs-private */
+/* @docs-private */
 export class MdTabNavBase {
   constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
 export const _MdTabNavMixinBase = mixinColor(MdTabNavBase, 'primary');
 
-/**
+/*
  * Navigation component matching the styles of the tab group header.
  * Provides anchored navigation with animated ink bar.
  */
@@ -58,7 +58,7 @@ export const _MdTabNavMixinBase = mixinColor(MdTabNavBase, 'primary');
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MdTabNav extends _MdTabNavMixinBase implements AfterContentInit, CanColor, OnDestroy {
-  /** Subject that emits when the component has been destroyed. */
+  /* Subject that emits when the component has been destroyed. */
   private _onDestroy = new Subject<void>();
 
   _activeLinkChanged: boolean;
@@ -66,10 +66,10 @@ export class MdTabNav extends _MdTabNavMixinBase implements AfterContentInit, Ca
 
   @ViewChild(MdInkBar) _inkBar: MdInkBar;
 
-  /** Subscription for window.resize event **/
+  /* Subscription for window.resize event **/
   private _resizeSubscription: Subscription;
 
-  /** Background color of the tab nav. */
+  /* Background color of the tab nav. */
   @Input()
   get backgroundColor(): ThemePalette { return this._backgroundColor; }
   set backgroundColor(value: ThemePalette) {
@@ -93,7 +93,7 @@ export class MdTabNav extends _MdTabNavMixinBase implements AfterContentInit, Ca
     super(renderer, elementRef);
   }
 
-  /** Notifies the component that the active link has been changed. */
+  /* Notifies the component that the active link has been changed. */
   updateActiveLink(element: ElementRef) {
     this._activeLinkChanged = this._activeLinkElement != element;
     this._activeLinkElement = element;
@@ -115,7 +115,7 @@ export class MdTabNav extends _MdTabNavMixinBase implements AfterContentInit, Ca
     });
   }
 
-  /** Checks if the active link has been changed and, if so, will update the ink bar. */
+  /* Checks if the active link has been changed and, if so, will update the ink bar. */
   ngAfterContentChecked(): void {
     if (this._activeLinkChanged) {
       this._alignInkBar();
@@ -131,7 +131,7 @@ export class MdTabNav extends _MdTabNavMixinBase implements AfterContentInit, Ca
     }
   }
 
-  /** Aligns the ink bar to the active link. */
+  /* Aligns the ink bar to the active link. */
   _alignInkBar(): void {
     if (this._activeLinkElement) {
       this._inkBar.alignToElement(this._activeLinkElement.nativeElement);
@@ -144,7 +144,7 @@ export class MdTabNav extends _MdTabNavMixinBase implements AfterContentInit, Ca
 export class MdTabLinkBase {}
 export const _MdTabLinkMixinBase = mixinDisabled(MdTabLinkBase);
 
-/**
+/*
  * Link inside of a `md-tab-nav-bar`.
  */
 @Directive({
@@ -157,13 +157,13 @@ export const _MdTabLinkMixinBase = mixinDisabled(MdTabLinkBase);
   }
 })
 export class MdTabLink extends _MdTabLinkMixinBase implements OnDestroy, CanDisable {
-  /** Whether the tab link is active or not. */
+  /* Whether the tab link is active or not. */
   private _isActive: boolean = false;
 
-  /** Reference to the instance of the ripple for the tab link. */
+  /* Reference to the instance of the ripple for the tab link. */
   private _tabLinkRipple: MdRipple;
 
-  /** Whether the link is active. */
+  /* Whether the link is active. */
   @Input()
   get active(): boolean { return this._isActive; }
   set active(value: boolean) {
@@ -173,7 +173,7 @@ export class MdTabLink extends _MdTabLinkMixinBase implements OnDestroy, CanDisa
     }
   }
 
-  /** @docs-private */
+  /* @docs-private */
   @HostBinding('tabIndex')
   get tabIndex(): number {
     return this.disabled ? -1 : 0;

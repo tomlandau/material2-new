@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -26,16 +26,16 @@ import {
 } from '@angular/animations';
 import {MdAccordion, MdAccordionDisplayMode} from './accordion';
 import {AccordionItem} from './accordion-item';
-import {UniqueSelectionDispatcher} from '../core';
+import {UniqueSelectionDispatcher} from '../core/coordination/unique-selection-dispatcher';
 
 
-/** MdExpansionPanel's states. */
+/* MdExpansionPanel's states. */
 export type MdExpansionPanelState = 'expanded' | 'collapsed';
 
-/** Time and timing curve for expansion panel animations. */
+/* Time and timing curve for expansion panel animations. */
 export const EXPANSION_PANEL_ANIMATION_TIMING = '225ms cubic-bezier(0.4,0.0,0.2,1)';
 
-/**
+/*
  * <md-expansion-panel> component.
  *
  * This component can be used as a single element to show expandable content, or as one of
@@ -74,7 +74,7 @@ export const EXPANSION_PANEL_ANIMATION_TIMING = '225ms cubic-bezier(0.4,0.0,0.2,
   ],
 })
 export class MdExpansionPanel extends AccordionItem {
-  /** Whether the toggle indicator should be hidden. */
+  /* Whether the toggle indicator should be hidden. */
   @Input() hideToggle: boolean = false;
 
   constructor(@Optional() @Host() accordion: MdAccordion,
@@ -84,7 +84,7 @@ export class MdExpansionPanel extends AccordionItem {
     this.accordion = accordion;
   }
 
-  /** Whether the expansion indicator should be hidden. */
+  /* Whether the expansion indicator should be hidden. */
   _getHideToggle(): boolean {
     if (this.accordion) {
       return this.accordion.hideToggle;
@@ -92,7 +92,7 @@ export class MdExpansionPanel extends AccordionItem {
     return this.hideToggle;
   }
 
-  /** Gets the panel's display mode. */
+  /* Gets the panel's display mode. */
   _getDisplayMode(): MdAccordionDisplayMode | MdExpansionPanelState {
     if (!this.expanded) {
       return this._getExpandedState();
@@ -103,7 +103,7 @@ export class MdExpansionPanel extends AccordionItem {
     return this._getExpandedState();
   }
 
-  /** Gets the expanded state string. */
+  /* Gets the expanded state string. */
   _getExpandedState(): MdExpansionPanelState {
     return this.expanded ? 'expanded' : 'collapsed';
   }

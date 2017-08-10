@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -19,8 +19,9 @@ import {
   ViewEncapsulation,
   Inject,
 } from '@angular/core';
-import {FocusOriginMonitor, Platform} from '../core';
-import {mixinDisabled, CanDisable} from '../core/common-behaviors/disabled';
+import {FocusOriginMonitor} from '../core/style/index';
+import {Platform} from '../core/platform/index';
+import {mixinDisabled, CanDisable} from '../core/common-behaviors/index';
 import {CanColor, mixinColor} from '../core/common-behaviors/color';
 import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/disable-ripple';
 
@@ -31,7 +32,7 @@ import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/dis
 const DEFAULT_ROUND_BUTTON_COLOR = 'accent';
 
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -41,7 +42,7 @@ const DEFAULT_ROUND_BUTTON_COLOR = 'accent';
 })
 export class MdButtonCssMatStyler {}
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -53,7 +54,7 @@ export class MdButtonCssMatStyler {}
 })
 export class MdRaisedButtonCssMatStyler {}
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -64,7 +65,7 @@ export class MdRaisedButtonCssMatStyler {}
 })
 export class MdIconButtonCssMatStyler {}
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -80,7 +81,7 @@ export class MdFab {
   }
 }
 
-/**
+/*
  * Directive that targets mini-fab buttons and anchors. It's used to apply the `mat-` class
  * to all mini-fab buttons and also is responsible for setting the default color palette.
  * @docs-private
@@ -106,7 +107,7 @@ export class MdButtonBase {
 export const _MdButtonMixinBase = mixinColor(mixinDisabled(mixinDisableRipple(MdButtonBase)));
 
 
-/**
+/*
  * Material design button.
  */
 @Component({
@@ -127,10 +128,10 @@ export const _MdButtonMixinBase = mixinColor(mixinDisabled(mixinDisableRipple(Md
 export class MdButton extends _MdButtonMixinBase
     implements OnDestroy, CanDisable, CanColor, CanDisableRipple {
 
-  /** Whether the button is round. */
+  /* Whether the button is round. */
   _isRoundButton: boolean = this._hasAttributeWithPrefix('fab', 'mini-fab');
 
-  /** Whether the button is icon button. */
+  /* Whether the button is icon button. */
   _isIconButton: boolean = this._hasAttributeWithPrefix('icon-button');
 
   constructor(renderer: Renderer2,
@@ -145,7 +146,7 @@ export class MdButton extends _MdButtonMixinBase
     this._focusOriginMonitor.stopMonitoring(this._elementRef.nativeElement);
   }
 
-  /** Focuses the button. */
+  /* Focuses the button. */
   focus(): void {
     this._getHostElement().focus();
   }
@@ -158,7 +159,7 @@ export class MdButton extends _MdButtonMixinBase
     return this.disableRipple || this.disabled;
   }
 
-  /**
+  /*
    * Gets whether the button has one of the given attributes
    * with either an 'md-' or 'mat-' prefix.
    */
@@ -178,7 +179,7 @@ export class MdButton extends _MdButtonMixinBase
   }
 }
 
-/**
+/*
  * Raised Material design button.
  */
 @Component({

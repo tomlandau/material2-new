@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -23,7 +23,8 @@ import {
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {coerceBooleanProperty} from '@angular/cdk';
-import {FocusOrigin, FocusOriginMonitor, MdRipple, RippleRef} from '../core';
+import {FocusOrigin, FocusOriginMonitor} from '../core/style/index';
+import {MdRipple, RippleRef} from '../core/ripple/index';
 import {mixinDisabled, CanDisable} from '../core/common-behaviors/disabled';
 import {CanColor, mixinColor} from '../core/common-behaviors/color';
 import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/disable-ripple';
@@ -31,7 +32,7 @@ import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/dis
 // Increasing integer for generating unique ids for checkbox components.
 let nextUniqueId = 0;
 
-/**
+/*
  * Provider Expression that allows md-checkbox to register as a ControlValueAccessor.
  * This allows it to support [(ngModel)].
  * @docs-private
@@ -42,31 +43,31 @@ export const MD_CHECKBOX_CONTROL_VALUE_ACCESSOR: any = {
   multi: true
 };
 
-/**
+/*
  * Represents the different states that require custom transitions between them.
  * @docs-private
  */
 export enum TransitionCheckState {
-  /** The initial state of the component before any user interaction. */
+  /* The initial state of the component before any user interaction. */
   Init,
-  /** The state representing the component when it's becoming checked. */
+  /* The state representing the component when it's becoming checked. */
   Checked,
-  /** The state representing the component when it's becoming unchecked. */
+  /* The state representing the component when it's becoming unchecked. */
   Unchecked,
-  /** The state representing the component when it's becoming indeterminate. */
+  /* The state representing the component when it's becoming indeterminate. */
   Indeterminate
 }
 
-/** Change event object emitted by MdCheckbox. */
+/* Change event object emitted by MdCheckbox. */
 export class MdCheckboxChange {
-  /** The source MdCheckbox of the event. */
+  /* The source MdCheckbox of the event. */
   source: MdCheckbox;
-  /** The new `checked` value of the checkbox. */
+  /* The new `checked` value of the checkbox. */
   checked: boolean;
 }
 
 // Boilerplate for applying mixins to MdCheckbox.
-/** @docs-private */
+/* @docs-private */
 export class MdCheckboxBase {
   constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
@@ -74,7 +75,7 @@ export const _MdCheckboxMixinBase =
   mixinColor(mixinDisableRipple(mixinDisabled(MdCheckboxBase)), 'accent');
 
 
-/**
+/*
  * A material design checkbox component. Supports all of the functionality of an HTML5 checkbox,
  * and exposes a similar API. A MdCheckbox can be either checked, unchecked, indeterminate, or
  * disabled. Note that all additional accessibility attributes are taken care of by the component,
@@ -103,33 +104,33 @@ export const _MdCheckboxMixinBase =
 export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAccessor, AfterViewInit,
     OnDestroy, CanColor, CanDisable, CanDisableRipple {
 
-  /**
+  /*
    * Attached to the aria-label attribute of the host element. In most cases, arial-labelledby will
    * take precedence so this may be omitted.
    */
   @Input('aria-label') ariaLabel: string = '';
 
-  /**
+  /*
    * Users can specify the `aria-labelledby` attribute which will be forwarded to the input element
    */
   @Input('aria-labelledby') ariaLabelledby: string | null = null;
 
   private _uniqueId: string = `md-checkbox-${++nextUniqueId}`;
 
-  /** A unique id for the checkbox input. If none is supplied, it will be auto-generated. */
+  /* A unique id for the checkbox input. If none is supplied, it will be auto-generated. */
   @Input() id: string = this._uniqueId;
 
-  /** Returns the unique id for the visual hidden input. */
+  /* Returns the unique id for the visual hidden input. */
   get inputId(): string { return `${this.id || this._uniqueId}-input`; }
 
   private _required: boolean;
 
-  /** Whether the checkbox is required. */
+  /* Whether the checkbox is required. */
   @Input()
   get required(): boolean { return this._required; }
   set required(value) { this._required = coerceBooleanProperty(value); }
 
-  /**
+  /*
    * Whether or not the checkbox should appear before or after the label.
    * @deprecated
    */
@@ -144,31 +145,31 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     this.labelPosition = (v == 'start') ? 'after' : 'before';
   }
 
-  /** Whether the label should appear after or before the checkbox. Defaults to 'after' */
+  /* Whether the label should appear after or before the checkbox. Defaults to 'after' */
   @Input() labelPosition: 'before' | 'after' = 'after';
 
-  /** Tabindex value that is passed to the underlying input element. */
+  /* Tabindex value that is passed to the underlying input element. */
   @Input() tabIndex: number = 0;
 
-  /** Name value will be applied to the input element if present */
+  /* Name value will be applied to the input element if present */
   @Input() name: string | null = null;
 
-  /** Event emitted when the checkbox's `checked` value changes. */
+  /* Event emitted when the checkbox's `checked` value changes. */
   @Output() change: EventEmitter<MdCheckboxChange> = new EventEmitter<MdCheckboxChange>();
 
-  /** Event emitted when the checkbox's `indeterminate` value changes. */
+  /* Event emitted when the checkbox's `indeterminate` value changes. */
   @Output() indeterminateChange: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  /** The value attribute of the native input element */
+  /* The value attribute of the native input element */
   @Input() value: string ;
 
-  /** The native `<input type="checkbox"> element */
+  /* The native `<input type="checkbox"> element */
   @ViewChild('input') _inputElement: ElementRef;
 
-  /** Called when the checkbox is blurred. Needed to properly implement ControlValueAccessor. */
+  /* Called when the checkbox is blurred. Needed to properly implement ControlValueAccessor. */
   @ViewChild(MdRipple) _ripple: MdRipple;
 
-  /**
+  /*
    * Called when the checkbox is blurred. Needed to properly implement ControlValueAccessor.
    * @docs-private
    */
@@ -184,7 +185,7 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
 
   private _controlValueAccessorChangeFn: (value: any) => void = () => {};
 
-  /** Reference to the focused state ripple. */
+  /* Reference to the focused state ripple. */
   private _focusRipple: RippleRef | null;
 
   constructor(renderer: Renderer2,
@@ -204,7 +205,7 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     this._focusOriginMonitor.stopMonitoring(this._inputElement.nativeElement);
   }
 
-  /**
+  /*
    * Whether the checkbox is checked.
    */
   @Input() get checked() {
@@ -218,7 +219,7 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     }
   }
 
-  /**
+  /*
    * Whether the checkbox is indeterminate. This is also known as "mixed" mode and can be used to
    * represent a checkbox with three states, e.g. a checkbox that represents a nested list of
    * checkable items. Note that whenever checkbox is manually clicked, indeterminate is immediately
@@ -247,7 +248,7 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     return this.disableRipple || this.disabled;
   }
 
-  /** Method being called whenever the label text changes. */
+  /* Method being called whenever the label text changes. */
   _onLabelTextChange() {
     // This method is getting called whenever the label of the checkbox changes.
     // Since the checkbox uses the OnPush strategy we need to notify it about the change
@@ -255,7 +256,7 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     this._changeDetectorRef.markForCheck();
   }
 
-  /**
+  /*
    * Sets the model value. Implemented as part of ControlValueAccessor.
    * @param value Value to be set to the model.
    */
@@ -263,7 +264,7 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     this.checked = !!value;
   }
 
-  /**
+  /*
    * Registers a callback to be triggered when the value has changed.
    * Implemented as part of ControlValueAccessor.
    * @param fn Function to be called on change.
@@ -272,7 +273,7 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     this._controlValueAccessorChangeFn = fn;
   }
 
-  /**
+  /*
    * Registers a callback to be triggered when the control has been touched.
    * Implemented as part of ControlValueAccessor.
    * @param fn Callback to be triggered when the checkbox is touched.
@@ -281,7 +282,7 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     this.onTouched = fn;
   }
 
-  /**
+  /*
    * Sets the checkbox's disabled state. Implemented as a part of ControlValueAccessor.
    * @param isDisabled Whether the checkbox should be disabled.
    */
@@ -320,7 +321,7 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     this.change.emit(event);
   }
 
-  /** Function is called whenever the focus changes for the input element. */
+  /* Function is called whenever the focus changes for the input element. */
   private _onInputFocusChange(focusOrigin: FocusOrigin) {
     if (!this._focusRipple && focusOrigin === 'keyboard') {
       this._focusRipple = this._ripple.launch(0, 0, {persistent: true, centered: true});
@@ -330,12 +331,12 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     }
   }
 
-  /** Toggles the `checked` state of the checkbox. */
+  /* Toggles the `checked` state of the checkbox. */
   toggle(): void {
     this.checked = !this.checked;
   }
 
-  /**
+  /*
    * Event handler for checkbox input element.
    * Toggles checked state if element is not disabled.
    * Do not toggle on (change) event since IE doesn't fire change event when
@@ -374,7 +375,7 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     }
   }
 
-  /** Focuses the checkbox. */
+  /* Focuses the checkbox. */
   focus(): void {
     this._focusOriginMonitor.focusVia(this._inputElement.nativeElement, 'keyboard');
   }
@@ -419,7 +420,7 @@ export class MdCheckbox extends _MdCheckboxMixinBase implements ControlValueAcce
     return `mat-checkbox-anim-${animSuffix}`;
   }
 
-  /** Fades out the focus state ripple. */
+  /* Fades out the focus state ripple. */
   private _removeFocusRipple(): void {
     if (this._focusRipple) {
       this._focusRipple.fadeOut();

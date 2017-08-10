@@ -837,7 +837,7 @@ describe('MdCheckbox', () => {
   });
 });
 
-/** Simple component for testing a single checkbox. */
+/* Simple component for testing a single checkbox. */
 @Component({
   template: `
   <div (click)="parentElementClicked = true" (keyup)="parentElementKeyedUp = true">
@@ -874,7 +874,7 @@ class SingleCheckbox {
   onCheckboxChange: (event?: MdCheckboxChange) => void = () => {};
 }
 
-/** Simple component for testing an MdCheckbox with ngModel. */
+ Simple component for testing an MdCheckbox with ngModel. */
 @Component({
   template: `
     <form>
@@ -886,7 +886,7 @@ class CheckboxWithFormDirectives {
   isGood: boolean = false;
 }
 
-/** Simple test component with multiple checkboxes. */
+ Simple test component with multiple checkboxes. */
 @Component(({
   template: `
     <md-checkbox>Option 1</md-checkbox>
@@ -896,7 +896,7 @@ class CheckboxWithFormDirectives {
 class MultipleCheckboxes { }
 
 
-/** Simple test component with tabIndex */
+ Simple test component with tabIndex */
 @Component({
   template: `
     <md-checkbox
@@ -909,25 +909,25 @@ class CheckboxWithTabIndex {
   isDisabled: boolean = false;
 }
 
-/** Simple test component with an aria-label set. */
+ Simple test component with an aria-label set. */
 @Component({
   template: `<md-checkbox aria-label="Super effective"></md-checkbox>`
 })
 class CheckboxWithAriaLabel { }
 
-/** Simple test component with an aria-label set. */
+ Simple test component with an aria-label set. */
 @Component({
   template: `<md-checkbox aria-labelledby="some-id"></md-checkbox>`
 })
 class CheckboxWithAriaLabelledby {}
 
-/** Simple test component with name attribute */
+ Simple test component with name attribute */
 @Component({
   template: `<md-checkbox name="test-name"></md-checkbox>`
 })
 class CheckboxWithNameAttribute {}
 
-/** Simple test component with change event */
+ Simple test component with change event */
 @Component({
   template: `<md-checkbox (change)="lastEvent = $event"></md-checkbox>`
 })
@@ -935,7 +935,7 @@ class CheckboxWithChangeEvent {
   lastEvent: MdCheckboxChange;
 }
 
-/** Test component with reactive forms */
+ Test component with reactive forms */
 @Component({
   template: `<md-checkbox [formControl]="formControl"></md-checkbox>`
 })
@@ -943,7 +943,7 @@ class CheckboxWithFormControl {
   formControl = new FormControl();
 }
 
-/** Test component without label */
+ Test component without label */
 @Component({
   template: `<md-checkbox>{{ label }}</md-checkbox>`
 })

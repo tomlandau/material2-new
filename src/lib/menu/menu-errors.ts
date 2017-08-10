@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-/**
+/*
  * Throws an exception for the case when menu trigger doesn't have a valid md-menu instance
  * @docs-private
  */
@@ -18,7 +18,7 @@ export function throwMdMenuMissingError() {
       <button [mdMenuTriggerFor]="menu"></button>`);
 }
 
-/**
+/*
  * Throws an exception for the case when menu's x-position value isn't valid.
  * In other words, it doesn't match 'before' or 'after'.
  * @docs-private
@@ -28,7 +28,7 @@ export function throwMdMenuInvalidPositionX() {
       Example: <md-menu x-position="before" #menu="mdMenu"></md-menu>`);
 }
 
-/**
+/*
  * Throws an exception for the case when menu's y-position value isn't valid.
  * In other words, it doesn't match 'above' or 'below'.
  * @docs-private

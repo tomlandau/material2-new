@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -10,7 +10,7 @@ import {Directive, ElementRef, Input, AfterViewInit, Optional, Self} from '@angu
 import {NgControl} from '@angular/forms';
 
 
-/**
+/*
  * Directive to automatically resize a textarea to fit its content.
  */
 @Directive({
@@ -25,7 +25,7 @@ import {NgControl} from '@angular/forms';
   },
 })
 export class MdTextareaAutosize implements AfterViewInit {
-  /** Keep track of the previous textarea value to avoid resizing when the value hasn't changed. */
+  /* Keep track of the previous textarea value to avoid resizing when the value hasn't changed. */
   private _previousValue: string;
 
   private _minRows: number;
@@ -54,7 +54,7 @@ export class MdTextareaAutosize implements AfterViewInit {
   get _matAutosizeMaxRows() { return this.maxRows; }
   set _matAutosizeMaxRows(v) { this.maxRows = v; }
 
-  /** Cached height of a textarea with a single row. */
+  /* Cached height of a textarea with a single row. */
   private _cachedLineHeight: number;
 
   constructor(private _elementRef: ElementRef, @Optional() @Self() formControl: NgControl) {
@@ -63,7 +63,7 @@ export class MdTextareaAutosize implements AfterViewInit {
     }
   }
 
-  /** Sets the minimum height of the textarea as determined by minRows. */
+  /* Sets the minimum height of the textarea as determined by minRows. */
   _setMinHeight(): void {
     const minHeight = this.minRows && this._cachedLineHeight ?
         `${this.minRows * this._cachedLineHeight}px` : null;
@@ -73,7 +73,7 @@ export class MdTextareaAutosize implements AfterViewInit {
     }
   }
 
-  /** Sets the maximum height of the textarea as determined by maxRows. */
+  /* Sets the maximum height of the textarea as determined by maxRows. */
   _setMaxHeight(): void {
     const maxHeight = this.maxRows && this._cachedLineHeight ?
         `${this.maxRows * this._cachedLineHeight}px` : null;
@@ -88,13 +88,13 @@ export class MdTextareaAutosize implements AfterViewInit {
     this.resizeToFitContent();
   }
 
-  /** Sets a style property on the textarea element. */
+  /* Sets a style property on the textarea element. */
   private _setTextareaStyle(property: string, value: string): void {
     const textarea = this._elementRef.nativeElement as HTMLTextAreaElement;
     textarea.style[property] = value;
   }
 
-  /**
+  /*
    * Cache the height of a single-row textarea.
    *
    * We need to know how large a single "row" of a textarea is in order to apply minRows and
@@ -128,7 +128,7 @@ export class MdTextareaAutosize implements AfterViewInit {
     this._setMaxHeight();
   }
 
-  /** Resize the textarea to fit its content. */
+  /* Resize the textarea to fit its content. */
   resizeToFitContent() {
     const textarea = this._elementRef.nativeElement as HTMLTextAreaElement;
     if (textarea.value === this._previousValue) {

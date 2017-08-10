@@ -128,7 +128,7 @@ describe('MdSort', () => {
   });
 });
 
-/**
+/*
  * Performs a sequence of sorting on a single column to see if the sort directions are
  * consistent with expectations. Detects any changes in the fixture to reflect any changes in
  * the inputs and resets the MdSort to remove any side effects from previous tests.

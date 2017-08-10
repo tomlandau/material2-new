@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -31,7 +31,7 @@ import {
 import {MdOption, MdOptionSelectionChange, MdOptgroup} from '../core/option/index';
 import {ENTER, SPACE, UP_ARROW, DOWN_ARROW, HOME, END} from '../core/keyboard/keycodes';
 import {FocusKeyManager} from '../core/a11y/focus-key-manager';
-import {Directionality} from '../core/bidi/index';
+import {Directionality} from '@angular/cdk';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 import {transformPlaceholder, transformPanel, fadeInContent} from './select-animations';
@@ -56,38 +56,38 @@ import {
 // tslint:disable-next-line:no-unused-variable
 import {ScrollStrategy, RepositionScrollStrategy} from '../core/overlay/scroll';
 
-/**
+/*
  * The following style constants are necessary to save here in order
  * to properly calculate the alignment of the selected option over
  * the trigger element.
  */
 
-/** The fixed height of every option element (option, group header etc.). */
+/* The fixed height of every option element (option, group header etc.). */
 export const SELECT_ITEM_HEIGHT = 48;
 
-/** The max height of the select's overlay panel */
+/* The max height of the select's overlay panel */
 export const SELECT_PANEL_MAX_HEIGHT = 256;
 
-/** The max number of options visible at once in the select panel. */
+/* The max number of options visible at once in the select panel. */
 export const SELECT_MAX_OPTIONS_DISPLAYED =
     Math.floor(SELECT_PANEL_MAX_HEIGHT / SELECT_ITEM_HEIGHT);
 
-/** The fixed height of the select's trigger element. */
+/* The fixed height of the select's trigger element. */
 export const SELECT_TRIGGER_HEIGHT = 30;
 
-/**
+/*
  * Must adjust for the difference in height between the option and the trigger,
  * so the text will align on the y axis.
  */
 export const SELECT_OPTION_HEIGHT_ADJUSTMENT = (SELECT_ITEM_HEIGHT - SELECT_TRIGGER_HEIGHT) / 2;
 
-/** The panel's padding on the x-axis */
+/* The panel's padding on the x-axis */
 export const SELECT_PANEL_PADDING_X = 16;
 
-/** The panel's x axis padding if it is indented (e.g. there is an option group). */
+/* The panel's x axis padding if it is indented (e.g. there is an option group). */
 export const SELECT_PANEL_INDENT_PADDING_X = SELECT_PANEL_PADDING_X * 2;
 
-/**
+/*
  * Distance between the panel edge and the option text in
  * multi-selection mode.
  *
@@ -98,41 +98,41 @@ export const SELECT_PANEL_INDENT_PADDING_X = SELECT_PANEL_PADDING_X * 2;
  */
 export const SELECT_MULTIPLE_PANEL_PADDING_X = SELECT_PANEL_PADDING_X * 1.75 + 20;
 
-/**
+/*
  * The panel's padding on the y-axis. This padding indicates there are more
  * options available if you scroll.
  */
 export const SELECT_PANEL_PADDING_Y = 16;
 
-/**
+/*
  * The select panel will only "fit" inside the viewport if it is positioned at
  * this value or more away from the viewport boundary.
  */
 export const SELECT_PANEL_VIEWPORT_PADDING = 8;
 
-/** Injection token that determines the scroll handling while a select is open. */
+/* Injection token that determines the scroll handling while a select is open. */
 export const MD_SELECT_SCROLL_STRATEGY =
     new InjectionToken<() => ScrollStrategy>('md-select-scroll-strategy');
 
-/** @docs-private */
+/* @docs-private */
 export function MD_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY(overlay: Overlay) {
   return () => overlay.scrollStrategies.reposition();
 }
 
-/** @docs-private */
+/* @docs-private */
 export const MD_SELECT_SCROLL_STRATEGY_PROVIDER = {
   provide: MD_SELECT_SCROLL_STRATEGY,
   deps: [Overlay],
   useFactory: MD_SELECT_SCROLL_STRATEGY_PROVIDER_FACTORY,
 };
 
-/** Change event object that is emitted when the select value has changed. */
+/* Change event object that is emitted when the select value has changed. */
 export class MdSelectChange {
   constructor(public source: MdSelect, public value: any) { }
 }
 
 // Boilerplate for applying mixins to MdSelect.
-/** @docs-private */
+/* @docs-private */
 export class MdSelectBase {
   constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
@@ -170,83 +170,83 @@ export const _MdSelectMixinBase = mixinColor(mixinDisabled(MdSelectBase), 'prima
 })
 export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, OnDestroy, OnInit,
     ControlValueAccessor, CanColor, CanDisable {
-  /** Whether or not the overlay panel is open. */
+  /* Whether or not the overlay panel is open. */
   private _panelOpen = false;
 
-  /** Subscriptions to option events. */
+  /* Subscriptions to option events. */
   private _optionSubscription: Subscription | null;
 
-  /** Subscription to changes in the option list. */
+  /* Subscription to changes in the option list. */
   private _changeSubscription: Subscription;
 
-  /** Subscription to tab events while overlay is focused. */
+  /* Subscription to tab events while overlay is focused. */
   private _tabSubscription: Subscription;
 
-  /** Whether filling out the select is required in the form.  */
+  /* Whether filling out the select is required in the form.  */
   private _required: boolean = false;
 
-  /** The scroll position of the overlay panel, calculated to center the selected option. */
+  /* The scroll position of the overlay panel, calculated to center the selected option. */
   private _scrollTop = 0;
 
-  /** The placeholder displayed in the trigger of the select. */
+  /* The placeholder displayed in the trigger of the select. */
   private _placeholder: string;
 
-  /** Whether the component is in multiple selection mode. */
+  /* Whether the component is in multiple selection mode. */
   private _multiple: boolean = false;
 
-  /** Deals with the selection logic. */
+  /* Deals with the selection logic. */
   _selectionModel: SelectionModel<MdOption>;
 
-  /** The animation state of the placeholder. */
+  /* The animation state of the placeholder. */
   private _placeholderState = '';
 
-  /** Tab index for the element. */
+  /* Tab index for the element. */
   private _tabIndex: number;
 
-  /** Deals with configuring placeholder options */
+  /* Deals with configuring placeholder options */
   private _placeholderOptions: PlaceholderOptions;
 
-  /**
+  /*
    * The width of the trigger. Must be saved to set the min width of the overlay panel
    * and the width of the selected value.
    */
   _triggerWidth: number;
 
-  /** Manages keyboard events for options in the panel. */
+  /* Manages keyboard events for options in the panel. */
   _keyManager: FocusKeyManager;
 
-  /**
+  /*
    * The width of the selected option's value. Must be set programmatically
    * to ensure its overflow is clipped, as it's absolutely positioned.
    */
   _selectedValueWidth: number;
 
-  /** View -> model callback called when value changes */
+  /* View -> model callback called when value changes */
   _onChange: (value: any) => void = () => {};
 
-  /** View -> model callback called when select has been touched */
+  /* View -> model callback called when select has been touched */
   _onTouched = () => {};
 
-  /** The IDs of child options to be passed to the aria-owns attribute. */
+  /* The IDs of child options to be passed to the aria-owns attribute. */
   _optionIds: string = '';
 
-  /** The value of the select panel's transform-origin property. */
+  /* The value of the select panel's transform-origin property. */
   _transformOrigin: string = 'top';
 
-  /** Whether the panel's animation is done. */
+  /* Whether the panel's animation is done. */
   _panelDoneAnimating: boolean = false;
 
-  /** Strategy that will be used to handle scrolling while the select panel is open. */
+  /* Strategy that will be used to handle scrolling while the select panel is open. */
   _scrollStrategy = this._scrollStrategyFactory();
 
-  /**
+  /*
    * The y-offset of the overlay panel in relation to the trigger's top start corner.
    * This must be adjusted to align the selected option text over the trigger text.
    * when the panel opens. Will change based on the y-position of the selected option.
    */
   _offsetY = 0;
 
-  /**
+  /*
    * This position config ensures that the top "start" corner of the overlay
    * is aligned with with the top "start" of the origin by default (overlapping
    * the trigger completely). If the panel cannot fit below the trigger, it
@@ -267,22 +267,22 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     },
   ];
 
-  /** Trigger that opens the select. */
+  /* Trigger that opens the select. */
   @ViewChild('trigger') trigger: ElementRef;
 
-  /** Overlay pane containing the options. */
+  /* Overlay pane containing the options. */
   @ViewChild(ConnectedOverlayDirective) overlayDir: ConnectedOverlayDirective;
 
-  /** All of the defined select options. */
+  /* All of the defined select options. */
   @ContentChildren(MdOption, { descendants: true }) options: QueryList<MdOption>;
 
-  /** All of the defined groups of options. */
+  /* All of the defined groups of options. */
   @ContentChildren(MdOptgroup) optionGroups: QueryList<MdOptgroup>;
 
-  /** Classes to be passed to the select panel. Supports the same syntax as `ngClass`. */
+  /* Classes to be passed to the select panel. Supports the same syntax as `ngClass`. */
   @Input() panelClass: string|string[]|Set<string>|{[key: string]: any};
 
-  /** Placeholder to be shown if no value has been selected. */
+  /* Placeholder to be shown if no value has been selected. */
   @Input()
   get placeholder() { return this._placeholder; }
   set placeholder(value: string) {
@@ -292,12 +292,12 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     Promise.resolve(null).then(() => this._setTriggerWidth());
   }
 
-  /** Whether the component is required. */
+  /* Whether the component is required. */
   @Input()
   get required() { return this._required; }
   set required(value: any) { this._required = coerceBooleanProperty(value); }
 
-  /** Whether the user should be allowed to select multiple options. */
+  /* Whether the user should be allowed to select multiple options. */
   @Input()
   get multiple(): boolean { return this._multiple; }
   set multiple(value: boolean) {
@@ -308,7 +308,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._multiple = coerceBooleanProperty(value);
   }
 
-  /** Whether to float the placeholder text. */
+  /* Whether to float the placeholder text. */
   @Input()
   get floatPlaceholder(): FloatPlaceholderType { return this._floatPlaceholder; }
   set floatPlaceholder(value: FloatPlaceholderType) {
@@ -316,7 +316,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
   }
   private _floatPlaceholder: FloatPlaceholderType;
 
-  /** Tab index for the select element. */
+  /* Tab index for the select element. */
   @Input()
   get tabIndex(): number { return this.disabled ? -1 : this._tabIndex; }
   set tabIndex(value: number) {
@@ -325,24 +325,24 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /** Aria label of the select. If not specified, the placeholder will be used as label. */
+  /* Aria label of the select. If not specified, the placeholder will be used as label. */
   @Input('aria-label') ariaLabel: string = '';
 
-  /** Input that can be used to specify the `aria-labelledby` attribute. */
+  /* Input that can be used to specify the `aria-labelledby` attribute. */
   @Input('aria-labelledby') ariaLabelledby: string = '';
 
-  /** Combined stream of all of the child options' change events. */
+  /* Combined stream of all of the child options' change events. */
   get optionSelectionChanges(): Observable<MdOptionSelectionChange> {
     return merge(...this.options.map(option => option.onSelectionChange));
   }
 
-  /** Event emitted when the select has been opened. */
+  /* Event emitted when the select has been opened. */
   @Output() onOpen: EventEmitter<void> = new EventEmitter<void>();
 
-  /** Event emitted when the select has been closed. */
+  /* Event emitted when the select has been closed. */
   @Output() onClose: EventEmitter<void> = new EventEmitter<void>();
 
-  /** Event emitted when the selected value has been changed by the user. */
+  /* Event emitted when the selected value has been changed by the user. */
   @Output() change: EventEmitter<MdSelectChange> = new EventEmitter<MdSelectChange>();
 
   constructor(
@@ -397,12 +397,12 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /** Toggles the overlay panel open or closed. */
+  /* Toggles the overlay panel open or closed. */
   toggle(): void {
     this.panelOpen ? this.close() : this.open();
   }
 
-  /** Opens the overlay panel. */
+  /* Opens the overlay panel. */
   open(): void {
     if (this.disabled || !this.options.length) {
       return;
@@ -418,7 +418,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._changeDetectorRef.markForCheck();
   }
 
-  /** Closes the overlay panel and focuses the host element. */
+  /* Closes the overlay panel and focuses the host element. */
   close(): void {
     if (this._panelOpen) {
       this._panelOpen = false;
@@ -432,7 +432,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /**
+  /*
    * Sets the select's value. Part of the ControlValueAccessor interface
    * required to integrate with Angular's core forms API.
    *
@@ -444,7 +444,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /**
+  /*
    * Saves a callback function to be invoked when the select's value
    * changes from user input. Part of the ControlValueAccessor interface
    * required to integrate with Angular's core forms API.
@@ -455,7 +455,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._onChange = fn;
   }
 
-  /**
+  /*
    * Saves a callback function to be invoked when the select is blurred
    * by the user. Part of the ControlValueAccessor interface required
    * to integrate with Angular's core forms API.
@@ -466,7 +466,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._onTouched = fn;
   }
 
-  /**
+  /*
    * Disables the select. Part of the ControlValueAccessor interface required
    * to integrate with Angular's core forms API.
    *
@@ -477,17 +477,17 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._changeDetectorRef.markForCheck();
   }
 
-  /** Whether or not the overlay panel is open. */
+  /* Whether or not the overlay panel is open. */
   get panelOpen(): boolean {
     return this._panelOpen;
   }
 
-  /** The currently selected option. */
+  /* The currently selected option. */
   get selected(): MdOption | MdOption[] {
     return this.multiple ? this._selectionModel.selected : this._selectionModel.selected[0];
   }
 
-  /** The value displayed in the trigger. */
+  /* The value displayed in the trigger. */
   get triggerValue(): string {
     if (this._multiple) {
       let selectedOptions = this._selectionModel.selected.map(option => option.viewValue);
@@ -503,12 +503,12 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     return this._selectionModel.selected[0].viewValue;
   }
 
-  /** Whether the element is in RTL mode. */
+  /* Whether the element is in RTL mode. */
   _isRtl(): boolean {
     return this._dir ? this._dir.value === 'rtl' : false;
   }
 
-  /**
+  /*
    * Sets the width of the trigger element. This is necessary to match
    * the overlay width to the trigger width.
    */
@@ -517,7 +517,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._changeDetectorRef.markForCheck();
   }
 
-  /** Handles the keyboard interactions of a closed select. */
+  /* Handles the keyboard interactions of a closed select. */
   _handleClosedKeydown(event: KeyboardEvent): void {
     if (!this.disabled) {
       if (event.keyCode === ENTER || event.keyCode === SPACE) {
@@ -529,7 +529,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /** Handles keypresses inside the panel. */
+  /* Handles keypresses inside the panel. */
   _handlePanelKeydown(event: KeyboardEvent): void {
     if (event.keyCode === HOME || event.keyCode === END) {
       event.preventDefault();
@@ -540,7 +540,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /**
+  /*
    * When the panel element is finished transforming in (though not fading in), it
    * emits an event and focuses an option if the panel is open.
    */
@@ -556,7 +556,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /**
+  /*
    * When the panel content is done fading in, the _panelDoneAnimating property is
    * set so the proper class can be added to the panel.
    */
@@ -565,7 +565,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._changeDetectorRef.markForCheck();
   }
 
-  /**
+  /*
    * Calls the touched callback only if the panel is closed. Otherwise, the trigger will
    * "blur" to the panel when it opens, causing a false positive.
    */
@@ -576,7 +576,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /**
+  /*
    * Callback that is invoked when the overlay panel has been attached.
    */
   _onAttached(): void {
@@ -584,12 +584,12 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._setScrollTop();
   }
 
-  /** Whether the select has a value. */
+  /* Whether the select has a value. */
   _hasValue(): boolean {
     return this._selectionModel && this._selectionModel.hasValue();
   }
 
-  /**
+  /*
    * Sets the scroll position of the scroll container. This must be called after
    * the overlay pane is attached or the scroll container element will not yet be
    * present in the DOM.
@@ -600,7 +600,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     scrollContainer!.scrollTop = this._scrollTop;
   }
 
-  /**
+  /*
    * Sets the selected option based on a value. If no option can be
    * found with the designated value, the select trigger is cleared.
    */
@@ -629,7 +629,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._changeDetectorRef.markForCheck();
   }
 
-  /**
+  /*
    * Finds and selects and option based on its value.
    * @returns Option that has the corresponding value.
    */
@@ -648,7 +648,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     return correspondingOption;
   }
 
-  /**
+  /*
    * Clears the select trigger and deselects every option in the list.
    * @param skip Option that should not be deselected.
    */
@@ -665,13 +665,13 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     return this.trigger.nativeElement.getBoundingClientRect();
   }
 
-  /** Sets up a key manager to listen to keyboard events on the overlay panel. */
+  /* Sets up a key manager to listen to keyboard events on the overlay panel. */
   private _initKeyManager() {
     this._keyManager = new FocusKeyManager(this.options);
     this._tabSubscription = this._keyManager.tabOut.subscribe(() => this.close());
   }
 
-  /** Drops current option subscriptions and IDs and resets from scratch. */
+  /* Drops current option subscriptions and IDs and resets from scratch. */
   private _resetOptions(): void {
     this._dropSubscriptions();
     this._listenToOptions();
@@ -679,7 +679,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._setOptionMultiple();
   }
 
-  /** Listens to user-generated selection events on each option. */
+  /* Listens to user-generated selection events on each option. */
   private _listenToOptions(): void {
     this._optionSubscription = filter.call(this.optionSelectionChanges,
       event => event.isUserInput).subscribe(event => {
@@ -692,7 +692,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
       });
   }
 
-  /** Invoked when an option is clicked. */
+  /* Invoked when an option is clicked. */
   private _onSelect(option: MdOption): void {
     const wasSelected = this._selectionModel.isSelected(option);
 
@@ -716,7 +716,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /**
+  /*
    * Sorts the model values, ensuring that they keep the same
    * order that they have in the panel.
    */
@@ -732,7 +732,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /** Unsubscribes from all option subscriptions. */
+  /* Unsubscribes from all option subscriptions. */
   private _dropSubscriptions(): void {
     if (this._optionSubscription) {
       this._optionSubscription.unsubscribe();
@@ -740,7 +740,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /** Emits change event to set the model value. */
+  /* Emits change event to set the model value. */
   private _propagateChanges(fallbackValue?: any): void {
     let valueToEmit: any = null;
 
@@ -754,12 +754,12 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this.change.emit(new MdSelectChange(this, valueToEmit));
   }
 
-  /** Records option IDs to pass to the aria-owns property. */
+  /* Records option IDs to pass to the aria-owns property. */
   private _setOptionIds() {
     this._optionIds = this.options.map(option => option.id).join(' ');
   }
 
-  /**
+  /*
    * Sets the `multiple` property on each option. The promise is necessary
    * in order to avoid Angular errors when modifying the property after init.
    */
@@ -771,7 +771,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /**
+  /*
    * Must set the width of the selected option's value programmatically
    * because it is absolutely positioned and otherwise will not clip
    * overflow. The selection arrow is 9px wide, add 4px of padding = 13
@@ -781,7 +781,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._changeDetectorRef.markForCheck();
   }
 
-  /**
+  /*
    * Focuses the selected item. If no option is selected, it will focus
    * the first item instead.
    */
@@ -793,19 +793,19 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /** Focuses the select element. */
+  /* Focuses the select element. */
   focus(): void {
     this._elementRef.nativeElement.focus();
   }
 
-  /** Gets the index of the provided option in the option list. */
+  /* Gets the index of the provided option in the option list. */
   private _getOptionIndex(option: MdOption): number | undefined {
     return this.options.reduce((result: number, current: MdOption, index: number) => {
       return result === undefined ? (option === current ? index : undefined) : result;
     }, undefined);
   }
 
-  /** Calculates the scroll position and x- and y-offsets of the overlay panel. */
+  /* Calculates the scroll position and x- and y-offsets of the overlay panel. */
   private _calculateOverlayPosition(): void {
     const items = this._getItemCount();
     const panelHeight = Math.min(items * SELECT_ITEM_HEIGHT, SELECT_PANEL_MAX_HEIGHT);
@@ -836,7 +836,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this._checkOverlayWithinViewport(maxScroll);
   }
 
-  /**
+  /*
    * Calculates the scroll position of the select's overlay panel.
    *
    * Attempts to center the selected option in the panel. If the option is
@@ -856,7 +856,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     return clampValue(0, optimalScrollPosition, maxScroll);
   }
 
-  /**
+  /*
    * Figures out the appropriate animation state for the placeholder.
    */
   _getPlaceholderAnimationState(): string {
@@ -871,21 +871,21 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     return this._placeholderState;
   }
 
-  /**
+  /*
    * Determines the CSS `opacity` of the placeholder element.
    */
   _getPlaceholderOpacity(): string {
     return (this.floatPlaceholder !== 'never' || this._selectionModel.isEmpty()) ? '1' : '0';
   }
 
-  /** Returns the aria-label of the select component. */
+  /* Returns the aria-label of the select component. */
   get _ariaLabel(): string | null {
     // If an ariaLabelledby value has been set, the select should not overwrite the
     // `aria-labelledby` value by setting the ariaLabel to the placeholder.
     return this.ariaLabelledby ? null : this.ariaLabel || this.placeholder;
   }
 
-  /**
+  /*
    * Sets the x-offset of the overlay panel in relation to the trigger's top start corner.
    * This must be adjusted to align the selected option text over the trigger text when
    * the panel opens. Will change based on LTR or RTL text direction. Note that the offset
@@ -931,7 +931,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     this.overlayDir.overlayRef.updatePosition();
   }
 
-  /**
+  /*
    * Calculates the y-offset of the select's overlay panel in relation to the
    * top start corner of the trigger. It has to be adjusted in order for the
    * selected option to be aligned over the trigger when the panel opens.
@@ -965,7 +965,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     return optionOffsetFromPanelTop * -1 - SELECT_OPTION_HEIGHT_ADJUSTMENT;
   }
 
-  /**
+  /*
    * Checks that the attempted overlay position will fit within the viewport.
    * If it will not fit, tries to adjust the scroll position and the associated
    * y-offset so the panel can open fully on-screen. If it still won't fit,
@@ -993,7 +993,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /** Adjusts the overlay panel up to fit in the viewport. */
+  /* Adjusts the overlay panel up to fit in the viewport. */
   private _adjustPanelUp(panelHeightBottom: number, bottomSpaceAvailable: number) {
     const distanceBelowViewport = panelHeightBottom - bottomSpaceAvailable;
 
@@ -1013,7 +1013,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /** Adjusts the overlay panel down to fit in the viewport. */
+  /* Adjusts the overlay panel down to fit in the viewport. */
   private _adjustPanelDown(panelHeightTop: number, topSpaceAvailable: number,
                            maxScroll: number) {
     const distanceAboveViewport = panelHeightTop - topSpaceAvailable;
@@ -1035,19 +1035,19 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /** Sets the transform origin point based on the selected option. */
+  /* Sets the transform origin point based on the selected option. */
   private _getOriginBasedOnOption(): string {
     const originY =
         Math.abs(this._offsetY) - SELECT_OPTION_HEIGHT_ADJUSTMENT + SELECT_ITEM_HEIGHT / 2;
     return `50% ${originY}px 0px`;
   }
 
-  /** Figures out the floating placeholder state value. */
+  /* Figures out the floating placeholder state value. */
   private _floatPlaceholderState(): string {
     return this._isRtl() ? 'floating-rtl' : 'floating-ltr';
   }
 
-  /** Handles the user pressing the arrow keys on a closed select.  */
+  /* Handles the user pressing the arrow keys on a closed select.  */
   private _handleArrowKey(event: KeyboardEvent): void {
     if (this._multiple) {
       event.preventDefault();
@@ -1071,12 +1071,12 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
     }
   }
 
-  /** Calculates the amount of items in the select. This includes options and group labels. */
+  /* Calculates the amount of items in the select. This includes options and group labels. */
   private _getItemCount(): number {
     return this.options.length + this.optionGroups.length;
   }
 
-  /**
+  /*
    * Calculates the amount of option group labels that precede the specified option.
    * Useful when positioning the panel, because the labels will offset the index of the
    * currently-selected option.
@@ -1101,7 +1101,7 @@ export class MdSelect extends _MdSelectMixinBase implements AfterContentInit, On
 
 }
 
-/** Clamps a value n between min and max values. */
+/* Clamps a value n between min and max values. */
 function clampValue(min: number, n: number, max: number): number {
   return Math.min(Math.max(min, n), max);
 }

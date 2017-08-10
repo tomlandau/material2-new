@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -9,7 +9,7 @@
 import {QueryList} from '@angular/core';
 import {MdGridTile} from './grid-tile';
 
-/**
+/*
  * Class for determining, from a list of tiles, the (row, col) position of each of those tiles
  * in the grid. This is necessary (rather than just rendering the tiles in normal document flow)
  * because the tiles can have a rowspan.
@@ -27,19 +27,19 @@ import {MdGridTile} from './grid-tile';
  * @docs-private
  */
 export class TileCoordinator {
-  /** Tracking array (see class description). */
+  /* Tracking array (see class description). */
   tracker: number[];
 
-  /** Index at which the search for the next gap will start. */
+  /* Index at which the search for the next gap will start. */
   columnIndex: number = 0;
 
-  /** The current row index. */
+  /* The current row index. */
   rowIndex: number = 0;
 
-  /** Gets the total number of rows occupied by tiles */
+  /* Gets the total number of rows occupied by tiles */
   get rowCount(): number { return this.rowIndex + 1; }
 
-  /** Gets the total span of rows occupied by tiles.
+  /* Gets the total span of rows occupied by tiles.
    * Ex: A list with 1 row that contains a tile with rowspan 2 will have a total rowspan of 2. */
   get rowspan() {
     let lastRowMax = Math.max(...this.tracker);
@@ -48,7 +48,7 @@ export class TileCoordinator {
     return lastRowMax > 1 ? this.rowCount + lastRowMax - 1 : this.rowCount;
   }
 
-  /** The computed (row, col) position of each tile (the output). */
+  /* The computed (row, col) position of each tile (the output). */
   positions: TilePosition[];
 
   constructor(numColumns: number, tiles: QueryList<MdGridTile>) {
@@ -58,7 +58,7 @@ export class TileCoordinator {
     this.positions = tiles.map(tile => this._trackTile(tile));
   }
 
-  /** Calculates the row and col position of a tile. */
+  /* Calculates the row and col position of a tile. */
   private _trackTile(tile: MdGridTile): TilePosition {
     // Find a gap large enough for this tile.
     let gapStartIndex = this._findMatchingGap(tile.colspan);
@@ -73,7 +73,7 @@ export class TileCoordinator {
     return new TilePosition(this.rowIndex, gapStartIndex);
   }
 
-  /** Finds the next available space large enough to fit the tile. */
+  /* Finds the next available space large enough to fit the tile. */
   private _findMatchingGap(tileCols: number): number {
     if (tileCols > this.tracker.length) {
       throw Error(`md-grid-list: tile with colspan ${tileCols} is wider than ` +
@@ -111,7 +111,7 @@ export class TileCoordinator {
     return gapStartIndex;
   }
 
-  /** Move "down" to the next row. */
+  /* Move "down" to the next row. */
   private _nextRow(): void {
     this.columnIndex = 0;
     this.rowIndex++;
@@ -122,7 +122,7 @@ export class TileCoordinator {
     }
   }
 
-  /**
+  /*
    * Finds the end index (exclusive) of a gap given the index from which to start looking.
    * The gap ends when a non-zero value is found.
    */
@@ -137,7 +137,7 @@ export class TileCoordinator {
     return this.tracker.length;
   }
 
-  /** Update the tile tracker to account for the given tile in the given space. */
+  /* Update the tile tracker to account for the given tile in the given space. */
   private _markTilePosition(start: number, tile: MdGridTile): void {
     for (let i = 0; i < tile.colspan; i++) {
       this.tracker[start + i] = tile.rowspan;
@@ -145,7 +145,7 @@ export class TileCoordinator {
   }
 }
 
-/**
+/*
  * Simple data structure for tile position (row, col).
  * @docs-private
  */

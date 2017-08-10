@@ -1,0 +1,723 @@
+{
+    "core/animation": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/animation/animation.ts",
+                "test": false,
+                "name": "animation.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/animation/animation.ts"
+    },
+    "core/common-behaviors": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/common-behaviors/color.spec.ts",
+                "test": true,
+                "name": "color.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/common-behaviors/color.ts",
+                "test": false,
+                "name": "color.ts"
+            },
+            {
+                "relativePath": "src/lib/core/common-behaviors/common-module.ts",
+                "test": false,
+                "name": "common-module.ts"
+            },
+            {
+                "relativePath": "src/lib/core/common-behaviors/constructor.ts",
+                "test": false,
+                "name": "constructor.ts"
+            },
+            {
+                "relativePath": "src/lib/core/common-behaviors/disable-ripple.spec.ts",
+                "test": true,
+                "name": "disable-ripple.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/common-behaviors/disable-ripple.ts",
+                "test": false,
+                "name": "disable-ripple.ts"
+            },
+            {
+                "relativePath": "src/lib/core/common-behaviors/disabled.spec.ts",
+                "test": true,
+                "name": "disabled.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/common-behaviors/disabled.ts",
+                "test": false,
+                "name": "disabled.ts"
+            },
+            {
+                "relativePath": "src/lib/core/common-behaviors/index.ts",
+                "test": false,
+                "name": "index.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/common-behaviors/index.ts"
+    },
+    "core/compatibility": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/compatibility/compatibility.spec.ts",
+                "test": true,
+                "name": "compatibility.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/compatibility/compatibility.ts",
+                "test": false,
+                "name": "compatibility.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/compatibility/compatibility.ts"
+    },
+    "core/coordination": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/coordination/unique-selection-dispatcher.spec.ts",
+                "test": true,
+                "name": "unique-selection-dispatcher.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/coordination/unique-selection-dispatcher.ts",
+                "test": false,
+                "name": "unique-selection-dispatcher.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/coordination/unique-selection-dispatcher.ts"
+    },
+    "core/datetime": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/datetime/date-adapter.ts",
+                "test": false,
+                "name": "date-adapter.ts"
+            },
+            {
+                "relativePath": "src/lib/core/datetime/date-formats.ts",
+                "test": false,
+                "name": "date-formats.ts"
+            },
+            {
+                "relativePath": "src/lib/core/datetime/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/core/datetime/native-date-adapter.spec.ts",
+                "test": false,
+                "name": "native-date-adapter.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/datetime/native-date-adapter.ts",
+                "test": false,
+                "name": "native-date-adapter.ts"
+            },
+            {
+                "relativePath": "src/lib/core/datetime/native-date-formats.ts",
+                "test": false,
+                "name": "native-date-formats.ts"
+            },
+            {
+                "relativePath": "src/lib/core/datetime/native-date-adapter.spec.ts",
+                "test": true,
+                "name": "native-date-adapter.spec.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/datetime/index.ts"
+    },
+    "core/error-options": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/error/error-options.ts",
+                "test": false,
+                "name": "error-options.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/error/error-options.ts"
+    },
+    "core/gestures": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/gestures/gesture-annotations.ts",
+                "test": false,
+                "name": "gesture-annotations.ts"
+            },
+            {
+                "relativePath": "src/lib/core/gestures/gesture-config.ts",
+                "test": false,
+                "name": "gesture-config.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/gestures/gesture-config.ts"
+    },
+    "core/keyboard": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/keyboard/keycodes.ts",
+                "test": false,
+                "name": "keycodes.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/keyboard/keycodes.ts"
+    },
+    "core/line": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/line/line.ts",
+                "test": false,
+                "name": "line.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/line/line.ts"
+    },
+    "core/option": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/option/_optgroup-theme.scss",
+                "test": false,
+                "name": "_optgroup-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/core/option/_optgroup.scss",
+                "test": false,
+                "name": "_optgroup.scss"
+            },
+            {
+                "relativePath": "src/lib/core/option/_option-theme.scss",
+                "test": false,
+                "name": "_option-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/core/option/_option.scss",
+                "test": false,
+                "name": "_option.scss"
+            },
+            {
+                "relativePath": "src/lib/core/option/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/core/option/optgroup.html",
+                "test": false,
+                "name": "optgroup.html"
+            },
+            {
+                "relativePath": "src/lib/core/option/optgroup.ts",
+                "test": false,
+                "name": "optgroup.ts"
+            },
+            {
+                "relativePath": "src/lib/core/option/option.html",
+                "test": false,
+                "name": "option.html"
+            },
+            {
+                "relativePath": "src/lib/core/option/option.spec.ts",
+                "test": true,
+                "name": "option.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/option/option.ts",
+                "test": false,
+                "name": "option.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/option/index.ts"
+    },
+    "core/overlay": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/overlay/scroll/block-scroll-strategy.spec.ts",
+                "test": false,
+                "name": "block-scroll-strategy.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/block-scroll-strategy.ts",
+                "test": false,
+                "name": "block-scroll-strategy.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/close-scroll-strategy.spec.ts",
+                "test": false,
+                "name": "close-scroll-strategy.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/close-scroll-strategy.ts",
+                "test": false,
+                "name": "close-scroll-strategy.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/noop-scroll-strategy.ts",
+                "test": false,
+                "name": "noop-scroll-strategy.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/reposition-scroll-strategy.spec.ts",
+                "test": false,
+                "name": "reposition-scroll-strategy.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/reposition-scroll-strategy.ts",
+                "test": false,
+                "name": "reposition-scroll-strategy.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/scroll-dispatcher.spec.ts",
+                "test": true,
+                "name": "scroll-dispatcher.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/scroll-dispatcher.ts",
+                "test": false,
+                "name": "scroll-dispatcher.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/scroll-strategy-options.ts",
+                "test": false,
+                "name": "scroll-strategy-options.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/scroll-strategy.md",
+                "test": false,
+                "name": "scroll-strategy.md"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/scroll-strategy.ts",
+                "test": false,
+                "name": "scroll-strategy.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/scroll/scrollable.ts",
+                "test": false,
+                "name": "scrollable.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/position/connected-position-strategy.spec.ts",
+                "test": false,
+                "name": "connected-position-strategy.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/position/connected-position-strategy.ts",
+                "test": false,
+                "name": "connected-position-strategy.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/position/connected-position.ts",
+                "test": false,
+                "name": "connected-position.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/position/fake-viewport-ruler.ts",
+                "test": false,
+                "name": "fake-viewport-ruler.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/position/global-position-strategy.spec.ts",
+                "test": false,
+                "name": "global-position-strategy.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/position/global-position-strategy.ts",
+                "test": false,
+                "name": "global-position-strategy.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/position/overlay-position-builder.ts",
+                "test": false,
+                "name": "overlay-position-builder.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/position/position-strategy.ts",
+                "test": false,
+                "name": "position-strategy.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/position/viewport-ruler.spec.ts",
+                "test": true,
+                "name": "viewport-ruler.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/position/viewport-ruler.ts",
+                "test": false,
+                "name": "viewport-ruler.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/_overlay.scss",
+                "test": false,
+                "name": "_overlay.scss"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/fullscreen-overlay-container.ts",
+                "test": false,
+                "name": "fullscreen-overlay-container.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/generic-component-type.ts",
+                "test": false,
+                "name": "generic-component-type.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/overlay-container.ts",
+                "test": false,
+                "name": "overlay-container.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/overlay-directives.spec.ts",
+                "test": false,
+                "name": "overlay-directives.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/overlay-directives.ts",
+                "test": false,
+                "name": "overlay-directives.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/overlay-ref.ts",
+                "test": false,
+                "name": "overlay-ref.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/overlay-state.ts",
+                "test": false,
+                "name": "overlay-state.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/overlay.spec.ts",
+                "test": true,
+                "name": "overlay.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/overlay/overlay.ts",
+                "test": false,
+                "name": "overlay.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/overlay/index.ts"
+    },
+    "core/placeholder": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/placeholder/placeholder-options.ts",
+                "test": false,
+                "name": "placeholder-options.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/placeholder/placeholder-options.ts"
+    },
+    "core/platform": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/platform/features.ts",
+                "test": false,
+                "name": "features.ts"
+            },
+            {
+                "relativePath": "src/lib/core/platform/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/core/platform/platform.ts",
+                "test": false,
+                "name": "platform.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/platform/index.ts"
+    },
+    "core/ripple": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/ripple/_ripple.scss",
+                "test": false,
+                "name": "_ripple.scss"
+            },
+            {
+                "relativePath": "src/lib/core/ripple/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/core/ripple/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/lib/core/ripple/ripple-ref.ts",
+                "test": false,
+                "name": "ripple-ref.ts"
+            },
+            {
+                "relativePath": "src/lib/core/ripple/ripple-renderer.ts",
+                "test": false,
+                "name": "ripple-renderer.ts"
+            },
+            {
+                "relativePath": "src/lib/core/ripple/ripple.spec.ts",
+                "test": true,
+                "name": "ripple.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/ripple/ripple.ts",
+                "test": false,
+                "name": "ripple.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/ripple/index.ts"
+    },
+    "core/rxjs": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/rxjs/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/core/rxjs/rx-chain.spec.ts",
+                "test": true,
+                "name": "rx-chain.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/rxjs/rx-chain.ts",
+                "test": false,
+                "name": "rx-chain.ts"
+            },
+            {
+                "relativePath": "src/lib/core/rxjs/rx-operators.ts",
+                "test": false,
+                "name": "rx-operators.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/rxjs/index.ts"
+    },
+    "core/selection": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/selection/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/core/selection/pseudo-checkbox/_pseudo-checkbox-theme.scss",
+                "test": false,
+                "name": "_pseudo-checkbox-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/core/selection/pseudo-checkbox/pseudo-checkbox.scss",
+                "test": false,
+                "name": "pseudo-checkbox.scss"
+            },
+            {
+                "relativePath": "src/lib/core/selection/pseudo-checkbox/pseudo-checkbox.ts",
+                "test": false,
+                "name": "pseudo-checkbox.ts"
+            },
+            {
+                "relativePath": "src/lib/core/selection/selection.spec.ts",
+                "test": true,
+                "name": "selection.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/selection/selection.ts",
+                "test": false,
+                "name": "selection.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/selection/index.ts"
+    },
+    "core/style": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/style/_button-common.scss",
+                "test": false,
+                "name": "_button-common.scss"
+            },
+            {
+                "relativePath": "src/lib/core/style/_checkbox-common.scss",
+                "test": false,
+                "name": "_checkbox-common.scss"
+            },
+            {
+                "relativePath": "src/lib/core/style/_elevation.scss",
+                "test": false,
+                "name": "_elevation.scss"
+            },
+            {
+                "relativePath": "src/lib/core/style/_form-common.scss",
+                "test": false,
+                "name": "_form-common.scss"
+            },
+            {
+                "relativePath": "src/lib/core/style/_layout-common.scss",
+                "test": false,
+                "name": "_layout-common.scss"
+            },
+            {
+                "relativePath": "src/lib/core/style/_list-common.scss",
+                "test": false,
+                "name": "_list-common.scss"
+            },
+            {
+                "relativePath": "src/lib/core/style/_menu-common.scss",
+                "test": false,
+                "name": "_menu-common.scss"
+            },
+            {
+                "relativePath": "src/lib/core/style/_variables.scss",
+                "test": false,
+                "name": "_variables.scss"
+            },
+            {
+                "relativePath": "src/lib/core/style/_vendor-prefixes.scss",
+                "test": false,
+                "name": "_vendor-prefixes.scss"
+            },
+            {
+                "relativePath": "src/lib/core/style/apply-transform.ts",
+                "test": false,
+                "name": "apply-transform.ts"
+            },
+            {
+                "relativePath": "src/lib/core/style/focus-origin-monitor.spec.ts",
+                "test": true,
+                "name": "focus-origin-monitor.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/style/focus-origin-monitor.ts",
+                "test": false,
+                "name": "focus-origin-monitor.ts"
+            },
+            {
+                "relativePath": "src/lib/core/style/index.ts",
+                "test": false,
+                "name": "index.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/style/index.ts"
+    },
+    "testing/month-constants": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/testing/month-constants.ts",
+                "test": false,
+                "name": "month-constants.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/testing/month-constants.ts"
+    },
+    "core/theming": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/theming/_all-theme.scss",
+                "test": false,
+                "name": "_all-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/core/theming/_palette.scss",
+                "test": false,
+                "name": "_palette.scss"
+            },
+            {
+                "relativePath": "src/lib/core/theming/_theming.scss",
+                "test": false,
+                "name": "_theming.scss"
+            },
+            {
+                "relativePath": "src/lib/core/theming/prebuilt/deeppurple-amber.scss",
+                "test": false,
+                "name": "deeppurple-amber.scss"
+            },
+            {
+                "relativePath": "src/lib/core/theming/prebuilt/indigo-pink.scss",
+                "test": false,
+                "name": "indigo-pink.scss"
+            },
+            {
+                "relativePath": "src/lib/core/theming/prebuilt/pink-bluegrey.scss",
+                "test": false,
+                "name": "pink-bluegrey.scss"
+            },
+            {
+                "relativePath": "src/lib/core/theming/prebuilt/purple-green.scss",
+                "test": false,
+                "name": "purple-green.scss"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/theming/_theming.scss"
+    },
+    "core/typography": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/typography/_all-typography.scss",
+                "test": false,
+                "name": "_all-typography.scss"
+            },
+            {
+                "relativePath": "src/lib/core/typography/_typography-utils.scss",
+                "test": false,
+                "name": "_typography-utils.scss"
+            },
+            {
+                "relativePath": "src/lib/core/typography/_typography.scss",
+                "test": false,
+                "name": "_typography.scss"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/typography/_typography.scss"
+    },
+    "core/object-extend": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/util/object-extend.spec.ts",
+                "test": false,
+                "name": "object-extend.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/core/util/object-extend.ts",
+                "test": false,
+                "name": "object-extend.ts"
+            },
+            {
+                "relativePath": "src/lib/core/util/object-extend.spec.ts",
+                "test": true,
+                "name": "object-extend.spec.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/util/object-extend.ts"
+    }
+}

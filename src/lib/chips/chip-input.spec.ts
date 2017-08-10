@@ -3,7 +3,7 @@ import {MdChipsModule} from './index';
 import {Component, DebugElement} from '@angular/core';
 import {MdChipInput, MdChipInputEvent} from './chip-input';
 import {By} from '@angular/platform-browser';
-import {Directionality} from '../core';
+import {Directionality} from '@angular/cdk';
 import {createKeyboardEvent} from '@angular/cdk/testing';
 
 import {ENTER} from '../core/keyboard/keycodes';

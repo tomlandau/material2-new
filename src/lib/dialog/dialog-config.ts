@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -7,12 +7,12 @@
  */
 
 import {ViewContainerRef} from '@angular/core';
-import {Direction} from '../core';
+import {Direction} from '@angular/cdk';
 
-/** Valid ARIA roles for a dialog element. */
+/* Valid ARIA roles for a dialog element. */
 export type DialogRole = 'dialog' | 'alertdialog';
 
-/** Possible overrides for a dialog's position. */
+/* Possible overrides for a dialog's position. */
 export interface DialogPosition {
   top?: string;
   bottom?: string;
@@ -20,12 +20,12 @@ export interface DialogPosition {
   right?: string;
 }
 
-/**
+/*
  * Configuration for opening a modal dialog with the MdDialog service.
  */
 export class MdDialogConfig {
 
-  /**
+  /*
    * Where the attached component should live in Angular's *logical* component tree.
    * This affects what is available for injection and the change detection order for the
    * component instantiated inside of the dialog. This does not affect where the dialog
@@ -33,37 +33,37 @@ export class MdDialogConfig {
    */
   viewContainerRef?: ViewContainerRef;
 
-  /** The ARIA role of the dialog element. */
+  /* The ARIA role of the dialog element. */
   role?: DialogRole = 'dialog';
 
-  /** Custom class for the overlay pane. */
+  /* Custom class for the overlay pane. */
   panelClass?: string = '';
 
-  /** Whether the dialog has a backdrop. */
+  /* Whether the dialog has a backdrop. */
   hasBackdrop?: boolean = true;
 
-  /** Custom class for the backdrop, */
+  /* Custom class for the backdrop, */
   backdropClass?: string = '';
 
-  /** Whether the user can use escape or clicking outside to close a modal. */
+  /* Whether the user can use escape or clicking outside to close a modal. */
   disableClose?: boolean = false;
 
-  /** Width of the dialog. */
+  /* Width of the dialog. */
   width?: string = '';
 
-  /** Height of the dialog. */
+  /* Height of the dialog. */
   height?: string = '';
 
-  /** Position overrides. */
+  /* Position overrides. */
   position?: DialogPosition;
 
-  /** Data being injected into the child component. */
+  /* Data being injected into the child component. */
   data?: any = null;
 
-  /** Layout direction for the dialog's content. */
+  /* Layout direction for the dialog's content. */
   direction?: Direction = 'ltr';
 
-  /** ID of the element that describes the dialog.  */
+  /* ID of the element that describes the dialog.  */
   ariaDescribedBy?: string | null = null;
 
   // TODO(jelbourn): add configuration for lifecycle hooks, ARIA labelling.

@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -28,7 +28,7 @@ import {
   Inject
 } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import {coerceBooleanProperty, Platform} from '../core';
+import {coerceBooleanProperty, Platform} from '@angular/cdk';
 import {FormGroupDirective, NgControl, NgForm, FormControl} from '@angular/forms';
 import {getSupportedInputTypes} from '../core/platform/features';
 import {
@@ -66,7 +66,7 @@ const MD_INPUT_INVALID_TYPES = [
 let nextUniqueId = 0;
 
 
-/**
+/*
  * The placeholder directive. The content can declare this to implement more
  * complex placeholders.
  */
@@ -76,7 +76,7 @@ let nextUniqueId = 0;
 export class MdPlaceholder {}
 
 
-/** Hint text to be shown underneath the input. */
+/* Hint text to be shown underneath the input. */
 @Directive({
   selector: 'md-hint, mat-hint',
   host: {
@@ -86,14 +86,14 @@ export class MdPlaceholder {}
   }
 })
 export class MdHint {
-  /** Whether to align the hint label at the start or end of the line. */
+  /* Whether to align the hint label at the start or end of the line. */
   @Input() align: 'start' | 'end' = 'start';
 
-  /** Unique ID for the hint. Used for the aria-describedby on the input. */
+  /* Unique ID for the hint. Used for the aria-describedby on the input. */
   @Input() id: string = `md-input-hint-${nextUniqueId++}`;
 }
 
-/** Single error message to be shown underneath the input. */
+/* Single error message to be shown underneath the input. */
 @Directive({
   selector: 'md-error, mat-error',
   host: {
@@ -102,21 +102,21 @@ export class MdHint {
 })
 export class MdErrorDirective { }
 
-/** Prefix to be placed the the front of the input. */
+/* Prefix to be placed the the front of the input. */
 @Directive({
   selector: '[mdPrefix], [matPrefix]'
 })
 export class MdPrefix {}
 
 
-/** Suffix to be placed at the end of the input. */
+/* Suffix to be placed at the end of the input. */
 @Directive({
   selector: '[mdSuffix], [matSuffix]'
 })
 export class MdSuffix {}
 
 
-/** Marker for the input element that `MdInputContainer` is wrapping. */
+/* Marker for the input element that `MdInputContainer` is wrapping. */
 @Directive({
   selector: `input[mdInput], textarea[mdInput], input[matInput], textarea[matInput]`,
   host: {
@@ -136,7 +136,7 @@ export class MdSuffix {}
 })
 export class MdInputDirective {
 
-  /** Variables used as cache for getters and setters. */
+  /* Variables used as cache for getters and setters. */
   private _type = 'text';
   private _placeholder: string = '';
   private _disabled = false;
@@ -146,13 +146,13 @@ export class MdInputDirective {
   private _cachedUid: string;
   private _errorOptions: ErrorOptions;
 
-  /** Whether the element is focused or not. */
+  /* Whether the element is focused or not. */
   focused = false;
 
-  /** Sets the aria-describedby attribute on the input for improved a11y. */
+  /* Sets the aria-describedby attribute on the input for improved a11y. */
   ariaDescribedby: string;
 
-  /** Whether the element is disabled. */
+  /* Whether the element is disabled. */
   @Input()
   get disabled() {
     return this._ngControl ? this._ngControl.disabled : this._disabled;
@@ -162,12 +162,12 @@ export class MdInputDirective {
     this._disabled = coerceBooleanProperty(value);
   }
 
-  /** Unique id of the element. */
+  /* Unique id of the element. */
   @Input()
   get id() { return this._id; }
   set id(value: string) {this._id = value || this._uid; }
 
-  /** Placeholder attribute of the element. */
+  /* Placeholder attribute of the element. */
   @Input()
   get placeholder() { return this._placeholder; }
   set placeholder(value: string) {
@@ -177,12 +177,12 @@ export class MdInputDirective {
     }
   }
 
-  /** Whether the element is required. */
+  /* Whether the element is required. */
   @Input()
   get required() { return this._required; }
   set required(value: any) { this._required = coerceBooleanProperty(value); }
 
-  /** Input type of the element. */
+  /* Input type of the element. */
   @Input()
   get type() { return this._type; }
   set type(value: string) {
@@ -197,24 +197,24 @@ export class MdInputDirective {
     }
   }
 
-  /** Whether the element is readonly. */
+  /* Whether the element is readonly. */
   @Input()
   get readonly() { return this._readonly; }
   set readonly(value: any) { this._readonly = coerceBooleanProperty(value); }
 
-  /** A function used to control when error messages are shown. */
+  /* A function used to control when error messages are shown. */
   @Input() errorStateMatcher: ErrorStateMatcher;
 
-  /** The input element's value. */
+  /* The input element's value. */
   get value() { return this._elementRef.nativeElement.value; }
   set value(value: string) { this._elementRef.nativeElement.value = value; }
 
-  /**
+  /*
    * Emits an event when the placeholder changes so that the `md-input-container` can re-validate.
    */
   @Output() _placeholderChange = new EventEmitter<string>();
 
-  /** Whether the input is empty. */
+  /* Whether the input is empty. */
   get empty() {
     return !this._isNeverEmpty() &&
         (this.value == null || this.value === '') &&
@@ -250,7 +250,7 @@ export class MdInputDirective {
     this.errorStateMatcher = this._errorOptions.errorStateMatcher || defaultErrorStateMatcher;
   }
 
-  /** Focuses the input element. */
+  /* Focuses the input element. */
   focus() { this._elementRef.nativeElement.focus(); }
 
   _onFocus() {
@@ -271,14 +271,14 @@ export class MdInputDirective {
     // FormsModule or ReactiveFormsModule, because Angular forms also listens to input events.
   }
 
-  /** Whether the input is in an error state. */
+  /* Whether the input is in an error state. */
   _isErrorState(): boolean {
     const control = this._ngControl;
     const form = this._parentFormGroup || this._parentForm;
     return control && this.errorStateMatcher(control.control as FormControl, form);
   }
 
-  /** Make sure the input is a supported type. */
+  /* Make sure the input is a supported type. */
   private _validateType() {
     if (MD_INPUT_INVALID_TYPES.indexOf(this._type) !== -1) {
       throw getMdInputContainerUnsupportedTypeError(this._type);
@@ -293,7 +293,7 @@ export class MdInputDirective {
     return validity && validity.badInput;
   }
 
-  /** Determines if the component host is a textarea. If not recognizable it returns false. */
+  /* Determines if the component host is a textarea. If not recognizable it returns false. */
   private _isTextarea() {
     let nativeElement = this._elementRef.nativeElement;
 
@@ -306,7 +306,7 @@ export class MdInputDirective {
 }
 
 
-/**
+/*
  * Container for text inputs that applies Material Design styling and behavior.
  */
 @Component({
@@ -344,15 +344,15 @@ export class MdInputDirective {
 export class MdInputContainer implements AfterViewInit, AfterContentInit, AfterContentChecked {
   private _placeholderOptions: PlaceholderOptions;
 
-  /** Color of the input divider, based on the theme. */
+  /* Color of the input divider, based on the theme. */
   @Input() color: 'primary' | 'accent' | 'warn' = 'primary';
 
-  /** @deprecated Use color instead. */
+  /* @deprecated Use color instead. */
   @Input()
   get dividerColor() { return this.color; }
   set dividerColor(value) { this.color = value; }
 
-  /** Whether the required marker should be hidden. */
+  /* Whether the required marker should be hidden. */
   @Input()
   get hideRequiredMarker() { return this._hideRequiredMarker; }
   set hideRequiredMarker(value: any) {
@@ -360,16 +360,16 @@ export class MdInputContainer implements AfterViewInit, AfterContentInit, AfterC
   }
   private _hideRequiredMarker: boolean;
 
-  /** Whether the floating label should always float or not. */
+  /* Whether the floating label should always float or not. */
   get _shouldAlwaysFloat() { return this._floatPlaceholder === 'always'; }
 
-  /** Whether the placeholder can float or not. */
+  /* Whether the placeholder can float or not. */
   get _canPlaceholderFloat() { return this._floatPlaceholder !== 'never'; }
 
-  /** State of the md-hint and md-error animations. */
+  /* State of the md-hint and md-error animations. */
   _subscriptAnimationState: string = '';
 
-  /** Text for the input hint. */
+  /* Text for the input hint. */
   @Input()
   get hintLabel() { return this._hintLabel; }
   set hintLabel(value: string) {
@@ -381,7 +381,7 @@ export class MdInputContainer implements AfterViewInit, AfterContentInit, AfterC
   // Unique id for the hint label.
   _hintLabelId: string = `md-input-hint-${nextUniqueId++}`;
 
-  /** Whether the placeholder should always float, never float or float as the user types. */
+  /* Whether the placeholder should always float, never float or float as the user types. */
   @Input()
   get floatPlaceholder() { return this._floatPlaceholder; }
   set floatPlaceholder(value: FloatPlaceholderType) {
@@ -389,7 +389,7 @@ export class MdInputContainer implements AfterViewInit, AfterContentInit, AfterC
   }
   private _floatPlaceholder: FloatPlaceholderType;
 
-  /** Reference to the input's underline element. */
+  /* Reference to the input's underline element. */
   @ViewChild('underline') underlineRef: ElementRef;
 
   @ContentChild(MdInputDirective) _mdInputChild: MdInputDirective;
@@ -438,25 +438,25 @@ export class MdInputContainer implements AfterViewInit, AfterContentInit, AfterC
     this._changeDetectorRef.detectChanges();
   }
 
-  /** Determines whether a class from the NgControl should be forwarded to the host element. */
+  /* Determines whether a class from the NgControl should be forwarded to the host element. */
   _shouldForward(prop: string): boolean {
     let control = this._mdInputChild ? this._mdInputChild._ngControl : null;
     return control && (control as any)[prop];
   }
 
-  /** Whether the input has a placeholder. */
+  /* Whether the input has a placeholder. */
   _hasPlaceholder() { return !!(this._mdInputChild.placeholder || this._placeholderChild); }
 
-  /** Focuses the underlying input. */
+  /* Focuses the underlying input. */
   _focusInput() { this._mdInputChild.focus(); }
 
-  /** Determines whether to display hints or errors. */
+  /* Determines whether to display hints or errors. */
   _getDisplayedMessages(): 'error' | 'hint' {
     let input = this._mdInputChild;
     return (this._errorChildren.length > 0 && input._isErrorState()) ? 'error' : 'hint';
   }
 
-  /**
+  /*
    * Ensure that there is only one placeholder (either `input` attribute or child element with the
    * `md-placeholder` attribute.
    */
@@ -466,7 +466,7 @@ export class MdInputContainer implements AfterViewInit, AfterContentInit, AfterC
     }
   }
 
-  /**
+  /*
    * Does any extra processing that is required when handling the hints.
    */
   private _processHints() {
@@ -474,7 +474,7 @@ export class MdInputContainer implements AfterViewInit, AfterContentInit, AfterC
     this._syncAriaDescribedby();
   }
 
-  /**
+  /*
    * Ensure that there is a maximum of one of each `<md-hint>` alignment specified, with the
    * attribute being considered as `align="start"`.
    */
@@ -498,7 +498,7 @@ export class MdInputContainer implements AfterViewInit, AfterContentInit, AfterC
     }
   }
 
-  /**
+  /*
    * Sets the child input's `aria-describedby` to a space-separated list of the ids
    * of the currently-specified hints, as well as a generated id for the hint label.
    */
@@ -524,7 +524,7 @@ export class MdInputContainer implements AfterViewInit, AfterContentInit, AfterC
     }
   }
 
-  /**
+  /*
    * Throws an error if the container's input child was removed.
    */
   protected _validateInputChild() {

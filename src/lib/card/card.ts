@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -15,7 +15,7 @@ import {
 } from '@angular/core';
 
 
-/**
+/*
  * Content of a card, needed as it's used as a selector in the API.
  * @docs-private
  */
@@ -25,7 +25,7 @@ import {
 })
 export class MdCardContent {}
 
-/**
+/*
  * Title of a card, needed as it's used as a selector in the API.
  * @docs-private
  */
@@ -38,7 +38,7 @@ export class MdCardContent {}
 })
 export class MdCardTitle {}
 
-/**
+/*
  * Sub-title of a card, needed as it's used as a selector in the API.
  * @docs-private
  */
@@ -51,7 +51,7 @@ export class MdCardTitle {}
 })
 export class MdCardSubtitle {}
 
-/**
+/*
  * Action section of a card, needed as it's used as a selector in the API.
  * @docs-private
  */
@@ -63,11 +63,11 @@ export class MdCardSubtitle {}
   }
 })
 export class MdCardActions {
-  /** Position of the actions inside the card. */
+  /* Position of the actions inside the card. */
   @Input() align: 'start' | 'end' = 'start';
 }
 
-/**
+/*
  * Footer of a card, needed as it's used as a selector in the API.
  * @docs-private
  */
@@ -77,7 +77,7 @@ export class MdCardActions {
 })
 export class MdCardFooter {}
 
-/**
+/*
  * Image used in a card, needed to add the mat- CSS styling.
  * @docs-private
  */
@@ -87,7 +87,7 @@ export class MdCardFooter {}
 })
 export class MdCardImage {}
 
-/**
+/*
  * Image used in a card, needed to add the mat- CSS styling.
  * @docs-private
  */
@@ -97,7 +97,7 @@ export class MdCardImage {}
 })
 export class MdCardSmImage {}
 
-/**
+/*
  * Image used in a card, needed to add the mat- CSS styling.
  * @docs-private
  */
@@ -107,7 +107,7 @@ export class MdCardSmImage {}
 })
 export class MdCardMdImage {}
 
-/**
+/*
  * Image used in a card, needed to add the mat- CSS styling.
  * @docs-private
  */
@@ -117,7 +117,7 @@ export class MdCardMdImage {}
 })
 export class MdCardLgImage {}
 
-/**
+/*
  * Large image used in a card, needed to add the mat- CSS styling.
  * @docs-private
  */
@@ -127,7 +127,7 @@ export class MdCardLgImage {}
 })
 export class MdCardXlImage {}
 
-/**
+/*
  * Avatar image used in a card, needed to add the mat- CSS styling.
  * @docs-private
  */
@@ -138,7 +138,7 @@ export class MdCardXlImage {}
 export class MdCardAvatar {}
 
 
-/**
+/*
  * A basic content container component that adds the styles of a Material design card.
  *
  * While this component can be used alone, it also provides a number
@@ -161,7 +161,7 @@ export class MdCardAvatar {}
 export class MdCard {}
 
 
-/**
+/*
  * Component intended to be used within the `<md-card>` component. It adds styles for a
  * preset header section (i.e. a title, subtitle, and avatar layout).
  * @docs-private
@@ -177,7 +177,7 @@ export class MdCard {}
 export class MdCardHeader {}
 
 
-/**
+/*
  * Component intended to be used within the <md-card> component. It adds styles for a preset
  * layout that groups an image with a title section.
  * @docs-private

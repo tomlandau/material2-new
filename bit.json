@@ -1,0 +1,35 @@
+{
+    "sources": {
+        "impl": "impl.js",
+        "spec": "spec.js"
+    },
+    "env": {
+        "compiler": "none",
+        "tester": "none"
+    },
+    "dependencies": {
+        "angular.material2-core/core/animation": "1",
+        "angular.material2-core/core/common-behaviors": "1",
+        "angular.material2-core/core/compatibility": "1",
+        "angular.material2-core/core/coordination": "1",
+        "angular.material2-core/core/datetime": "1",
+        "angular.material2-core/core/error-options": "1",
+        "angular.material2-core/core/gestures": "1",
+        "angular.material2-core/core/keyboard": "1",
+        "angular.material2-core/core/line": "1",
+        "angular.material2-core/core/overlay": "1",
+        "angular.material2-core/core/placeholder": "1",
+        "angular.material2-core/core/platform": "1",
+        "angular.material2-core/core/rxjs": "1",
+        "angular.material2-core/core/selection": "1",
+        "angular.material2-core/core/style": "1",
+        "angular.material2-core/testing/month-constants": "1",
+        "angular.material2-core/core/theming": "1",
+        "angular.material2-core/core/typography": "1",
+        "angular.material2-core/core/object-extend": "1"
+    },
+    "structure": "components/{namespace}/{name}",
+    "dist": {
+        "target": "dist"
+    }
+}

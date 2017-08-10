@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-/**
+/*
  * Returns an exception to be thrown when attempting to change a s
  * elect's `multiple` option after initialization.
  * @docs-private
@@ -15,7 +15,7 @@ export function getMdSelectDynamicMultipleError(): Error {
   return Error('Cannot change `multiple` mode of select after initialization.');
 }
 
-/**
+/*
  * Returns an exception to be thrown when attempting to assign a non-array value to a select
  * in `multiple` mode. Note that `undefined` and `null` are still valid values to allow for
  * resetting the value.

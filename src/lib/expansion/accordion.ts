@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -9,33 +9,33 @@
 import {Directive, Input} from '@angular/core';
 import {coerceBooleanProperty} from '@angular/cdk';
 
-/** MdAccordion's display modes. */
+/* MdAccordion's display modes. */
 export type MdAccordionDisplayMode = 'default' | 'flat';
 
-/** Unique ID counter */
+/* Unique ID counter */
 let nextId = 0;
 
-/**
+/*
  * Directive whose purpose is to manage the expanded state of CdkAccordionItem children.
  */
 @Directive({
   selector: '[cdk-accordion]',
 })
 export class CdkAccordion {
-  /** A readonly id value to use for unique selection coordination. */
+  /* A readonly id value to use for unique selection coordination. */
   readonly id = `cdk-accordion-${nextId++}`;
 
-  /** Whether the accordion should allow multiple expanded accordion items simulateously. */
+  /* Whether the accordion should allow multiple expanded accordion items simulateously. */
   @Input() get multi(): boolean { return this._multi; }
   set multi(multi: boolean) { this._multi = coerceBooleanProperty(multi); }
   private  _multi: boolean = false;
 
-  /** Whether the expansion indicator should be hidden. */
+  /* Whether the expansion indicator should be hidden. */
   @Input() get hideToggle(): boolean { return this._hideToggle; }
   set hideToggle(show: boolean) { this._hideToggle = coerceBooleanProperty(show); }
   private  _hideToggle: boolean = false;
 
-  /**
+  /*
    * The display mode used for all expansion panels in the accordion. Currently two display
    * modes exist:
    *   default - a gutter-like spacing is placed around any expanded panel, placing the expanded
@@ -46,7 +46,7 @@ export class CdkAccordion {
   @Input() displayMode: MdAccordionDisplayMode = 'default';
 }
 
-/**
+/*
  * Directive for a Material Design Accordion.
  */
 @Directive({

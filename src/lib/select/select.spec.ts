@@ -15,7 +15,7 @@ import {OverlayContainer} from '../core/overlay/overlay-container';
 import {MdSelect} from './select';
 import {getMdSelectDynamicMultipleError, getMdSelectNonArrayValueError} from './select-errors';
 import {MdOption} from '../core/option/option';
-import {Directionality} from '../core/bidi/index';
+import {Directionality} from '@angular/cdk';
 import {DOWN_ARROW, UP_ARROW, ENTER, SPACE, HOME, END, TAB} from '../core/keyboard/keycodes';
 import {
   ControlValueAccessor, FormControl, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule
@@ -877,7 +877,7 @@ describe('MdSelect', () => {
       select = fixture.debugElement.query(By.css('md-select')).nativeElement;
     });
 
-    /**
+    /*
      * Asserts that the given option is aligned with the trigger.
      * @param index The index of the option.
      * @param selectInstance Instance of the `md-select` component to check against.

@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -15,14 +15,14 @@ import {
   trigger,
 } from '@angular/animations';
 
-/**
+/*
  * The following are all the animations for the md-select component, with each
  * const containing the metadata for one animation.
  *
  * The values below match the implementation of the AngularJS Material md-select animation.
  */
 
-/**
+/*
  * This animation shrinks the placeholder text to 75% of its normal size and translates
  * it to either the top left corner (ltr) or top right corner (rtl) of the trigger,
  * depending on the text direction of the application.
@@ -41,7 +41,7 @@ export const transformPlaceholder: AnimationTriggerMetadata = trigger('transform
   transition('* => *', animate('400ms cubic-bezier(0.25, 0.8, 0.25, 1)'))
 ]);
 
-/**
+/*
  * This animation transforms the select's overlay panel on and off the page.
  *
  * When the panel is attached to the DOM, it expands its width by the amount of padding, scales it
@@ -74,7 +74,7 @@ export const transformPanel: AnimationTriggerMetadata = trigger('transformPanel'
   ])
 ]);
 
-/**
+/*
  * This animation fades in the background color and text content of the
  * select's options. It is time delayed to occur 100ms after the overlay
  * panel has transformed in.

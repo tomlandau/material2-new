@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -22,7 +22,7 @@ import {
 import {MdGridTile} from './grid-tile';
 import {TileCoordinator} from './tile-coordinator';
 import {TileStyler, FitTileStyler, RatioTileStyler, FixedTileStyler} from './tile-styler';
-import {Directionality} from '../core';
+import {Directionality} from '@angular/cdk';
 import {
   coerceToString,
   coerceToNumber,
@@ -48,10 +48,10 @@ const MD_FIT_MODE = 'fit';
   encapsulation: ViewEncapsulation.None,
 })
 export class MdGridList implements OnInit, AfterContentChecked {
-  /** Number of columns being rendered. */
+  /* Number of columns being rendered. */
   private _cols: number;
 
-  /**
+  /*
    * Row height value passed in by user. This can be one of three types:
    * - Number value (ex: "100px"):  sets a fixed row height to that value
    * - Ratio value (ex: "4:3"): sets the row height based on width:height ratio
@@ -59,13 +59,13 @@ export class MdGridList implements OnInit, AfterContentChecked {
    */
   private _rowHeight: string;
 
-  /** The amount of space between tiles. This will be something like '5px' or '2em'. */
+  /* The amount of space between tiles. This will be something like '5px' or '2em'. */
   private _gutter: string = '1px';
 
-  /** Sets position and size styles for a tile */
+  /* Sets position and size styles for a tile */
   private _tileStyler: TileStyler;
 
-  /** Query list of tiles that are being rendered. */
+  /* Query list of tiles that are being rendered. */
   @ContentChildren(MdGridTile) _tiles: QueryList<MdGridTile>;
 
   constructor(
@@ -73,17 +73,17 @@ export class MdGridList implements OnInit, AfterContentChecked {
       private _element: ElementRef,
       @Optional() private _dir: Directionality) {}
 
-  /** Amount of columns in the grid list. */
+  /* Amount of columns in the grid list. */
   @Input()
   get cols() { return this._cols; }
   set cols(value: any) { this._cols = coerceToNumber(value); }
 
-  /** Size of the grid list's gutter in pixels. */
+  /* Size of the grid list's gutter in pixels. */
   @Input()
   get gutterSize() { return this._gutter; }
   set gutterSize(value: any) { this._gutter = coerceToString(value); }
 
-  /** Set internal representation of row height from the user-provided value. */
+  /* Set internal representation of row height from the user-provided value. */
   @Input()
   set rowHeight(value: string | number) {
     this._rowHeight = coerceToString(value);
@@ -95,7 +95,7 @@ export class MdGridList implements OnInit, AfterContentChecked {
     this._checkRowHeight();
   }
 
-  /**
+  /*
    * The layout calculation is fairly cheap if nothing changes, so there's little cost
    * to run it frequently.
    */
@@ -103,7 +103,7 @@ export class MdGridList implements OnInit, AfterContentChecked {
     this._layoutTiles();
   }
 
-  /** Throw a friendly error if cols property is missing */
+  /* Throw a friendly error if cols property is missing */
   private _checkCols() {
     if (!this.cols) {
       throw Error(`md-grid-list: must pass in number of columns. ` +
@@ -111,14 +111,14 @@ export class MdGridList implements OnInit, AfterContentChecked {
     }
   }
 
-  /** Default to equal width:height if rowHeight property is missing */
+  /* Default to equal width:height if rowHeight property is missing */
   private _checkRowHeight(): void {
     if (!this._rowHeight) {
       this._tileStyler = new RatioTileStyler('1:1');
     }
   }
 
-  /** Creates correct Tile Styler subtype based on rowHeight passed in by user */
+  /* Creates correct Tile Styler subtype based on rowHeight passed in by user */
   private _setTileStyler(): void {
     if (this._rowHeight === MD_FIT_MODE) {
       this._tileStyler = new FitTileStyler();
@@ -129,7 +129,7 @@ export class MdGridList implements OnInit, AfterContentChecked {
     }
   }
 
-  /** Computes and applies the size and position for all children grid tiles. */
+  /* Computes and applies the size and position for all children grid tiles. */
   private _layoutTiles(): void {
     let tracker = new TileCoordinator(this.cols, this._tiles);
     let direction = this._dir ? this._dir.value : 'ltr';
@@ -143,7 +143,7 @@ export class MdGridList implements OnInit, AfterContentChecked {
     this._setListStyle(this._tileStyler.getComputedHeight());
   }
 
-  /** Sets style on the main grid-list element, given the style name and value. */
+  /* Sets style on the main grid-list element, given the style name and value. */
   _setListStyle(style: [string, string] | null): void {
     if (style) {
       this._renderer.setStyle(this._element.nativeElement, style[0], style[1]);

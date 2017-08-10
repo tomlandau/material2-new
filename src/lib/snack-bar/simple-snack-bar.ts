@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -11,7 +11,7 @@ import {MdSnackBarRef} from './snack-bar-ref';
 import {MD_SNACK_BAR_DATA} from './snack-bar-config';
 
 
-/**
+/*
  * A component used to open as the default snack bar, matching material spec.
  * This should only be used internally by the snack bar service.
  */
@@ -27,7 +27,7 @@ import {MD_SNACK_BAR_DATA} from './snack-bar-config';
   }
 })
 export class SimpleSnackBar {
-  /** Data that was injected into the snack bar. */
+  /* Data that was injected into the snack bar. */
   data: { message: string, action: string };
 
   constructor(
@@ -36,12 +36,12 @@ export class SimpleSnackBar {
     this.data = data;
   }
 
-  /** Dismisses the snack bar. */
+  /* Dismisses the snack bar. */
   dismiss(): void {
     this.snackBarRef._action();
   }
 
-  /** If the action button should be shown. */
+  /* If the action button should be shown. */
   get hasAction(): boolean {
     return !!this.data.action;
   }

@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -24,7 +24,7 @@ import {CanColor, mixinColor} from '../core/common-behaviors/color';
 export class MdToolbarRow {}
 
 // Boilerplate for applying mixins to MdToolbar.
-/** @docs-private */
+/* @docs-private */
 export class MdToolbarBase {
   constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }

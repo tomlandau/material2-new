@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -15,7 +15,7 @@ import {of as observableOf} from 'rxjs/observable/of';
 import {forkJoin} from 'rxjs/observable/forkJoin';
 import {RxChain, map, doOperator, catchOperator, finallyOperator, share} from '../core/rxjs/index';
 
-/**
+/*
  * Returns an exception to be thrown in the case when attempting to
  * load an icon with a name that cannot be found.
  * @docs-private
@@ -25,7 +25,7 @@ export function getMdIconNameNotFoundError(iconName: string): Error {
 }
 
 
-/**
+/*
  * Returns an exception to be thrown when the consumer attempts to use
  * `<md-icon>` without including @angular/http.
  * @docs-private
@@ -36,7 +36,7 @@ export function getMdIconNoHttpProviderError(): Error {
 }
 
 
-/**
+/*
  * Returns an exception to be thrown when a URL couldn't be sanitized.
  * @param url URL that was attempted to be sanitized.
  * @docs-private
@@ -46,7 +46,7 @@ export function getMdIconFailedToSanitizeError(url: SafeResourceUrl): Error {
                `via Angular's DomSanitizer. Attempted URL was "${url}".`);
 }
 
-/**
+/*
  * Configuration for an icon, including the URL and possibly the cached SVG element.
  * @docs-private
  */
@@ -55,7 +55,7 @@ class SvgIconConfig {
   constructor(public url: SafeResourceUrl) { }
 }
 
-/**
+/*
  * Service to register and display icons used by the <md-icon> component.
  * - Registers icon URLs by namespace and name.
  * - Registers icon set URLs by namespace.
@@ -64,27 +64,27 @@ class SvgIconConfig {
  */
 @Injectable()
 export class MdIconRegistry {
-  /**
+  /*
    * URLs and cached SVG elements for individual icons. Keys are of the format "[namespace]:[icon]".
    */
   private _svgIconConfigs = new Map<string, SvgIconConfig>();
 
-  /**
+  /*
    * SvgIconConfig objects and cached SVG elements for icon sets, keyed by namespace.
    * Multiple icon sets can be registered under the same namespace.
    */
   private _iconSetConfigs = new Map<string, SvgIconConfig[]>();
 
-  /** Cache for icons loaded by direct URLs. */
+  /* Cache for icons loaded by direct URLs. */
   private _cachedIconsByUrl = new Map<string, SVGElement>();
 
-  /** In-progress icon fetches. Used to coalesce multiple requests to the same URL. */
+  /* In-progress icon fetches. Used to coalesce multiple requests to the same URL. */
   private _inProgressUrlFetches = new Map<string, Observable<string>>();
 
-  /** Map from font identifiers to their CSS class names. Used for icon fonts. */
+  /* Map from font identifiers to their CSS class names. Used for icon fonts. */
   private _fontCssClassesByAlias = new Map<string, string>();
 
-  /**
+  /*
    * The CSS class to apply when an <md-icon> component has no icon name, url, or font specified.
    * The default 'material-icons' value assumes that the material icon font has been loaded as
    * described at http://google.github.io/material-design-icons/#icon-font-for-the-web
@@ -93,7 +93,7 @@ export class MdIconRegistry {
 
   constructor(@Optional() private _http: Http, private _sanitizer: DomSanitizer) {}
 
-  /**
+  /*
    * Registers an icon by URL in the default namespace.
    * @param iconName Name under which the icon should be registered.
    * @param url
@@ -102,7 +102,7 @@ export class MdIconRegistry {
     return this.addSvgIconInNamespace('', iconName, url);
   }
 
-  /**
+  /*
    * Registers an icon by URL in the specified namespace.
    * @param namespace Namespace in which the icon should be registered.
    * @param iconName Name under which the icon should be registered.
@@ -114,7 +114,7 @@ export class MdIconRegistry {
     return this;
   }
 
-  /**
+  /*
    * Registers an icon set by URL in the default namespace.
    * @param url
    */
@@ -122,7 +122,7 @@ export class MdIconRegistry {
     return this.addSvgIconSetInNamespace('', url);
   }
 
-  /**
+  /*
    * Registers an icon set by URL in the specified namespace.
    * @param namespace Namespace in which to register the icon set.
    * @param url
@@ -139,7 +139,7 @@ export class MdIconRegistry {
     return this;
   }
 
-  /**
+  /*
    * Defines an alias for a CSS class name to be used for icon fonts. Creating an mdIcon
    * component with the alias as the fontSet input will cause the class name to be applied
    * to the <md-icon> element.
@@ -152,7 +152,7 @@ export class MdIconRegistry {
     return this;
   }
 
-  /**
+  /*
    * Returns the CSS class name associated with the alias by a previous call to
    * registerFontClassAlias. If no CSS class has been associated, returns the alias unmodified.
    */
@@ -160,7 +160,7 @@ export class MdIconRegistry {
     return this._fontCssClassesByAlias.get(alias) || alias;
   }
 
-  /**
+  /*
    * Sets the CSS class name to be used for icon fonts when an <md-icon> component does not
    * have a fontSet input value, and is not loading an icon by name or URL.
    *
@@ -171,7 +171,7 @@ export class MdIconRegistry {
     return this;
   }
 
-  /**
+  /*
    * Returns the CSS class name to be used for icon fonts when an <md-icon> component does not
    * have a fontSet input value, and is not loading an icon by name or URL.
    */
@@ -179,7 +179,7 @@ export class MdIconRegistry {
     return this._defaultFontSetClass;
   }
 
-  /**
+  /*
    * Returns an Observable that produces the icon (as an <svg> DOM element) from the given URL.
    * The response from the URL may be cached so this will not always cause an HTTP request, but
    * the produced element will always be a new copy of the originally fetched icon. (That is,
@@ -206,7 +206,7 @@ export class MdIconRegistry {
       .result();
   }
 
-  /**
+  /*
    * Returns an Observable that produces the icon (as an <svg> DOM element) with the given name
    * and namespace. The icon must have been previously registered with addIcon or addIconSet;
    * if not, the Observable will throw an error.
@@ -233,7 +233,7 @@ export class MdIconRegistry {
     return observableThrow(getMdIconNameNotFoundError(key));
   }
 
-  /**
+  /*
    * Returns the cached icon for a SvgIconConfig if available, or fetches it from its URL if not.
    */
   private _getSvgFromConfig(config: SvgIconConfig): Observable<SVGElement> {
@@ -249,7 +249,7 @@ export class MdIconRegistry {
     }
   }
 
-  /**
+  /*
    * Attempts to find an icon with the specified name in any of the SVG icon sets.
    * First searches the available cached icons for a nested element with a matching name, and
    * if found copies the element to a new <svg> element. If not found, fetches all icon sets
@@ -306,7 +306,7 @@ export class MdIconRegistry {
     });
   }
 
-  /**
+  /*
    * Searches the cached SVG elements for the given icon sets for a nested icon element whose "id"
    * tag matches the specified name. If found, copies the nested element to a new SVG element and
    * returns it. Returns null if no matching element is found.
@@ -326,7 +326,7 @@ export class MdIconRegistry {
     return null;
   }
 
-  /**
+  /*
    * Loads the content of the icon URL specified in the SvgIconConfig and creates an SVG element
    * from it.
    */
@@ -335,7 +335,7 @@ export class MdIconRegistry {
         svgText => this._createSvgElementForSingleIcon(svgText));
   }
 
-  /**
+  /*
    * Loads the content of the icon set URL specified in the SvgIconConfig and creates an SVG element
    * from it.
    */
@@ -345,7 +345,7 @@ export class MdIconRegistry {
         svgText => this._svgElementFromString(svgText));
   }
 
-  /**
+  /*
    * Creates a DOM element from the given SVG string, and adds default attributes.
    */
   private _createSvgElementForSingleIcon(responseText: string): SVGElement {
@@ -354,7 +354,7 @@ export class MdIconRegistry {
     return svg;
   }
 
-  /**
+  /*
    * Searches the cached element of the given SvgIconConfig for a nested icon element whose "id"
    * tag matches the specified name. If found, copies the nested element to a new SVG element and
    * returns it. Returns null if no matching element is found.
@@ -391,7 +391,7 @@ export class MdIconRegistry {
     return this._setSvgAttributes(svg);
   }
 
-  /**
+  /*
    * Creates a DOM element from the given SVG string.
    */
   private _svgElementFromString(str: string): SVGElement {
@@ -406,7 +406,7 @@ export class MdIconRegistry {
     return svg;
   }
 
-  /**
+  /*
    * Converts an element into an SVG node by cloning all of its children.
    */
   private _toSvgElement(element: Element): SVGElement {
@@ -421,7 +421,7 @@ export class MdIconRegistry {
     return svg;
   }
 
-  /**
+  /*
    * Sets the default attributes for an SVG element to be used as an icon.
    */
   private _setSvgAttributes(svg: SVGElement): SVGElement {
@@ -436,7 +436,7 @@ export class MdIconRegistry {
     return svg;
   }
 
-  /**
+  /*
    * Returns an Observable which produces the string contents of the given URL. Results may be
    * cached, so future calls with the same URL may not cause another HTTP request.
    */
@@ -473,13 +473,13 @@ export class MdIconRegistry {
   }
 }
 
-/** @docs-private */
+/* @docs-private */
 export function ICON_REGISTRY_PROVIDER_FACTORY(
     parentRegistry: MdIconRegistry, http: Http, sanitizer: DomSanitizer) {
   return parentRegistry || new MdIconRegistry(http, sanitizer);
 }
 
-/** @docs-private */
+/* @docs-private */
 export const ICON_REGISTRY_PROVIDER = {
   // If there is already an MdIconRegistry available, use that. Otherwise, provide a new one.
   provide: MdIconRegistry,
@@ -487,12 +487,12 @@ export const ICON_REGISTRY_PROVIDER = {
   useFactory: ICON_REGISTRY_PROVIDER_FACTORY
 };
 
-/** Clones an SVGElement while preserving type information. */
+/* Clones an SVGElement while preserving type information. */
 function cloneSvg(svg: SVGElement): SVGElement {
   return svg.cloneNode(true) as SVGElement;
 }
 
-/** Returns the cache key to use for an icon namespace and name. */
+/* Returns the cache key to use for an icon namespace and name. */
 function iconKey(namespace: string, name: string) {
   return namespace + ':' + name;
 }

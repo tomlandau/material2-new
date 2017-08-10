@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -22,15 +22,15 @@ import {Subject} from 'rxjs/Subject';
 import {
   Overlay,
   OverlayRef,
-  ComponentType,
   OverlayState,
-  ComponentPortal,
   BlockScrollStrategy,
   // This import is only used to define a generic type. The current TypeScript version incorrectly
   // considers such imports as unused (https://github.com/Microsoft/TypeScript/issues/14953)
   // tslint:disable-next-line:no-unused-variable
   ScrollStrategy,
-} from '../core';
+} from '../core/overlay/index';
+import {ComponentType} from '../core/overlay/generic-component-type'
+import {ComponentPortal} from '@angular/cdk'
 import {PortalInjector} from '../core/portal/portal-injector';
 import {extendObject} from '../core/util/object-extend';
 import {ESCAPE} from '../core/keyboard/keycodes';
@@ -42,16 +42,16 @@ import {TemplatePortal} from '../core/portal/portal';
 export const MD_DIALOG_DATA = new InjectionToken<any>('MdDialogData');
 
 
-/** Injection token that determines the scroll handling while the dialog is open. */
+/* Injection token that determines the scroll handling while the dialog is open. */
 export const MD_DIALOG_SCROLL_STRATEGY =
     new InjectionToken<() => ScrollStrategy>('md-dialog-scroll-strategy');
 
-/** @docs-private */
+/* @docs-private */
 export function MD_DIALOG_SCROLL_STRATEGY_PROVIDER_FACTORY(overlay: Overlay) {
   return () => overlay.scrollStrategies.block();
 }
 
-/** @docs-private */
+/* @docs-private */
 export const MD_DIALOG_SCROLL_STRATEGY_PROVIDER = {
   provide: MD_DIALOG_SCROLL_STRATEGY,
   deps: [Overlay],
@@ -59,7 +59,7 @@ export const MD_DIALOG_SCROLL_STRATEGY_PROVIDER = {
 };
 
 
-/**
+/*
  * Service to open Material Design modal dialogs.
  */
 @Injectable()
@@ -69,26 +69,26 @@ export class MdDialog {
   private _afterOpenAtThisLevel = new Subject<MdDialogRef<any>>();
   private _boundKeydown = this._handleKeydown.bind(this);
 
-  /** Keeps track of the currently-open dialogs. */
+  /* Keeps track of the currently-open dialogs. */
   get _openDialogs(): MdDialogRef<any>[] {
     return this._parentDialog ? this._parentDialog._openDialogs : this._openDialogsAtThisLevel;
   }
 
-  /** Subject for notifying the user that a dialog has opened. */
+  /* Subject for notifying the user that a dialog has opened. */
   get _afterOpen(): Subject<MdDialogRef<any>> {
     return this._parentDialog ? this._parentDialog._afterOpen : this._afterOpenAtThisLevel;
   }
 
-  /** Subject for notifying the user that all open dialogs have finished closing. */
+  /* Subject for notifying the user that all open dialogs have finished closing. */
   get _afterAllClosed(): Subject<void> {
     return this._parentDialog ?
       this._parentDialog._afterAllClosed : this._afterAllClosedAtThisLevel;
   }
 
-  /** Gets an observable that is notified when a dialog has been opened. */
+  /* Gets an observable that is notified when a dialog has been opened. */
   afterOpen: Observable<MdDialogRef<any>> = this._afterOpen.asObservable();
 
-  /** Gets an observable that is notified when all open dialog have finished closing. */
+  /* Gets an observable that is notified when all open dialog have finished closing. */
   afterAllClosed: Observable<void> = this._afterAllClosed.asObservable();
 
   constructor(
@@ -106,7 +106,7 @@ export class MdDialog {
     }
   }
 
-  /**
+  /*
    * Opens a modal dialog containing the given component.
    * @param componentOrTemplateRef Type of the component to load into the dialog,
    *     or a TemplateRef to instantiate as the dialog content.
@@ -133,7 +133,7 @@ export class MdDialog {
     return dialogRef;
   }
 
-  /**
+  /*
    * Closes all of the currently-open dialogs.
    */
   closeAll(): void {
@@ -148,7 +148,7 @@ export class MdDialog {
     }
   }
 
-  /**
+  /*
    * Creates the overlay into which the dialog will be loaded.
    * @param config The dialog configuration.
    * @returns A promise resolving to the OverlayRef for the created overlay.
@@ -158,7 +158,7 @@ export class MdDialog {
     return this._overlay.create(overlayState);
   }
 
-  /**
+  /*
    * Creates an overlay state from a dialog config.
    * @param dialogConfig The dialog configuration.
    * @returns The overlay configuration.
@@ -177,7 +177,7 @@ export class MdDialog {
     return overlayState;
   }
 
-  /**
+  /*
    * Attaches an MdDialogContainer to a dialog's already-created overlay.
    * @param overlay Reference to the dialog's underlying overlay.
    * @param config The dialog configuration.
@@ -191,7 +191,7 @@ export class MdDialog {
     return containerRef.instance;
   }
 
-  /**
+  /*
    * Attaches the user-provided component to the already-created MdDialogContainer.
    * @param componentOrTemplateRef The type of component being loaded into the dialog,
    *     or a TemplateRef to instantiate as the content.
@@ -235,7 +235,7 @@ export class MdDialog {
     return dialogRef;
   }
 
-  /**
+  /*
    * Creates a custom injector to be used inside the dialog. This allows a component loaded inside
    * of a dialog to close itself and, optionally, to return a value.
    * @param config Config object that is used to construct the dialog.
@@ -258,7 +258,7 @@ export class MdDialog {
     return new PortalInjector(userInjector || this._injector, injectionTokens);
   }
 
-  /**
+  /*
    * Removes a dialog from the array of open dialogs.
    * @param dialogRef Dialog to be removed.
    */
@@ -276,7 +276,7 @@ export class MdDialog {
     }
   }
 
-  /**
+  /*
    * Handles global key presses while there are open dialogs. Closes the
    * top dialog when the user presses escape.
    */
@@ -290,7 +290,7 @@ export class MdDialog {
   }
 }
 
-/**
+/*
  * Applies default options to the dialog config.
  * @param config Config to be modified.
  * @returns The new configuration object.

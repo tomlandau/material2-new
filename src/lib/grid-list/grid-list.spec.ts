@@ -260,7 +260,7 @@ function getStyle(el: DebugElement, prop: string): string {
   return getComputedStyle(el.nativeElement).getPropertyValue(prop);
 }
 
-/** Gets the `left` position of an element. */
+/* Gets the `left` position of an element. */
 function getComputedLeft(element: DebugElement): number {
   // While the other properties in this test use `getComputedStyle`, we use `getBoundingClientRect`
   // for left because iOS Safari doesn't support using `getComputedStyle` to get the calculated

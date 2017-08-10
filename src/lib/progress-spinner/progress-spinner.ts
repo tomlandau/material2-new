@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -23,21 +23,21 @@ import {CanColor, mixinColor} from '../core/common-behaviors/color';
 
 // TODO(josephperrott): Benchpress tests.
 
-/** A single degree in radians. */
+/* A single degree in radians. */
 const DEGREE_IN_RADIANS = Math.PI / 180;
-/** Duration of the indeterminate animation. */
+/* Duration of the indeterminate animation. */
 const DURATION_INDETERMINATE = 667;
-/** Duration of the indeterminate animation. */
+/* Duration of the indeterminate animation. */
 const DURATION_DETERMINATE = 225;
-/** Start animation value of the indeterminate animation */
+/* Start animation value of the indeterminate animation */
 const startIndeterminate = 3;
-/** End animation value of the indeterminate animation */
+/* End animation value of the indeterminate animation */
 const endIndeterminate = 80;
-/** Maximum angle for the arc. The angle can't be exactly 360, because the arc becomes hidden. */
+/* Maximum angle for the arc. The angle can't be exactly 360, because the arc becomes hidden. */
 const MAX_ANGLE = 359.99 / 100;
-/** Whether the user's browser supports requestAnimationFrame. */
+/* Whether the user's browser supports requestAnimationFrame. */
 const HAS_RAF = typeof requestAnimationFrame !== 'undefined';
-/** Default stroke width as a percentage of the viewBox. */
+/* Default stroke width as a percentage of the viewBox. */
 export const PROGRESS_SPINNER_STROKE_WIDTH = 10;
 
 export type ProgressSpinnerMode = 'determinate' | 'indeterminate';
@@ -46,7 +46,7 @@ type EasingFn = (currentTime: number, startValue: number,
                  changeInValue: number, duration: number) => number;
 
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -57,13 +57,13 @@ type EasingFn = (currentTime: number, startValue: number,
 export class MdProgressSpinnerCssMatStyler {}
 
 // Boilerplate for applying mixins to MdProgressSpinner.
-/** @docs-private */
+/* @docs-private */
 export class MdProgressSpinnerBase {
   constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
 export const _MdProgressSpinnerMixinBase = mixinColor(MdProgressSpinnerBase, 'primary');
 
-/**
+/*
  * <md-progress-spinner> component.
  */
 @Component({
@@ -82,22 +82,22 @@ export const _MdProgressSpinnerMixinBase = mixinColor(MdProgressSpinnerBase, 'pr
 export class MdProgressSpinner extends _MdProgressSpinnerMixinBase
     implements OnDestroy, CanColor {
 
-  /** The id of the last requested animation. */
+  /* The id of the last requested animation. */
   private _lastAnimationId: number = 0;
 
-  /** The id of the indeterminate interval. */
+  /* The id of the indeterminate interval. */
   private _interdeterminateInterval: number | null;
 
-  /** The SVG <path> node that is used to draw the circle. */
+  /* The SVG <path> node that is used to draw the circle. */
   @ViewChild('path') private _path: ElementRef;
 
   private _mode: ProgressSpinnerMode = 'determinate';
   private _value: number;
 
-  /** Stroke width of the progress spinner. By default uses 10px as stroke width. */
+  /* Stroke width of the progress spinner. By default uses 10px as stroke width. */
   @Input() strokeWidth: number = PROGRESS_SPINNER_STROKE_WIDTH;
 
-  /**
+  /*
    * Values for aria max and min are only defined as numbers when in a determinate mode.  We do this
    * because voiceover does not report the progress indicator as indeterminate if the aria min
    * and/or max value are number values.
@@ -110,11 +110,11 @@ export class MdProgressSpinner extends _MdProgressSpinnerMixinBase
     return this.mode == 'determinate' ? 100 : null;
   }
 
-  /** @docs-private */
+  /* @docs-private */
   get interdeterminateInterval() {
     return this._interdeterminateInterval;
   }
-  /** @docs-private */
+  /* @docs-private */
   set interdeterminateInterval(interval: number | null) {
     if (this._interdeterminateInterval) {
       clearInterval(this._interdeterminateInterval);
@@ -123,14 +123,14 @@ export class MdProgressSpinner extends _MdProgressSpinnerMixinBase
     this._interdeterminateInterval = interval;
   }
 
-  /**
+  /*
    * Clean up any animations that were running.
    */
   ngOnDestroy() {
     this._cleanupIndeterminateAnimation();
   }
 
-  /** Value of the progress circle. It is bound to the host as the attribute aria-valuenow. */
+  /* Value of the progress circle. It is bound to the host as the attribute aria-valuenow. */
   @Input()
   @HostBinding('attr.aria-valuenow')
   get value() {
@@ -148,7 +148,7 @@ export class MdProgressSpinner extends _MdProgressSpinnerMixinBase
     }
   }
 
-  /**
+  /*
    * Mode of the progress circle
    *
    * Input must be one of the values from ProgressMode, defaults to 'determinate'.
@@ -178,7 +178,7 @@ export class MdProgressSpinner extends _MdProgressSpinnerMixinBase
   }
 
 
-  /**
+  /*
    * Animates the circle from one percentage value to another.
    *
    * @param animateFrom The percentage of the circle filled starting the animation.
@@ -224,7 +224,7 @@ export class MdProgressSpinner extends _MdProgressSpinnerMixinBase
   }
 
 
-  /**
+  /*
    * Starts the indeterminate animation interval, if it is not already running.
    */
   private _startIndeterminateAnimation() {
@@ -250,14 +250,14 @@ export class MdProgressSpinner extends _MdProgressSpinnerMixinBase
   }
 
 
-  /**
+  /*
    * Removes interval, ending the animation.
    */
   private _cleanupIndeterminateAnimation() {
     this.interdeterminateInterval = null;
   }
 
-  /**
+  /*
    * Renders the arc onto the SVG element. Proxies `getArc` while setting the proper
    * DOM attribute on the `<path>`.
    */
@@ -270,7 +270,7 @@ export class MdProgressSpinner extends _MdProgressSpinnerMixinBase
 }
 
 
-/**
+/*
  * <md-spinner> component.
  *
  * This is a component definition to be used as a convenience reference to create an
@@ -297,17 +297,17 @@ export class MdSpinner extends MdProgressSpinner {
 }
 
 
-/**
+/*
  * Module functions.
  */
 
-/** Clamps a value to be between 0 and 100. */
+/* Clamps a value to be between 0 and 100. */
 function clamp(v: number) {
   return Math.max(0, Math.min(100, v));
 }
 
 
-/**
+/*
  * Converts Polar coordinates to Cartesian.
  */
 function polarToCartesian(radius: number, pathRadius: number, angleInDegrees: number) {
@@ -318,7 +318,7 @@ function polarToCartesian(radius: number, pathRadius: number, angleInDegrees: nu
 }
 
 
-/**
+/*
  * Easing function for linear animation.
  */
 function linearEase(currentTime: number, startValue: number,
@@ -327,7 +327,7 @@ function linearEase(currentTime: number, startValue: number,
 }
 
 
-/**
+/*
  * Easing function to match material design indeterminate animation.
  */
 function materialEase(currentTime: number, startValue: number,
@@ -340,7 +340,7 @@ function materialEase(currentTime: number, startValue: number,
 }
 
 
-/**
+/*
  * Determines the path value to define the arc.  Converting percentage values to to polar
  * coordinates on the circle, and then to cartesian coordinates in the viewport.
  *

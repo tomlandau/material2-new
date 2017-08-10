@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -15,13 +15,13 @@ import{
   AnimationTriggerMetadata,
 } from '@angular/animations';
 
-/**
+/*
  * Below are all the animations for the md-menu component.
  * Animation duration and timing values are based on AngularJS Material.
  */
 
 
-/**
+/*
  * This animation controls the menu panel's entry and exit from the page.
  *
  * When the menu panel is added to the DOM, it scales in and fades in its border.
@@ -49,7 +49,7 @@ export const transformMenu: AnimationTriggerMetadata = trigger('transformMenu', 
 ]);
 
 
-/**
+/*
  * This animation fades in the background color and content of the menu panel
  * after its containing element is scaled in.
  */

@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -8,22 +8,22 @@
 
 import {Injectable} from '@angular/core';
 
-/**
+/*
  * To modify the labels and text displayed, create a new instance of MdPaginatorIntl and
  * include it in a custom provider
  */
 @Injectable()
 export class MdPaginatorIntl {
-  /** A label for the page size selector. */
+  /* A label for the page size selector. */
   itemsPerPageLabel = 'Items per page:';
 
-  /** A label for the button that increments the current page. */
+  /* A label for the button that increments the current page. */
   nextPageLabel = 'Next page';
 
-  /** A label for the button that decrements the current page. */
+  /* A label for the button that decrements the current page. */
   previousPageLabel = 'Previous page';
 
-  /** A label for the range of items within the current page and the length of the whole list. */
+  /* A label for the range of items within the current page and the length of the whole list. */
   getRangeLabel = (page: number, pageSize: number, length: number) => {
     if (length == 0 || pageSize == 0) { return `0 of ${length}`; }
 

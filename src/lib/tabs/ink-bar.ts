@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -9,7 +9,7 @@
 import {Directive, Renderer2, ElementRef, NgZone} from '@angular/core';
 
 
-/**
+/*
  * The ink-bar is used to display and animate the line underneath the current active tab label.
  * @docs-private
  */
@@ -25,7 +25,7 @@ export class MdInkBar {
     private _elementRef: ElementRef,
     private _ngZone: NgZone) {}
 
-  /**
+  /*
    * Calculates the styles from the provided element in order to align the ink-bar to that element.
    * Shows the ink bar if previously set as hidden.
    * @param element
@@ -42,17 +42,17 @@ export class MdInkBar {
     }
   }
 
-  /** Shows the ink bar. */
+  /* Shows the ink bar. */
   show(): void {
     this._renderer.setStyle(this._elementRef.nativeElement, 'visibility', 'visible');
   }
 
-  /** Hides the ink bar. */
+  /* Hides the ink bar. */
   hide(): void {
     this._renderer.setStyle(this._elementRef.nativeElement, 'visibility', 'hidden');
   }
 
-  /**
+  /*
    * Sets the proper styles to the ink bar element.
    * @param element
    */

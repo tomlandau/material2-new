@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -34,11 +34,11 @@ import {DateAdapter} from '../core/datetime/index';
 import {MdDatepickerIntl} from './datepicker-intl';
 import {createMissingDateImplError} from './datepicker-errors';
 import {MD_DATE_FORMATS, MdDateFormats} from '../core/datetime/date-formats';
-import {MATERIAL_COMPATIBILITY_MODE} from '../core';
+import {MATERIAL_COMPATIBILITY_MODE} from '../core/compatibility/compatibility';
 import {first} from '../core/rxjs/index';
 
 
-/**
+/*
  * A calendar that is used as part of the datepicker.
  * @docs-private
  */
@@ -54,28 +54,28 @@ import {first} from '../core/rxjs/index';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MdCalendar<D> implements AfterContentInit {
-  /** A date representing the period (month or year) to start the calendar in. */
+  /* A date representing the period (month or year) to start the calendar in. */
   @Input() startAt: D;
 
-  /** Whether the calendar should be started in month or year view. */
+  /* Whether the calendar should be started in month or year view. */
   @Input() startView: 'month' | 'year' = 'month';
 
-  /** The currently selected date. */
+  /* The currently selected date. */
   @Input() selected: D;
 
-  /** The minimum selectable date. */
+  /* The minimum selectable date. */
   @Input() minDate: D;
 
-  /** The maximum selectable date. */
+  /* The maximum selectable date. */
   @Input() maxDate: D;
 
-  /** A function used to filter which dates are selectable. */
+  /* A function used to filter which dates are selectable. */
   @Input() dateFilter: (date: D) => boolean;
 
-  /** Emits when the currently selected date changes. */
+  /* Emits when the currently selected date changes. */
   @Output() selectedChange = new EventEmitter<D>();
 
-  /** Date filter for the month and year views. */
+  /* Date filter for the month and year views. */
   _dateFilterForViews = (date: D) => {
     return !!date &&
         (!this.dateFilter || this.dateFilter(date)) &&
@@ -83,7 +83,7 @@ export class MdCalendar<D> implements AfterContentInit {
         (!this.maxDate || this._dateAdapter.compareDate(date, this.maxDate) <= 0);
   }
 
-  /**
+  /*
    * The current active date. This determines which time period is shown and which date is
    * highlighted when using keyboard navigation.
    */
@@ -93,10 +93,10 @@ export class MdCalendar<D> implements AfterContentInit {
   }
   private _clampedActiveDate: D;
 
-  /** Whether the calendar is in month view. */
+  /* Whether the calendar is in month view. */
   _monthView: boolean;
 
-  /** The label for the current calendar view. */
+  /* The label for the current calendar view. */
   get _periodButtonText(): string {
     return this._monthView ?
         this._dateAdapter.format(this._activeDate, this._dateFormats.display.monthYearLabel)
@@ -108,12 +108,12 @@ export class MdCalendar<D> implements AfterContentInit {
     return this._monthView ? this._intl.switchToYearViewLabel : this._intl.switchToMonthViewLabel;
   }
 
-  /** The label for the the previous button. */
+  /* The label for the the previous button. */
   get _prevButtonLabel(): string {
     return this._monthView ? this._intl.prevMonthLabel : this._intl.prevYearLabel;
   }
 
-  /** The label for the the next button. */
+  /* The label for the the next button. */
   get _nextButtonLabel(): string {
     return this._monthView ? this._intl.nextMonthLabel : this._intl.nextYearLabel;
   }
@@ -138,39 +138,39 @@ export class MdCalendar<D> implements AfterContentInit {
     this._monthView = this.startView != 'year';
   }
 
-  /** Handles date selection in the month view. */
+  /* Handles date selection in the month view. */
   _dateSelected(date: D): void {
     if (!this._dateAdapter.sameDate(date, this.selected)) {
       this.selectedChange.emit(date);
     }
   }
 
-  /** Handles month selection in the year view. */
+  /* Handles month selection in the year view. */
   _monthSelected(month: D): void {
     this._activeDate = month;
     this._monthView = true;
   }
 
-  /** Handles user clicks on the period label. */
+  /* Handles user clicks on the period label. */
   _currentPeriodClicked(): void {
     this._monthView = !this._monthView;
   }
 
-  /** Handles user clicks on the previous button. */
+  /* Handles user clicks on the previous button. */
   _previousClicked(): void {
     this._activeDate = this._monthView ?
         this._dateAdapter.addCalendarMonths(this._activeDate, -1) :
         this._dateAdapter.addCalendarYears(this._activeDate, -1);
   }
 
-  /** Handles user clicks on the next button. */
+  /* Handles user clicks on the next button. */
   _nextClicked(): void {
     this._activeDate = this._monthView ?
         this._dateAdapter.addCalendarMonths(this._activeDate, 1) :
         this._dateAdapter.addCalendarYears(this._activeDate, 1);
   }
 
-  /** Whether the previous period button is enabled. */
+  /* Whether the previous period button is enabled. */
   _previousEnabled(): boolean {
     if (!this.minDate) {
       return true;
@@ -178,12 +178,12 @@ export class MdCalendar<D> implements AfterContentInit {
     return !this.minDate || !this._isSameView(this._activeDate, this.minDate);
   }
 
-  /** Whether the next period button is enabled. */
+  /* Whether the next period button is enabled. */
   _nextEnabled(): boolean {
     return !this.maxDate || !this._isSameView(this._activeDate, this.maxDate);
   }
 
-  /** Handles keydown events on the calendar body. */
+  /* Handles keydown events on the calendar body. */
   _handleCalendarBodyKeydown(event: KeyboardEvent): void {
     // TODO(mmalerba): We currently allow keyboard navigation to disabled dates, but just prevent
     // disabled ones from being selected. This may not be ideal, we should look into whether
@@ -195,14 +195,14 @@ export class MdCalendar<D> implements AfterContentInit {
     }
   }
 
-  /** Focuses the active cell after the microtask queue is empty. */
+  /* Focuses the active cell after the microtask queue is empty. */
   _focusActiveCell() {
     this._ngZone.runOutsideAngular(() => first.call(this._ngZone.onStable).subscribe(() => {
       this._elementRef.nativeElement.querySelector('.mat-calendar-body-active').focus();
     }));
   }
 
-  /** Whether the two dates represent the same view in the current view mode (month or year). */
+  /* Whether the two dates represent the same view in the current view mode (month or year). */
   private _isSameView(date1: D, date2: D): boolean {
     return this._monthView ?
         this._dateAdapter.getYear(date1) == this._dateAdapter.getYear(date2) &&
@@ -210,7 +210,7 @@ export class MdCalendar<D> implements AfterContentInit {
         this._dateAdapter.getYear(date1) == this._dateAdapter.getYear(date2);
   }
 
-  /** Handles keydown events on the calendar body when calendar is in month view. */
+  /* Handles keydown events on the calendar body when calendar is in month view. */
   private _handleCalendarBodyKeydownInMonthView(event: KeyboardEvent): void {
     switch (event.keyCode) {
       case LEFT_ARROW:
@@ -261,7 +261,7 @@ export class MdCalendar<D> implements AfterContentInit {
     event.preventDefault();
   }
 
-  /** Handles keydown events on the calendar body when calendar is in year view. */
+  /* Handles keydown events on the calendar body when calendar is in year view. */
   private _handleCalendarBodyKeydownInYearView(event: KeyboardEvent): void {
     switch (event.keyCode) {
       case LEFT_ARROW:
@@ -305,7 +305,7 @@ export class MdCalendar<D> implements AfterContentInit {
     event.preventDefault();
   }
 
-  /**
+  /*
    * Determine the date for the month that comes before the given month in the same column in the
    * calendar table.
    */
@@ -317,7 +317,7 @@ export class MdCalendar<D> implements AfterContentInit {
     return this._dateAdapter.addCalendarMonths(date, increment);
   }
 
-  /**
+  /*
    * Determine the date for the month that comes after the given month in the same column in the
    * calendar table.
    */

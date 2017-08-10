@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -9,7 +9,7 @@
 import {MdGridTile} from './grid-tile';
 import {TileCoordinator} from './tile-coordinator';
 
-/**
+/*
  * Sets the style properties for an individual tile, given the position calculated by the
  * Tile Coordinator.
  * @docs-private
@@ -21,7 +21,7 @@ export abstract class TileStyler {
   _cols: number;
   _direction: string;
 
-  /**
+  /*
    * Adds grid-list layout info once it is available. Cannot be processed in the constructor
    * because these properties haven't been calculated by that point.
    *
@@ -38,7 +38,7 @@ export abstract class TileStyler {
     this._direction = direction;
   }
 
-  /**
+  /*
    * Computes the amount of space a single 1x1 tile would take up (width or height).
    * Used as a basis for other calculations.
    * @param sizePercent Percent of the total grid-list space that one 1x1 tile would take up.
@@ -55,7 +55,7 @@ export abstract class TileStyler {
   }
 
 
-  /**
+  /*
    * Gets The horizontal or vertical position of a tile, e.g., the 'top' or 'left' property value.
    * @param offset Number of tiles that have already been rendered in the row/column.
    * @param baseSize Base size of a 1x1 tile (as computed in getBaseTileSize).
@@ -68,7 +68,7 @@ export abstract class TileStyler {
   }
 
 
-  /**
+  /*
    * Gets the actual size of a tile, e.g., width or height, taking rowspan or colspan into account.
    * @param baseSize Base size of a 1x1 tile (as computed in getBaseTileSize).
    * @param span The tile's rowspan or colspan.
@@ -79,7 +79,7 @@ export abstract class TileStyler {
   }
 
 
-  /**
+  /*
    * Sets the style properties to be applied to a tile for the given row and column index.
    * @param tile Tile to which to apply the styling.
    * @param rowIndex Index of the tile's row.
@@ -97,7 +97,7 @@ export abstract class TileStyler {
     this.setRowStyles(tile, rowIndex, percentWidthPerTile, gutterWidthFractionPerTile);
   }
 
-  /** Sets the horizontal placement of the tile in the list. */
+  /* Sets the horizontal placement of the tile in the list. */
   setColStyles(tile: MdGridTile, colIndex: number, percentWidth: number,
                gutterWidth: number) {
     // Base horizontal size of a column.
@@ -110,14 +110,14 @@ export abstract class TileStyler {
     tile._setStyle('width', calc(this.getTileSize(baseTileWidth, tile.colspan)));
   }
 
-  /**
+  /*
    * Calculates the total size taken up by gutters across one axis of a list.
    */
   getGutterSpan(): string {
     return `${this._gutterSize} * (${this._rowspan} - 1)`;
   }
 
-  /**
+  /*
    * Calculates the total size taken up by tiles across one axis of a list.
    * @param tileHeight Height of the tile.
    */
@@ -125,7 +125,7 @@ export abstract class TileStyler {
     return `${this._rowspan} * ${this.getTileSize(tileHeight, 1)}`;
   }
 
-  /**
+  /*
    * Sets the vertical placement of the tile in the list.
    * This method will be implemented by each type of TileStyler.
    * @docs-private
@@ -133,7 +133,7 @@ export abstract class TileStyler {
   abstract setRowStyles(tile: MdGridTile, rowIndex: number, percentWidth: number,
                         gutterWidth: number);
 
-  /**
+  /*
    * Calculates the computed height and returns the correct style property to set.
    * This method can be implemented by each type of TileStyler.
    * @docs-private
@@ -142,7 +142,7 @@ export abstract class TileStyler {
 }
 
 
-/**
+/*
  * This type of styler is instantiated when the user passes in a fixed row height.
  * Example <md-grid-list cols="3" rowHeight="100px">
  * @docs-private
@@ -169,14 +169,14 @@ export class FixedTileStyler extends TileStyler {
 }
 
 
-/**
+/*
  * This type of styler is instantiated when the user passes in a width:height ratio
  * for the row height.  Example <md-grid-list cols="3" rowHeight="3:1">
  * @docs-private
  */
 export class RatioTileStyler extends TileStyler {
 
-  /** Ratio width:height given by user to determine row height.*/
+  /* Ratio width:height given by user to determine row height.*/
   rowHeightRatio: number;
   baseTileHeight: string;
 
@@ -214,7 +214,7 @@ export class RatioTileStyler extends TileStyler {
   }
 }
 
-/**
+/*
  * This type of styler is instantiated when the user selects a "fit" row height mode.
  * In other words, the row height will reflect the total height of the container divided
  * by the number of rows.  Example <md-grid-list cols="3" rowHeight="fit">
@@ -240,11 +240,11 @@ export class FitTileStyler extends TileStyler {
 }
 
 
-/** Wraps a CSS string in a calc function */
+/* Wraps a CSS string in a calc function */
 function calc(exp: string): string { return `calc(${exp})`; }
 
 
-/** Appends pixels to a CSS string if no units are given. */
+/* Appends pixels to a CSS string if no units are given. */
 function normalizeUnits(value: string): string {
   return (value.match(/px|em|rem/)) ? value : value + 'px';
 }

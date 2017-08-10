@@ -1,0 +1,1719 @@
+"form-controls/autocomplete": {
+        "files": [
+            {
+                "relativePath": "src/lib/autocomplete/_autocomplete-theme.scss",
+                "test": false,
+                "name": "_autocomplete-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/autocomplete/autocomplete-trigger.ts",
+                "test": false,
+                "name": "autocomplete-trigger.ts"
+            },
+            {
+                "relativePath": "src/lib/autocomplete/autocomplete.html",
+                "test": false,
+                "name": "autocomplete.html"
+            },
+            {
+                "relativePath": "src/lib/autocomplete/autocomplete.md",
+                "test": false,
+                "name": "autocomplete.md"
+            },
+            {
+                "relativePath": "src/lib/autocomplete/autocomplete.scss",
+                "test": false,
+                "name": "autocomplete.scss"
+            },
+            {
+                "relativePath": "src/lib/autocomplete/autocomplete.spec.ts",
+                "test": true,
+                "name": "autocomplete.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/autocomplete/autocomplete.ts",
+                "test": false,
+                "name": "autocomplete.ts"
+            },
+            {
+                "relativePath": "src/lib/autocomplete/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/autocomplete/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/autocomplete/index.ts"
+    },
+    "buttons-indicators-icons/button-toggle": {
+        "files": [
+            {
+                "relativePath": "src/lib/button-toggle/_button-toggle-theme.scss",
+                "test": false,
+                "name": "_button-toggle-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/button-toggle/button-toggle.html",
+                "test": false,
+                "name": "button-toggle.html"
+            },
+            {
+                "relativePath": "src/lib/button-toggle/button-toggle.md",
+                "test": false,
+                "name": "button-toggle.md"
+            },
+            {
+                "relativePath": "src/lib/button-toggle/button-toggle.scss",
+                "test": false,
+                "name": "button-toggle.scss"
+            },
+            {
+                "relativePath": "src/lib/button-toggle/button-toggle.spec.ts",
+                "test": true,
+                "name": "button-toggle.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/button-toggle/button-toggle.ts",
+                "test": false,
+                "name": "button-toggle.ts"
+            },
+            {
+                "relativePath": "src/lib/button-toggle/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/button-toggle/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/button-toggle/index.ts"
+    },
+    "buttons-indicators-icons/button": {
+        "files": [
+            {
+                "relativePath": "src/lib/button/_button-base.scss",
+                "test": false,
+                "name": "_button-base.scss"
+            },
+            {
+                "relativePath": "src/lib/button/_button-theme.scss",
+                "test": false,
+                "name": "_button-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/button/button.html",
+                "test": false,
+                "name": "button.html"
+            },
+            {
+                "relativePath": "src/lib/button/button.md",
+                "test": false,
+                "name": "button.md"
+            },
+            {
+                "relativePath": "src/lib/button/button.scss",
+                "test": false,
+                "name": "button.scss"
+            },
+            {
+                "relativePath": "src/lib/button/button.spec.ts",
+                "test": true,
+                "name": "button.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/button/button.ts",
+                "test": false,
+                "name": "button.ts"
+            },
+            {
+                "relativePath": "src/lib/button/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/button/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/button/index.ts"
+    },
+    "layout/card": {
+        "files": [
+            {
+                "relativePath": "src/lib/card/_card-theme.scss",
+                "test": false,
+                "name": "_card-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/card/card-header.html",
+                "test": false,
+                "name": "card-header.html"
+            },
+            {
+                "relativePath": "src/lib/card/card-title-group.html",
+                "test": false,
+                "name": "card-title-group.html"
+            },
+            {
+                "relativePath": "src/lib/card/card.html",
+                "test": false,
+                "name": "card.html"
+            },
+            {
+                "relativePath": "src/lib/card/card.md",
+                "test": false,
+                "name": "card.md"
+            },
+            {
+                "relativePath": "src/lib/card/card.scss",
+                "test": false,
+                "name": "card.scss"
+            },
+            {
+                "relativePath": "src/lib/card/card.ts",
+                "test": false,
+                "name": "card.ts"
+            },
+            {
+                "relativePath": "src/lib/card/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/card/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/card/index.ts"
+    },
+    "form-controls/checkbox": {
+        "files": [
+            {
+                "relativePath": "src/lib/checkbox/_checkbox-theme.scss",
+                "test": false,
+                "name": "_checkbox-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/checkbox/checkbox.html",
+                "test": false,
+                "name": "checkbox.html"
+            },
+            {
+                "relativePath": "src/lib/checkbox/checkbox.md",
+                "test": false,
+                "name": "checkbox.md"
+            },
+            {
+                "relativePath": "src/lib/checkbox/checkbox.scss",
+                "test": false,
+                "name": "checkbox.scss"
+            },
+            {
+                "relativePath": "src/lib/checkbox/checkbox.spec.ts",
+                "test": true,
+                "name": "checkbox.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/checkbox/checkbox.ts",
+                "test": false,
+                "name": "checkbox.ts"
+            },
+            {
+                "relativePath": "src/lib/checkbox/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/checkbox/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/checkbox/index.ts"
+    },
+    "buttons-indicators-icons/chips": {
+        "files": [
+            {
+                "relativePath": "src/lib/chips/_chips-theme.scss",
+                "test": false,
+                "name": "_chips-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/chips/chip-input.spec.ts",
+                "test": true,
+                "name": "chip-input.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/chips/chip-input.ts",
+                "test": false,
+                "name": "chip-input.ts"
+            },
+            {
+                "relativePath": "src/lib/chips/chip-list.spec.ts",
+                "test": true,
+                "name": "chip-list.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/chips/chip-list.ts",
+                "test": false,
+                "name": "chip-list.ts"
+            },
+            {
+                "relativePath": "src/lib/chips/chip-remove.spec.ts",
+                "test": true,
+                "name": "chip-remove.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/chips/chip.spec.ts",
+                "test": true,
+                "name": "chip.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/chips/chip.ts",
+                "test": false,
+                "name": "chip.ts"
+            },
+            {
+                "relativePath": "src/lib/chips/chips.md",
+                "test": false,
+                "name": "chips.md"
+            },
+            {
+                "relativePath": "src/lib/chips/chips.scss",
+                "test": false,
+                "name": "chips.scss"
+            },
+            {
+                "relativePath": "src/lib/chips/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/chips/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/chips/index.ts"
+    },
+    "form-controls/datepicker": {
+        "files": [
+            {
+                "relativePath": "src/lib/datepicker/_datepicker-theme.scss",
+                "test": false,
+                "name": "_datepicker-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/datepicker/calendar-body.html",
+                "test": false,
+                "name": "calendar-body.html"
+            },
+            {
+                "relativePath": "src/lib/datepicker/calendar-body.scss",
+                "test": false,
+                "name": "calendar-body.scss"
+            },
+            {
+                "relativePath": "src/lib/datepicker/calendar-body.spec.ts",
+                "test": true,
+                "name": "calendar-body.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/calendar-body.ts",
+                "test": false,
+                "name": "calendar-body.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/calendar.html",
+                "test": false,
+                "name": "calendar.html"
+            },
+            {
+                "relativePath": "src/lib/datepicker/calendar.scss",
+                "test": false,
+                "name": "calendar.scss"
+            },
+            {
+                "relativePath": "src/lib/datepicker/calendar.spec.ts",
+                "test": true,
+                "name": "calendar.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/calendar.ts",
+                "test": false,
+                "name": "calendar.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/datepicker-content.html",
+                "test": false,
+                "name": "datepicker-content.html"
+            },
+            {
+                "relativePath": "src/lib/datepicker/datepicker-content.scss",
+                "test": false,
+                "name": "datepicker-content.scss"
+            },
+            {
+                "relativePath": "src/lib/datepicker/datepicker-errors.ts",
+                "test": false,
+                "name": "datepicker-errors.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/datepicker-input.ts",
+                "test": false,
+                "name": "datepicker-input.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/datepicker-intl.ts",
+                "test": false,
+                "name": "datepicker-intl.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/datepicker-toggle.scss",
+                "test": false,
+                "name": "datepicker-toggle.scss"
+            },
+            {
+                "relativePath": "src/lib/datepicker/datepicker-toggle.ts",
+                "test": false,
+                "name": "datepicker-toggle.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/datepicker.md",
+                "test": false,
+                "name": "datepicker.md"
+            },
+            {
+                "relativePath": "src/lib/datepicker/datepicker.spec.ts",
+                "test": true,
+                "name": "datepicker.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/datepicker.ts",
+                "test": false,
+                "name": "datepicker.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/month-view.html",
+                "test": false,
+                "name": "month-view.html"
+            },
+            {
+                "relativePath": "src/lib/datepicker/month-view.spec.ts",
+                "test": true,
+                "name": "month-view.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/month-view.ts",
+                "test": false,
+                "name": "month-view.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/lib/datepicker/year-view.html",
+                "test": false,
+                "name": "year-view.html"
+            },
+            {
+                "relativePath": "src/lib/datepicker/year-view.spec.ts",
+                "test": true,
+                "name": "year-view.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/datepicker/year-view.ts",
+                "test": false,
+                "name": "year-view.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/datepicker/index.ts"
+    },
+    "popups-and-modals/dialog": {
+        "files": [
+            {
+                "relativePath": "src/lib/dialog/_dialog-theme.scss",
+                "test": false,
+                "name": "_dialog-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/dialog/dialog-config.ts",
+                "test": false,
+                "name": "dialog-config.ts"
+            },
+            {
+                "relativePath": "src/lib/dialog/dialog-container.html",
+                "test": false,
+                "name": "dialog-container.html"
+            },
+            {
+                "relativePath": "src/lib/dialog/dialog-container.ts",
+                "test": false,
+                "name": "dialog-container.ts"
+            },
+            {
+                "relativePath": "src/lib/dialog/dialog-content-directives.ts",
+                "test": false,
+                "name": "dialog-content-directives.ts"
+            },
+            {
+                "relativePath": "src/lib/dialog/dialog-ref.ts",
+                "test": false,
+                "name": "dialog-ref.ts"
+            },
+            {
+                "relativePath": "src/lib/dialog/dialog.md",
+                "test": false,
+                "name": "dialog.md"
+            },
+            {
+                "relativePath": "src/lib/dialog/dialog.scss",
+                "test": false,
+                "name": "dialog.scss"
+            },
+            {
+                "relativePath": "src/lib/dialog/dialog.spec.ts",
+                "test": true,
+                "name": "dialog.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/dialog/dialog.ts",
+                "test": false,
+                "name": "dialog.ts"
+            },
+            {
+                "relativePath": "src/lib/dialog/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/dialog/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/dialog/index.ts"
+    },
+    "layout/expansion": {
+        "files": [
+            {
+                "relativePath": "src/lib/expansion/_expansion-theme.scss",
+                "test": false,
+                "name": "_expansion-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/expansion/accordion-item.ts",
+                "test": false,
+                "name": "accordion-item.ts"
+            },
+            {
+                "relativePath": "src/lib/expansion/accordion.spec.ts",
+                "test": true,
+                "name": "accordion.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/expansion/accordion.ts",
+                "test": false,
+                "name": "accordion.ts"
+            },
+            {
+                "relativePath": "src/lib/expansion/expansion-panel-header.html",
+                "test": false,
+                "name": "expansion-panel-header.html"
+            },
+            {
+                "relativePath": "src/lib/expansion/expansion-panel-header.scss",
+                "test": false,
+                "name": "expansion-panel-header.scss"
+            },
+            {
+                "relativePath": "src/lib/expansion/expansion-panel-header.ts",
+                "test": false,
+                "name": "expansion-panel-header.ts"
+            },
+            {
+                "relativePath": "src/lib/expansion/expansion-panel.html",
+                "test": false,
+                "name": "expansion-panel.html"
+            },
+            {
+                "relativePath": "src/lib/expansion/expansion-panel.scss",
+                "test": false,
+                "name": "expansion-panel.scss"
+            },
+            {
+                "relativePath": "src/lib/expansion/expansion-panel.ts",
+                "test": false,
+                "name": "expansion-panel.ts"
+            },
+            {
+                "relativePath": "src/lib/expansion/expansion.spec.ts",
+                "test": true,
+                "name": "expansion.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/expansion/index.ts",
+                "test": false,
+                "name": "index.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/expansion/index.ts"
+    },
+    "layout/grid-list": {
+        "files": [
+            {
+                "relativePath": "src/lib/grid-list/_grid-list-theme.scss",
+                "test": false,
+                "name": "_grid-list-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/grid-list/grid-list-measure.ts",
+                "test": false,
+                "name": "grid-list-measure.ts"
+            },
+            {
+                "relativePath": "src/lib/grid-list/grid-list.html",
+                "test": false,
+                "name": "grid-list.html"
+            },
+            {
+                "relativePath": "src/lib/grid-list/grid-list.md",
+                "test": false,
+                "name": "grid-list.md"
+            },
+            {
+                "relativePath": "src/lib/grid-list/grid-list.scss",
+                "test": false,
+                "name": "grid-list.scss"
+            },
+            {
+                "relativePath": "src/lib/grid-list/grid-list.spec.ts",
+                "test": true,
+                "name": "grid-list.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/grid-list/grid-list.ts",
+                "test": false,
+                "name": "grid-list.ts"
+            },
+            {
+                "relativePath": "src/lib/grid-list/grid-tile-text.html",
+                "test": false,
+                "name": "grid-tile-text.html"
+            },
+            {
+                "relativePath": "src/lib/grid-list/grid-tile.html",
+                "test": false,
+                "name": "grid-tile.html"
+            },
+            {
+                "relativePath": "src/lib/grid-list/grid-tile.ts",
+                "test": false,
+                "name": "grid-tile.ts"
+            },
+            {
+                "relativePath": "src/lib/grid-list/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/grid-list/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/lib/grid-list/tile-coordinator.ts",
+                "test": false,
+                "name": "tile-coordinator.ts"
+            },
+            {
+                "relativePath": "src/lib/grid-list/tile-styler.ts",
+                "test": false,
+                "name": "tile-styler.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/grid-list/index.ts"
+    },
+    "buttons-indicators-icons/icon": {
+        "files": [
+            {
+                "relativePath": "src/lib/icon/_icon-theme.scss",
+                "test": false,
+                "name": "_icon-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/icon/fake-svgs.ts",
+                "test": false,
+                "name": "fake-svgs.ts"
+            },
+            {
+                "relativePath": "src/lib/icon/icon-registry.ts",
+                "test": false,
+                "name": "icon-registry.ts"
+            },
+            {
+                "relativePath": "src/lib/icon/icon.md",
+                "test": false,
+                "name": "icon.md"
+            },
+            {
+                "relativePath": "src/lib/icon/icon.scss",
+                "test": false,
+                "name": "icon.scss"
+            },
+            {
+                "relativePath": "src/lib/icon/icon.spec.ts",
+                "test": true,
+                "name": "icon.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/icon/icon.ts",
+                "test": false,
+                "name": "icon.ts"
+            },
+            {
+                "relativePath": "src/lib/icon/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/icon/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/icon/index.ts"
+    },
+    "form-controls/input": {
+        "files": [
+            {
+                "relativePath": "src/lib/input/_input-theme.scss",
+                "test": false,
+                "name": "_input-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/input/autosize.spec.ts",
+                "test": true,
+                "name": "autosize.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/input/autosize.ts",
+                "test": false,
+                "name": "autosize.ts"
+            },
+            {
+                "relativePath": "src/lib/input/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/input/input-container-errors.ts",
+                "test": false,
+                "name": "input-container-errors.ts"
+            },
+            {
+                "relativePath": "src/lib/input/input-container.html",
+                "test": false,
+                "name": "input-container.html"
+            },
+            {
+                "relativePath": "src/lib/input/input-container.scss",
+                "test": false,
+                "name": "input-container.scss"
+            },
+            {
+                "relativePath": "src/lib/input/input-container.spec.ts",
+                "test": true,
+                "name": "input-container.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/input/input-container.ts",
+                "test": false,
+                "name": "input-container.ts"
+            },
+            {
+                "relativePath": "src/lib/input/input.md",
+                "test": false,
+                "name": "input.md"
+            },
+            {
+                "relativePath": "src/lib/input/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/input/index.ts"
+    },
+    "layout/list": {
+        "files": [
+            {
+                "relativePath": "src/lib/list/_list-theme.scss",
+                "test": false,
+                "name": "_list-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/list/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/list/list-item.html",
+                "test": false,
+                "name": "list-item.html"
+            },
+            {
+                "relativePath": "src/lib/list/list.md",
+                "test": false,
+                "name": "list.md"
+            },
+            {
+                "relativePath": "src/lib/list/list.scss",
+                "test": false,
+                "name": "list.scss"
+            },
+            {
+                "relativePath": "src/lib/list/list.spec.ts",
+                "test": true,
+                "name": "list.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/list/list.ts",
+                "test": false,
+                "name": "list.ts"
+            },
+            {
+                "relativePath": "src/lib/list/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/list/index.ts"
+    },
+    "navigation/menu": {
+        "files": [
+            {
+                "relativePath": "src/lib/menu/_menu-theme.scss",
+                "test": false,
+                "name": "_menu-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/menu/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/menu/menu-animations.ts",
+                "test": false,
+                "name": "menu-animations.ts"
+            },
+            {
+                "relativePath": "src/lib/menu/menu-directive.ts",
+                "test": false,
+                "name": "menu-directive.ts"
+            },
+            {
+                "relativePath": "src/lib/menu/menu-errors.ts",
+                "test": false,
+                "name": "menu-errors.ts"
+            },
+            {
+                "relativePath": "src/lib/menu/menu-item.html",
+                "test": false,
+                "name": "menu-item.html"
+            },
+            {
+                "relativePath": "src/lib/menu/menu-item.ts",
+                "test": false,
+                "name": "menu-item.ts"
+            },
+            {
+                "relativePath": "src/lib/menu/menu-panel.ts",
+                "test": false,
+                "name": "menu-panel.ts"
+            },
+            {
+                "relativePath": "src/lib/menu/menu-positions.ts",
+                "test": false,
+                "name": "menu-positions.ts"
+            },
+            {
+                "relativePath": "src/lib/menu/menu-trigger.ts",
+                "test": false,
+                "name": "menu-trigger.ts"
+            },
+            {
+                "relativePath": "src/lib/menu/menu.html",
+                "test": false,
+                "name": "menu.html"
+            },
+            {
+                "relativePath": "src/lib/menu/menu.md",
+                "test": false,
+                "name": "menu.md"
+            },
+            {
+                "relativePath": "src/lib/menu/menu.scss",
+                "test": false,
+                "name": "menu.scss"
+            },
+            {
+                "relativePath": "src/lib/menu/menu.spec.ts",
+                "test": true,
+                "name": "menu.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/menu/menu.ts",
+                "test": false,
+                "name": "menu.ts"
+            },
+            {
+                "relativePath": "src/lib/menu/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/menu/index.ts"
+    },
+    "data-table/paginator": {
+        "files": [
+            {
+                "relativePath": "src/lib/paginator/_paginator-theme.scss",
+                "test": false,
+                "name": "_paginator-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/paginator/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/paginator/paginator-intl.ts",
+                "test": false,
+                "name": "paginator-intl.ts"
+            },
+            {
+                "relativePath": "src/lib/paginator/paginator.html",
+                "test": false,
+                "name": "paginator.html"
+            },
+            {
+                "relativePath": "src/lib/paginator/paginator.md",
+                "test": false,
+                "name": "paginator.md"
+            },
+            {
+                "relativePath": "src/lib/paginator/paginator.scss",
+                "test": false,
+                "name": "paginator.scss"
+            },
+            {
+                "relativePath": "src/lib/paginator/paginator.spec.ts",
+                "test": true,
+                "name": "paginator.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/paginator/paginator.ts",
+                "test": false,
+                "name": "paginator.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/paginator/index.ts"
+    },
+    "buttons-indicators-icons/progress-bar": {
+        "files": [
+            {
+                "relativePath": "src/lib/progress-bar/_progress-bar-theme.scss",
+                "test": false,
+                "name": "_progress-bar-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/progress-bar/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/progress-bar/progress-bar.html",
+                "test": false,
+                "name": "progress-bar.html"
+            },
+            {
+                "relativePath": "src/lib/progress-bar/progress-bar.md",
+                "test": false,
+                "name": "progress-bar.md"
+            },
+            {
+                "relativePath": "src/lib/progress-bar/progress-bar.scss",
+                "test": false,
+                "name": "progress-bar.scss"
+            },
+            {
+                "relativePath": "src/lib/progress-bar/progress-bar.spec.ts",
+                "test": true,
+                "name": "progress-bar.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/progress-bar/progress-bar.ts",
+                "test": false,
+                "name": "progress-bar.ts"
+            },
+            {
+                "relativePath": "src/lib/progress-bar/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/progress-bar/index.ts"
+    },
+    "buttons-indicators-icons/progress-spinner": {
+        "files": [
+            {
+                "relativePath": "src/lib/progress-spinner/_progress-spinner-theme.scss",
+                "test": false,
+                "name": "_progress-spinner-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/progress-spinner/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/progress-spinner/progress-spinner.html",
+                "test": false,
+                "name": "progress-spinner.html"
+            },
+            {
+                "relativePath": "src/lib/progress-spinner/progress-spinner.md",
+                "test": false,
+                "name": "progress-spinner.md"
+            },
+            {
+                "relativePath": "src/lib/progress-spinner/progress-spinner.scss",
+                "test": false,
+                "name": "progress-spinner.scss"
+            },
+            {
+                "relativePath": "src/lib/progress-spinner/progress-spinner.spec.ts",
+                "test": true,
+                "name": "progress-spinner.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/progress-spinner/progress-spinner.ts",
+                "test": false,
+                "name": "progress-spinner.ts"
+            },
+            {
+                "relativePath": "src/lib/progress-spinner/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/progress-spinner/index.ts"
+    },
+    "form-controls/radio": {
+        "files": [
+            {
+                "relativePath": "src/lib/radio/_radio-theme.scss",
+                "test": false,
+                "name": "_radio-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/radio/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/radio/radio.html",
+                "test": false,
+                "name": "radio.html"
+            },
+            {
+                "relativePath": "src/lib/radio/radio.md",
+                "test": false,
+                "name": "radio.md"
+            },
+            {
+                "relativePath": "src/lib/radio/radio.scss",
+                "test": false,
+                "name": "radio.scss"
+            },
+            {
+                "relativePath": "src/lib/radio/radio.spec.ts",
+                "test": true,
+                "name": "radio.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/radio/radio.ts",
+                "test": false,
+                "name": "radio.ts"
+            },
+            {
+                "relativePath": "src/lib/radio/README.md",
+                "test": false,
+                "name": "README.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/radio/index.ts"
+    },
+    "form-controls/select": {
+        "files": [
+            {
+                "relativePath": "src/lib/select/_select-theme.scss",
+                "test": false,
+                "name": "_select-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/select/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/select/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/lib/select/select-animations.ts",
+                "test": false,
+                "name": "select-animations.ts"
+            },
+            {
+                "relativePath": "src/lib/select/select-errors.ts",
+                "test": false,
+                "name": "select-errors.ts"
+            },
+            {
+                "relativePath": "src/lib/select/select.html",
+                "test": false,
+                "name": "select.html"
+            },
+            {
+                "relativePath": "src/lib/select/select.md",
+                "test": false,
+                "name": "select.md"
+            },
+            {
+                "relativePath": "src/lib/select/select.scss",
+                "test": false,
+                "name": "select.scss"
+            },
+            {
+                "relativePath": "src/lib/select/select.spec.ts",
+                "test": true,
+                "name": "select.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/select/select.ts",
+                "test": false,
+                "name": "select.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/select/index.ts"
+    },
+    "navigation/sidenav": {
+        "files": [
+            {
+                "relativePath": "src/lib/sidenav/_sidenav-theme.scss",
+                "test": false,
+                "name": "_sidenav-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/sidenav/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/sidenav/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/lib/sidenav/sidenav-container.html",
+                "test": false,
+                "name": "sidenav-container.html"
+            },
+            {
+                "relativePath": "src/lib/sidenav/sidenav-transitions.scss",
+                "test": false,
+                "name": "sidenav-transitions.scss"
+            },
+            {
+                "relativePath": "src/lib/sidenav/sidenav.html",
+                "test": false,
+                "name": "sidenav.html"
+            },
+            {
+                "relativePath": "src/lib/sidenav/sidenav.md",
+                "test": false,
+                "name": "sidenav.md"
+            },
+            {
+                "relativePath": "src/lib/sidenav/sidenav.scss",
+                "test": false,
+                "name": "sidenav.scss"
+            },
+            {
+                "relativePath": "src/lib/sidenav/sidenav.spec.ts",
+                "test": true,
+                "name": "sidenav.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/sidenav/sidenav.ts",
+                "test": false,
+                "name": "sidenav.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/sidenav/index.ts"
+    },
+    "form-controls/slide-toggle": {
+        "files": [
+            {
+                "relativePath": "src/lib/slide-toggle/_slide-toggle-theme.scss",
+                "test": false,
+                "name": "_slide-toggle-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/slide-toggle/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/slide-toggle/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/lib/slide-toggle/slide-toggle.html",
+                "test": false,
+                "name": "slide-toggle.html"
+            },
+            {
+                "relativePath": "src/lib/slide-toggle/slide-toggle.md",
+                "test": false,
+                "name": "slide-toggle.md"
+            },
+            {
+                "relativePath": "src/lib/slide-toggle/slide-toggle.scss",
+                "test": false,
+                "name": "slide-toggle.scss"
+            },
+            {
+                "relativePath": "src/lib/slide-toggle/slide-toggle.spec.ts",
+                "test": true,
+                "name": "slide-toggle.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/slide-toggle/slide-toggle.ts",
+                "test": false,
+                "name": "slide-toggle.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/slide-toggle/index.ts"
+    },
+    "form-controls/slider": {
+        "files": [
+            {
+                "relativePath": "src/lib/slider/_slider-theme.scss",
+                "test": false,
+                "name": "_slider-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/slider/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/slider/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/lib/slider/slider.html",
+                "test": false,
+                "name": "slider.html"
+            },
+            {
+                "relativePath": "src/lib/slider/slider.md",
+                "test": false,
+                "name": "slider.md"
+            },
+            {
+                "relativePath": "src/lib/slider/slider.scss",
+                "test": false,
+                "name": "slider.scss"
+            },
+            {
+                "relativePath": "src/lib/slider/slider.spec.ts",
+                "test": true,
+                "name": "slider.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/slider/slider.ts",
+                "test": false,
+                "name": "slider.ts"
+            },
+            {
+                "relativePath": "src/lib/slider/test-gesture-config.ts",
+                "test": false,
+                "name": "test-gesture-config.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/slider/index.ts"
+    },
+    "popups-and-modals/snack-bar": {
+        "files": [
+            {
+                "relativePath": "src/lib/snack-bar/_simple-snack-bar-theme.scss",
+                "test": false,
+                "name": "_simple-snack-bar-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/simple-snack-bar.html",
+                "test": false,
+                "name": "simple-snack-bar.html"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/simple-snack-bar.scss",
+                "test": false,
+                "name": "simple-snack-bar.scss"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/simple-snack-bar.ts",
+                "test": false,
+                "name": "simple-snack-bar.ts"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/snack-bar-config.ts",
+                "test": false,
+                "name": "snack-bar-config.ts"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/snack-bar-container.html",
+                "test": false,
+                "name": "snack-bar-container.html"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/snack-bar-container.scss",
+                "test": false,
+                "name": "snack-bar-container.scss"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/snack-bar-container.ts",
+                "test": false,
+                "name": "snack-bar-container.ts"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/snack-bar-ref.ts",
+                "test": false,
+                "name": "snack-bar-ref.ts"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/snack-bar.md",
+                "test": false,
+                "name": "snack-bar.md"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/snack-bar.spec.ts",
+                "test": true,
+                "name": "snack-bar.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/snack-bar/snack-bar.ts",
+                "test": false,
+                "name": "snack-bar.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/snack-bar/index.ts"
+    },
+    "data-table/sort-header": {
+        "files": [
+            {
+                "relativePath": "src/lib/sort/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/sort/sort-direction.ts",
+                "test": false,
+                "name": "sort-direction.ts"
+            },
+            {
+                "relativePath": "src/lib/sort/sort-errors.ts",
+                "test": false,
+                "name": "sort-errors.ts"
+            },
+            {
+                "relativePath": "src/lib/sort/sort-header-intl.ts",
+                "test": false,
+                "name": "sort-header-intl.ts"
+            },
+            {
+                "relativePath": "src/lib/sort/sort-header.html",
+                "test": false,
+                "name": "sort-header.html"
+            },
+            {
+                "relativePath": "src/lib/sort/sort-header.scss",
+                "test": false,
+                "name": "sort-header.scss"
+            },
+            {
+                "relativePath": "src/lib/sort/sort-header.ts",
+                "test": false,
+                "name": "sort-header.ts"
+            },
+            {
+                "relativePath": "src/lib/sort/sort.md",
+                "test": false,
+                "name": "sort.md"
+            },
+            {
+                "relativePath": "src/lib/sort/sort.spec.ts",
+                "test": true,
+                "name": "sort.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/sort/sort.ts",
+                "test": false,
+                "name": "sort.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/sort/index.ts"
+    },
+    "data-table/table": {
+        "files": [
+            {
+                "relativePath": "src/lib/table/_table-theme.scss",
+                "test": false,
+                "name": "_table-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/table/cell.ts",
+                "test": false,
+                "name": "cell.ts"
+            },
+            {
+                "relativePath": "src/lib/table/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/table/row.ts",
+                "test": false,
+                "name": "row.ts"
+            },
+            {
+                "relativePath": "src/lib/table/table.md",
+                "test": false,
+                "name": "table.md"
+            },
+            {
+                "relativePath": "src/lib/table/table.scss",
+                "test": false,
+                "name": "table.scss"
+            },
+            {
+                "relativePath": "src/lib/table/table.spec.ts",
+                "test": true,
+                "name": "table.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/table/table.ts",
+                "test": false,
+                "name": "table.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/table/index.ts"
+    },
+    "navigation/toolbar": {
+        "files": [
+            {
+                "relativePath": "src/lib/toolbar/_toolbar-theme.scss",
+                "test": false,
+                "name": "_toolbar-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/toolbar/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/toolbar/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/lib/toolbar/toolbar.html",
+                "test": false,
+                "name": "toolbar.html"
+            },
+            {
+                "relativePath": "src/lib/toolbar/toolbar.md",
+                "test": false,
+                "name": "toolbar.md"
+            },
+            {
+                "relativePath": "src/lib/toolbar/toolbar.scss",
+                "test": false,
+                "name": "toolbar.scss"
+            },
+            {
+                "relativePath": "src/lib/toolbar/toolbar.spec.ts",
+                "test": true,
+                "name": "toolbar.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/toolbar/toolbar.ts",
+                "test": false,
+                "name": "toolbar.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/toolbar/index.ts"
+    },
+    "popups-and-modals/tooltip": {
+        "files": [
+            {
+                "relativePath": "src/lib/tooltip/_tooltip-theme.scss",
+                "test": false,
+                "name": "_tooltip-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/tooltip/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/tooltip/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/lib/tooltip/tooltip.html",
+                "test": false,
+                "name": "tooltip.html"
+            },
+            {
+                "relativePath": "src/lib/tooltip/tooltip.md",
+                "test": false,
+                "name": "tooltip.md"
+            },
+            {
+                "relativePath": "src/lib/tooltip/tooltip.scss",
+                "test": false,
+                "name": "tooltip.scss"
+            },
+            {
+                "relativePath": "src/lib/tooltip/tooltip.spec.ts",
+                "test": true,
+                "name": "tooltip.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/tooltip/tooltip.ts",
+                "test": false,
+                "name": "tooltip.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/tooltip/index.ts"
+    },
+    "layout/tabs": {
+        "files": [
+            {
+                "relativePath": "src/lib/tabs/_tabs-common.scss",
+                "test": false,
+                "name": "_tabs-common.scss"
+            },
+            {
+                "relativePath": "src/lib/tabs/_tabs-theme.scss",
+                "test": false,
+                "name": "_tabs-theme.scss"
+            },
+            {
+                "relativePath": "src/lib/tabs/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/ink-bar.ts",
+                "test": false,
+                "name": "ink-bar.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-body.html",
+                "test": false,
+                "name": "tab-body.html"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-body.scss",
+                "test": false,
+                "name": "tab-body.scss"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-body.spec.ts",
+                "test": true,
+                "name": "tab-body.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-body.ts",
+                "test": false,
+                "name": "tab-body.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-group.html",
+                "test": false,
+                "name": "tab-group.html"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-group.scss",
+                "test": false,
+                "name": "tab-group.scss"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-group.spec.ts",
+                "test": true,
+                "name": "tab-group.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-group.ts",
+                "test": false,
+                "name": "tab-group.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-header.html",
+                "test": false,
+                "name": "tab-header.html"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-header.scss",
+                "test": false,
+                "name": "tab-header.scss"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-header.spec.ts",
+                "test": true,
+                "name": "tab-header.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-header.ts",
+                "test": false,
+                "name": "tab-header.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-label-wrapper.ts",
+                "test": false,
+                "name": "tab-label-wrapper.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-label.ts",
+                "test": false,
+                "name": "tab-label.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab.html",
+                "test": false,
+                "name": "tab.html"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab.ts",
+                "test": false,
+                "name": "tab.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/Tabs Pagination.png",
+                "test": false,
+                "name": "Tabs Pagination.png"
+            },
+            {
+                "relativePath": "src/lib/tabs/tabs.md",
+                "test": false,
+                "name": "tabs.md"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/tabs/index.ts"
+    },
+    "layout/tab-nav-bar": {
+        "files": [
+            {
+                "relativePath": "src/lib/tabs/tab-nav-bar/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.html",
+                "test": false,
+                "name": "tab-nav-bar.html"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.scss",
+                "test": false,
+                "name": "tab-nav-bar.scss"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.spec.ts",
+                "test": true,
+                "name": "tab-nav-bar.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.ts",
+                "test": false,
+                "name": "tab-nav-bar.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/tabs/tab-nav-bar/index.ts"
+    }

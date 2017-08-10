@@ -1,10 +1,9 @@
 import {async, ComponentFixture, TestBed, fakeAsync, tick} from '@angular/core/testing';
 import {Component, ViewChild, ViewContainerRef} from '@angular/core';
-import {Direction, Directionality} from '../core/bidi/index';
+import {Direction, Directionality, PortalModule} from '@angular/cdk';
 import {MdTabHeader} from './tab-header';
 import {MdRippleModule} from '../core/ripple/index';
 import {CommonModule} from '@angular/common';
-import {PortalModule} from '../core';
 import {MdInkBar} from './ink-bar';
 import {MdTabLabelWrapper} from './tab-label-wrapper';
 import {RIGHT_ARROW, LEFT_ARROW, ENTER} from '../core/keyboard/keycodes';

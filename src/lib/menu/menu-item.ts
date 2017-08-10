@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -12,11 +12,11 @@ import {CanDisable, mixinDisabled} from '../core/common-behaviors/disabled';
 import {Subject} from 'rxjs/Subject';
 
 // Boilerplate for applying mixins to MdMenuItem.
-/** @docs-private */
+/* @docs-private */
 export class MdMenuItemBase {}
 export const _MdMenuItemMixinBase = mixinDisabled(MdMenuItemBase);
 
-/**
+/*
  * This directive is intended to be used inside an md-menu tag.
  * It exists mostly to set the role attribute.
  */
@@ -39,17 +39,17 @@ export const _MdMenuItemMixinBase = mixinDisabled(MdMenuItemBase);
   exportAs: 'mdMenuItem',
 })
 export class MdMenuItem extends _MdMenuItemMixinBase implements Focusable, CanDisable, OnDestroy {
-  /** Stream that emits when the menu item is hovered. */
+  /* Stream that emits when the menu item is hovered. */
   hover: Subject<MdMenuItem> = new Subject();
 
-  /** Whether the menu item is highlighted. */
+  /* Whether the menu item is highlighted. */
   _highlighted: boolean = false;
 
   constructor(private _elementRef: ElementRef) {
     super();
   }
 
-  /** Focuses the menu item. */
+  /* Focuses the menu item. */
   focus(): void {
     this._getHostElement().focus();
   }
@@ -58,17 +58,17 @@ export class MdMenuItem extends _MdMenuItemMixinBase implements Focusable, CanDi
     this.hover.complete();
   }
 
-  /** Used to set the `tabindex`. */
+  /* Used to set the `tabindex`. */
   _getTabIndex(): string {
     return this.disabled ? '-1' : '0';
   }
 
-  /** Returns the host DOM element. */
+  /* Returns the host DOM element. */
   _getHostElement(): HTMLElement {
     return this._elementRef.nativeElement;
   }
 
-  /** Prevents the default element actions if it is disabled. */
+  /* Prevents the default element actions if it is disabled. */
   _checkDisabled(event: Event): void {
     if (this.disabled) {
       event.preventDefault();
@@ -76,7 +76,7 @@ export class MdMenuItem extends _MdMenuItemMixinBase implements Focusable, CanDi
     }
   }
 
-  /** Emits to the hover stream. */
+  /* Emits to the hover stream. */
   _emitHoverEvent() {
     if (!this.disabled) {
       this.hover.next(this);

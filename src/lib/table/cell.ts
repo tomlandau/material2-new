@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -9,11 +9,11 @@
 import {Directive, ElementRef, Renderer2} from '@angular/core';
 import {CdkCell, CdkColumnDef, CdkHeaderCell} from '@angular/cdk';
 
-/** Workaround for https://github.com/angular/angular/issues/17849 */
+/* Workaround for https://github.com/angular/angular/issues/17849 */
 export const _MdHeaderCellBase = CdkHeaderCell;
 export const _MdCell = CdkCell;
 
-/** Header cell template container that adds the right classes and role. */
+/* Header cell template container that adds the right classes and role. */
 @Directive({
   selector: 'md-header-cell, mat-header-cell',
   host: {
@@ -30,7 +30,7 @@ export class MdHeaderCell extends _MdHeaderCellBase {
   }
 }
 
-/** Cell template container that adds the right classes and role. */
+/* Cell template container that adds the right classes and role. */
 @Directive({
   selector: 'md-cell, mat-cell',
   host: {

@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -8,7 +8,7 @@
 
 import {Response, ResponseOptions} from '@angular/http';
 
-/**
+/*
  * Fake URLs and associated SVG documents used by tests.
  * @docs-private
  */
@@ -58,7 +58,7 @@ const FAKE_SVGS = (() => {
   return svgs;
 })();
 
-/**
+/*
  * Returns an HTTP response for a fake SVG URL.
  * @docs-private
  */

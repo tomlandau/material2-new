@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -8,7 +8,7 @@
 
 import {Directive, EventEmitter, Input, Output} from '@angular/core';
 import {SortDirection} from './sort-direction';
-import {coerceBooleanProperty} from '../core';
+import {coerceBooleanProperty} from '@angular/cdk';
 import {getMdSortDuplicateMdSortableIdError, getMdSortHeaderMissingIdError} from './sort-errors';
 
 export interface MdSortable {
@@ -22,27 +22,27 @@ export interface Sort {
   direction: SortDirection;
 }
 
-/** Container for MdSortables to manage the sort state and provide default sort parameters. */
+/* Container for MdSortables to manage the sort state and provide default sort parameters. */
 @Directive({
   selector: '[mdSort], [matSort]',
 })
 export class MdSort {
-  /** Collection of all registered sortables that this directive manages. */
+  /* Collection of all registered sortables that this directive manages. */
   sortables = new Map<string, MdSortable>();
 
-  /** The id of the most recently sorted MdSortable. */
+  /* The id of the most recently sorted MdSortable. */
   @Input('mdSortActive') active: string;
 
-  /**
+  /*
    * The direction to set when an MdSortable is initially sorted.
    * May be overriden by the MdSortable's sort start.
    */
   @Input('mdSortStart') start: 'asc' | 'desc' = 'asc';
 
-  /** The sort direction of the currently active MdSortable. */
+  /* The sort direction of the currently active MdSortable. */
   @Input('mdSortDirection') direction: SortDirection = '';
 
-  /**
+  /*
    * Whether to disable the user from clearing the sort by finishing the sort direction cycle.
    * May be overriden by the MdSortable's disable clear input.
    */
@@ -51,10 +51,10 @@ export class MdSort {
   set disableClear(v) { this._disableClear = coerceBooleanProperty(v); }
   private _disableClear: boolean;
 
-  /** Event emitted when the user changes either the active sort or sort direction. */
+  /* Event emitted when the user changes either the active sort or sort direction. */
   @Output() mdSortChange = new EventEmitter<Sort>();
 
-  /**
+  /*
    * Register function to be used by the contained MdSortables. Adds the MdSortable to the
    * collection of MdSortables.
    */
@@ -69,7 +69,7 @@ export class MdSort {
     this.sortables.set(sortable.id, sortable);
   }
 
-  /**
+  /*
    * Unregister function to be used by the contained MdSortables. Removes the MdSortable from the
    * collection of contained MdSortables.
    */
@@ -77,7 +77,7 @@ export class MdSort {
     this.sortables.delete(sortable.id);
   }
 
-  /** Sets the active sort id and determines the new sort direction. */
+  /* Sets the active sort id and determines the new sort direction. */
   sort(sortable: MdSortable) {
     if (this.active != sortable.id) {
       this.active = sortable.id;
@@ -89,7 +89,7 @@ export class MdSort {
     this.mdSortChange.next({active: this.active, direction: this.direction});
   }
 
-  /** Returns the next sort direction of the active sortable, checking for potential overrides. */
+  /* Returns the next sort direction of the active sortable, checking for potential overrides. */
   getNextSortDirection(sortable: MdSortable): SortDirection {
     if (!sortable) { return ''; }
 
@@ -104,7 +104,7 @@ export class MdSort {
   }
 }
 
-/** Returns the sort direction cycle to use given the provided parameters of order and clear. */
+/* Returns the sort direction cycle to use given the provided parameters of order and clear. */
 function getSortDirectionCycle(start: 'asc' | 'desc',
                                disableClear: boolean): SortDirection[] {
   let sortOrder: SortDirection[] = ['asc', 'desc'];

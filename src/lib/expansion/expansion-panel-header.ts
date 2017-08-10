@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -24,7 +24,7 @@ import {SPACE, ENTER} from '../core/keyboard/keycodes';
 import {MdExpansionPanel, EXPANSION_PANEL_ANIMATION_TIMING} from './expansion-panel';
 
 
-/**
+/*
  * <md-expansion-panel-header> component.
  *
  * This component corresponds to the header element of an <md-expansion-panel>.
@@ -65,32 +65,32 @@ import {MdExpansionPanel, EXPANSION_PANEL_ANIMATION_TIMING} from './expansion-pa
 export class MdExpansionPanelHeader {
   constructor(@Host() public panel: MdExpansionPanel) {}
 
-  /** Toggles the expanded state of the panel. */
+  /* Toggles the expanded state of the panel. */
   _toggle(): void {
     this.panel.toggle();
   }
 
-  /** Gets whether the panel is expanded. */
+  /* Gets whether the panel is expanded. */
   _isExpanded(): boolean {
     return this.panel.expanded;
   }
 
-  /** Gets the expanded state string of the panel. */
+  /* Gets the expanded state string of the panel. */
   _getExpandedState(): string {
     return this.panel._getExpandedState();
   }
 
-  /** Gets the panel id. */
+  /* Gets the panel id. */
   _getPanelId(): string {
     return this.panel.id;
   }
 
-  /** Gets whether the expand indicator is hidden. */
+  /* Gets whether the expand indicator is hidden. */
   _getHideToggle(): boolean {
     return this.panel.hideToggle;
   }
 
-  /** Handle keyup event calling to toggle() if appropriate. */
+  /* Handle keyup event calling to toggle() if appropriate. */
   _keyup(event: KeyboardEvent) {
     switch (event.keyCode) {
       // Toggle for space and enter keys.
@@ -105,7 +105,7 @@ export class MdExpansionPanelHeader {
   }
 }
 
-/**
+/*
  * <md-panel-description> directive.
  *
  * This direction is to be used inside of the MdExpansionPanelHeader component.
@@ -118,7 +118,7 @@ export class MdExpansionPanelHeader {
 })
 export class MdExpansionPanelDescription {}
 
-/**
+/*
  * <md-panel-title> directive.
  *
  * This direction is to be used inside of the MdExpansionPanelHeader component.

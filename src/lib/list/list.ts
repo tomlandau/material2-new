@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -19,16 +19,16 @@ import {
   ViewEncapsulation,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import {MdLine, MdLineSetter} from '../core';
+import {MdLine, MdLineSetter} from '../core/line/line';
 import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/disable-ripple';
 
 // Boilerplate for applying mixins to MdList.
-/** @docs-private */
+/* @docs-private */
 export class MdListBase {}
 export const _MdListMixinBase = mixinDisableRipple(MdListBase);
 
 // Boilerplate for applying mixins to MdListItem.
-/** @docs-private */
+/* @docs-private */
 export class MdListItemBase {}
 export const _MdListItemMixinBase = mixinDisableRipple(MdListItemBase);
 
@@ -53,7 +53,7 @@ export class MdListDivider {}
 })
 export class MdList extends _MdListMixinBase implements CanDisableRipple {}
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -63,7 +63,7 @@ export class MdList extends _MdListMixinBase implements CanDisableRipple {}
 })
 export class MdListCssMatStyler {}
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -73,7 +73,7 @@ export class MdListCssMatStyler {}
 })
 export class MdNavListCssMatStyler {}
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -83,7 +83,7 @@ export class MdNavListCssMatStyler {}
 })
 export class MdDividerCssMatStyler {}
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -93,7 +93,7 @@ export class MdDividerCssMatStyler {}
 })
 export class MdListAvatarCssMatStyler {}
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -103,7 +103,7 @@ export class MdListAvatarCssMatStyler {}
 })
 export class MdListIconCssMatStyler {}
 
-/**
+/*
  * Directive whose purpose is to add the mat- CSS styling to this selector.
  * @docs-private
  */
@@ -154,7 +154,7 @@ export class MdListItem extends _MdListItemMixinBase implements AfterContentInit
     this._lineSetter = new MdLineSetter(this._lines, this._renderer, this._element);
   }
 
-  /** Whether this list item should show a ripple effect when clicked.  */
+  /* Whether this list item should show a ripple effect when clicked.  */
   isRippleEnabled() {
     return !this.disableRipple && this._isNavList && !this._list.disableRipple;
   }
@@ -167,7 +167,7 @@ export class MdListItem extends _MdListItemMixinBase implements AfterContentInit
     this._renderer.removeClass(this._element.nativeElement, 'mat-list-item-focus');
   }
 
-  /** Retrieves the DOM element of the component host. */
+  /* Retrieves the DOM element of the component host. */
   _getHostElement(): HTMLElement {
     return this._element.nativeElement;
   }

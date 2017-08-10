@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -26,11 +26,11 @@ import {
   AnimationEvent,
 } from '@angular/animations';
 import {DOCUMENT} from '@angular/platform-browser';
-import {BasePortalHost, ComponentPortal, PortalHostDirective, TemplatePortal} from '../core';
+import {BasePortalHost, ComponentPortal, PortalHostDirective, TemplatePortal} from '@angular/cdk';
 import {MdDialogConfig} from './dialog-config';
-import {FocusTrapFactory, FocusTrap} from '../core/a11y/focus-trap';
+import {FocusTrapFactory, FocusTrap} from '@angular/cdk';
 
-/**
+/*
  * Throws an exception for the case when a ComponentPortal is
  * attached to a DomPortalHost without an origin.
  * @docs-private
@@ -39,7 +39,7 @@ export function throwMdDialogContentAlreadyAttachedError() {
   throw Error('Attempting to attach dialog content after content is already attached');
 }
 
-/**
+/*
  * Internal component that wraps user-provided dialog content.
  * Animation is based on https://material.io/guidelines/motion/choreography.html.
  * @docs-private
@@ -72,28 +72,28 @@ export function throwMdDialogContentAlreadyAttachedError() {
   },
 })
 export class MdDialogContainer extends BasePortalHost {
-  /** The portal host inside of this container into which the dialog content will be loaded. */
+  /* The portal host inside of this container into which the dialog content will be loaded. */
   @ViewChild(PortalHostDirective) _portalHost: PortalHostDirective;
 
-  /** The class that traps and manages focus within the dialog. */
+  /* The class that traps and manages focus within the dialog. */
   private _focusTrap: FocusTrap;
 
-  /** Element that was focused before the dialog was opened. Save this to restore upon close. */
+  /* Element that was focused before the dialog was opened. Save this to restore upon close. */
   private _elementFocusedBeforeDialogWasOpened: HTMLElement | null = null;
 
-  /** Reference to the global document object. */
+  /* Reference to the global document object. */
   private _document: Document;
 
-  /** The dialog configuration. */
+  /* The dialog configuration. */
   _config: MdDialogConfig;
 
-  /** State of the dialog animation. */
+  /* State of the dialog animation. */
   _state: 'void' | 'enter' | 'exit' = 'enter';
 
-  /** Emits the current animation state whenever it changes. */
+  /* Emits the current animation state whenever it changes. */
   _onAnimationStateChange = new EventEmitter<AnimationEvent>();
 
-  /** ID of the element that should be considered as the dialog's label. */
+  /* ID of the element that should be considered as the dialog's label. */
   _ariaLabelledBy: string | null = null;
 
   constructor(
@@ -106,7 +106,7 @@ export class MdDialogContainer extends BasePortalHost {
     this._document = _document;
   }
 
-  /**
+  /*
    * Attach a ComponentPortal as content to this dialog container.
    * @param portal Portal to be attached as the dialog content.
    */
@@ -119,7 +119,7 @@ export class MdDialogContainer extends BasePortalHost {
     return this._portalHost.attachComponentPortal(portal);
   }
 
-  /**
+  /*
    * Attach a TemplatePortal as content to this dialog container.
    * @param portal Portal to be attached as the dialog content.
    */
@@ -132,7 +132,7 @@ export class MdDialogContainer extends BasePortalHost {
     return this._portalHost.attachTemplatePortal(portal);
   }
 
-  /** Moves the focus inside the focus trap. */
+  /* Moves the focus inside the focus trap. */
   private _trapFocus() {
     if (!this._focusTrap) {
       this._focusTrap = this._focusTrapFactory.create(this._elementRef.nativeElement);
@@ -144,7 +144,7 @@ export class MdDialogContainer extends BasePortalHost {
     this._focusTrap.focusInitialElementWhenReady();
   }
 
-  /** Restores focus to the element that was focused before the dialog opened. */
+  /* Restores focus to the element that was focused before the dialog opened. */
   private _restoreFocus() {
     const toFocus = this._elementFocusedBeforeDialogWasOpened;
 
@@ -158,14 +158,14 @@ export class MdDialogContainer extends BasePortalHost {
     }
   }
 
-  /** Saves a reference to the element that was focused before the dialog was opened. */
+  /* Saves a reference to the element that was focused before the dialog was opened. */
   private _savePreviouslyFocusedElement() {
     if (this._document) {
       this._elementFocusedBeforeDialogWasOpened = this._document.activeElement as HTMLElement;
     }
   }
 
-  /** Callback, invoked whenever an animation on the host completes. */
+  /* Callback, invoked whenever an animation on the host completes. */
   _onAnimationDone(event: AnimationEvent) {
     this._onAnimationStateChange.emit(event);
 

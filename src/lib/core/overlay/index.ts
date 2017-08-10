@@ -8,7 +8,7 @@
 import {NgModule, Provider} from '@angular/core';
 import {Overlay} from './overlay';
 import {ScrollDispatchModule} from './scroll/index';
-import {PortalModule} from '../portal/portal-directives';
+import {PortalModule} from '@angular/cdk';
 import {
   ConnectedOverlayDirective,
   OverlayOrigin,

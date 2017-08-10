@@ -34,3 +34,6 @@ node_modules
 npm-debug.log
 testem.log
 /.chrome
+
+#bit
+/.bit

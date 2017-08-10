@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -7,12 +7,12 @@
  */
 
 import {Directive, TemplateRef, ViewContainerRef} from '@angular/core';
-import {TemplatePortalDirective} from '../core';
+import {TemplatePortalDirective} from '@angular/cdk';
 
-/** Workaround for https://github.com/angular/angular/issues/17849 */
+/* Workaround for https://github.com/angular/angular/issues/17849 */
 export const _MdTabLabelBaseClass = TemplatePortalDirective;
 
-/** Used to flag tab labels for use with the portal directive */
+/* Used to flag tab labels for use with the portal directive */
 @Directive({
   selector: '[md-tab-label], [mat-tab-label], [mdTabLabel], [matTabLabel]',
 })

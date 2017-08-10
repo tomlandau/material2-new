@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -10,11 +10,11 @@ import {Directive, ElementRef} from '@angular/core';
 import {CanDisable, mixinDisabled} from '../core/common-behaviors/disabled';
 
 // Boilerplate for applying mixins to MdTabLabelWrapper.
-/** @docs-private */
+/* @docs-private */
 export class MdTabLabelWrapperBase {}
 export const _MdTabLabelWrapperMixinBase = mixinDisabled(MdTabLabelWrapperBase);
 
-/**
+/*
  * Used in the `md-tab-group` view to display tab labels.
  * @docs-private
  */
@@ -30,7 +30,7 @@ export class MdTabLabelWrapper extends _MdTabLabelWrapperMixinBase implements Ca
     super();
   }
 
-  /** Sets focus on the wrapper element */
+  /* Sets focus on the wrapper element */
   focus(): void {
     this.elementRef.nativeElement.focus();
   }

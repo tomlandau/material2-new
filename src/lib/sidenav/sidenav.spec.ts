@@ -2,8 +2,8 @@ import {fakeAsync, async, tick, ComponentFixture, TestBed} from '@angular/core/t
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {By} from '@angular/platform-browser';
 import {MdSidenav, MdSidenavModule, MdSidenavContainer} from './index';
-import {A11yModule} from '../core/a11y/index';
-import {PlatformModule} from '../core/platform/index';
+import {A11yModule} from '@angular/cdk';
+import {PlatformModule} from '@angular/cdk';
 import {ESCAPE} from '../core/keyboard/keycodes';
 
 function endSidenavTransition(fixture: ComponentFixture<any>) {

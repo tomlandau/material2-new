@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {OverlayRef, GlobalPositionStrategy} from '../core';
+import {OverlayRef, GlobalPositionStrategy} from '../core/overlay/index';
 import {AnimationEvent} from '@angular/animations';
 import {DialogPosition} from './dialog-config';
 import {Observable} from 'rxjs/Observable';
@@ -19,20 +19,20 @@ import {filter} from '../core/rxjs/index';
 // TODO(jelbourn): afterOpen and beforeClose
 
 
-/**
+/*
  * Reference to a dialog opened via the MdDialog service.
  */
 export class MdDialogRef<T> {
-  /** The instance of component opened into the dialog. */
+  /* The instance of component opened into the dialog. */
   componentInstance: T;
 
-  /** Whether the user is allowed to close the dialog. */
+  /* Whether the user is allowed to close the dialog. */
   disableClose = this._containerInstance._config.disableClose;
 
-  /** Subject for notifying the user that the dialog has finished closing. */
+  /* Subject for notifying the user that the dialog has finished closing. */
   private _afterClosed: Subject<any> = new Subject();
 
-  /** Result to be passed to afterClosed. */
+  /* Result to be passed to afterClosed. */
   private _result: any;
 
   constructor(private _overlayRef: OverlayRef, private _containerInstance: MdDialogContainer) {
@@ -45,7 +45,7 @@ export class MdDialogRef<T> {
       });
   }
 
-  /**
+  /*
    * Close the dialog.
    * @param dialogResult Optional result to return to the dialog opener.
    */
@@ -55,14 +55,14 @@ export class MdDialogRef<T> {
     this._overlayRef.detachBackdrop(); // Transition the backdrop in parallel with the dialog.
   }
 
-  /**
+  /*
    * Gets an observable that is notified when the dialog is finished closing.
    */
   afterClosed(): Observable<any> {
     return this._afterClosed.asObservable();
   }
 
-  /**
+  /*
    * Updates the dialog's position.
    * @param position New dialog position.
    */
@@ -86,7 +86,7 @@ export class MdDialogRef<T> {
     return this;
   }
 
-  /**
+  /*
    * Updates the dialog's width and height.
    * @param width New width of the dialog.
    * @param height New height of the dialog.
@@ -97,7 +97,7 @@ export class MdDialogRef<T> {
     return this;
   }
 
-  /** Fetches the position strategy object from the overlay ref. */
+  /* Fetches the position strategy object from the overlay ref. */
   private _getPositionStrategy(): GlobalPositionStrategy {
     return this._overlayRef.getState().positionStrategy as GlobalPositionStrategy;
   }

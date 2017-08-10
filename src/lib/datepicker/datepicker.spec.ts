@@ -8,7 +8,8 @@ import {MdDatepicker} from './datepicker';
 import {MdDatepickerInput} from './datepicker-input';
 import {MdInputModule} from '../input/index';
 import {MdNativeDateModule} from '../core/datetime/index';
-import {ESCAPE, OverlayContainer} from '../core';
+import {ESCAPE} from '../core/keyboard/keycodes';
+import {OverlayContainer} from '../core/overlay/index';
 import {dispatchFakeEvent, dispatchMouseEvent, dispatchKeyboardEvent} from '@angular/cdk/testing';
 import {DEC, JAN} from '../core/testing/month-constants';
 

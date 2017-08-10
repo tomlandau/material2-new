@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -32,7 +32,7 @@ import {transformMenu, fadeInItems} from './menu-animations';
 import {ESCAPE, LEFT_ARROW, RIGHT_ARROW} from '../core/keyboard/keycodes';
 import {merge} from 'rxjs/observable/merge';
 import {Observable} from 'rxjs/Observable';
-import {Direction} from '../core';
+import {Direction} from '@angular/cdk';
 
 
 @Component({
@@ -53,22 +53,22 @@ export class MdMenu implements AfterContentInit, MdMenuPanel, OnDestroy {
   private _xPosition: MenuPositionX = 'after';
   private _yPosition: MenuPositionY = 'below';
 
-  /** Subscription to tab events on the menu panel */
+  /* Subscription to tab events on the menu panel */
   private _tabSubscription: Subscription;
 
-  /** Config object to be passed into the menu's ngClass */
+  /* Config object to be passed into the menu's ngClass */
   _classList: any = {};
 
-  /** Current state of the panel animation. */
+  /* Current state of the panel animation. */
   _panelAnimationState: 'void' | 'enter-start' | 'enter' = 'void';
 
-  /** Whether the menu is a sub-menu or a top-level menu. */
+  /* Whether the menu is a sub-menu or a top-level menu. */
   isSubmenu: boolean = false;
 
-  /** Layout direction of the menu. */
+  /* Layout direction of the menu. */
   direction: Direction;
 
-  /** Position of the menu in the X axis. */
+  /* Position of the menu in the X axis. */
   @Input()
   get xPosition() { return this._xPosition; }
   set xPosition(value: MenuPositionX) {
@@ -79,7 +79,7 @@ export class MdMenu implements AfterContentInit, MdMenuPanel, OnDestroy {
     this.setPositionClasses();
   }
 
-  /** Position of the menu in the Y axis. */
+  /* Position of the menu in the Y axis. */
   @Input()
   get yPosition() { return this._yPosition; }
   set yPosition(value: MenuPositionY) {
@@ -92,13 +92,13 @@ export class MdMenu implements AfterContentInit, MdMenuPanel, OnDestroy {
 
   @ViewChild(TemplateRef) templateRef: TemplateRef<any>;
 
-  /** List of the items inside of a menu. */
+  /* List of the items inside of a menu. */
   @ContentChildren(MdMenuItem) items: QueryList<MdMenuItem>;
 
-  /** Whether the menu should overlap its trigger. */
+  /* Whether the menu should overlap its trigger. */
   @Input() overlapTrigger = true;
 
-  /**
+  /*
    * This method takes classes set on the host md-menu element and applies them on the
    * menu template that displays in the overlay container.  Otherwise, it's difficult
    * to style the containing menu from outside the component.
@@ -117,7 +117,7 @@ export class MdMenu implements AfterContentInit, MdMenuPanel, OnDestroy {
     }
   }
 
-  /** Event emitted when the menu is closed. */
+  /* Event emitted when the menu is closed. */
   @Output() close = new EventEmitter<void | 'click' | 'keydown'>();
 
   constructor(private _elementRef: ElementRef) { }
@@ -136,12 +136,12 @@ export class MdMenu implements AfterContentInit, MdMenuPanel, OnDestroy {
     this.close.complete();
   }
 
-  /** Stream that emits whenever the hovered menu item changes. */
+  /* Stream that emits whenever the hovered menu item changes. */
   hover(): Observable<MdMenuItem> {
     return merge(...this.items.map(item => item.hover));
   }
 
-  /** Handle a keyboard event from the menu, delegating to the appropriate action. */
+  /* Handle a keyboard event from the menu, delegating to the appropriate action. */
   _handleKeydown(event: KeyboardEvent) {
     switch (event.keyCode) {
       case ESCAPE:
@@ -162,7 +162,7 @@ export class MdMenu implements AfterContentInit, MdMenuPanel, OnDestroy {
     }
   }
 
-  /**
+  /*
    * Focus the first item in the menu. This method is used by the menu trigger
    * to focus the first item when the menu is opened by the ENTER key.
    */
@@ -170,7 +170,7 @@ export class MdMenu implements AfterContentInit, MdMenuPanel, OnDestroy {
     this._keyManager.setFirstItemActive();
   }
 
-  /**
+  /*
    * It's necessary to set position-based classes to ensure the menu panel animation
    * folds out from the correct direction.
    */
@@ -181,17 +181,17 @@ export class MdMenu implements AfterContentInit, MdMenuPanel, OnDestroy {
     this._classList['mat-menu-below'] = posY === 'below';
   }
 
-  /** Starts the enter animation. */
+  /* Starts the enter animation. */
   _startAnimation() {
     this._panelAnimationState = 'enter-start';
   }
 
-  /** Resets the panel animation to its initial state. */
+  /* Resets the panel animation to its initial state. */
   _resetAnimation() {
     this._panelAnimationState = 'void';
   }
 
-  /** Callback that is invoked when the panel animation completes. */
+  /* Callback that is invoked when the panel animation completes. */
   _onAnimationDone(event: AnimationEvent) {
     // After the initial expansion is done, trigger the second phase of the enter animation.
     if (event.toState === 'enter-start') {

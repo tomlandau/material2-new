@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -9,11 +9,11 @@
 import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {CdkHeaderRow, CdkRow, CDK_ROW_TEMPLATE} from '@angular/cdk';
 
-/** Workaround for https://github.com/angular/angular/issues/17849 */
+/* Workaround for https://github.com/angular/angular/issues/17849 */
 export const _MdHeaderRow = CdkHeaderRow;
 export const _MdRow = CdkRow;
 
-/** Header template container that contains the cell outlet. Adds the right class and role. */
+/* Header template container that contains the cell outlet. Adds the right class and role. */
 @Component({
   selector: 'md-header-row, mat-header-row',
   template: CDK_ROW_TEMPLATE,
@@ -25,7 +25,7 @@ export const _MdRow = CdkRow;
 })
 export class MdHeaderRow extends _MdHeaderRow { }
 
-/** Data row template container that contains the cell outlet. Adds the right class and role. */
+/* Data row template container that contains the cell outlet. Adds the right class and role. */
 @Component({
   selector: 'md-row, mat-row',
   template: CDK_ROW_TEMPLATE,

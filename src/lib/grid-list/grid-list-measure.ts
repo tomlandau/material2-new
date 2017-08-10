@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -6,7 +6,7 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-/**
+/*
  * Converts values into strings. Falsy values become empty strings.
  * @docs-private
  */
@@ -14,7 +14,7 @@ export function coerceToString(value: string | number): string {
   return `${value || ''}`;
 }
 
-/**
+/*
  * Converts a value that might be a string into a number.
  * @docs-private
  */

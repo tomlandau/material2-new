@@ -1,0 +1,1 @@
+module.exports = require('./src/lib/core/util/object-extend.ts');

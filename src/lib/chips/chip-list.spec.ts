@@ -8,7 +8,7 @@ import {createKeyboardEvent} from '@angular/cdk/testing';
 
 import {MdInputModule} from '../input/index';
 import {LEFT_ARROW, RIGHT_ARROW, BACKSPACE, DELETE, TAB} from '../core/keyboard/keycodes';
-import {Directionality} from '../core';
+import {Directionality} from '@angular/cdk';
 
 describe('MdChipList', () => {
   let fixture: ComponentFixture<any>;

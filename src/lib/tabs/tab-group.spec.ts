@@ -295,7 +295,7 @@ describe('MdTabGroup', () => {
     });
   });
 
-  /**
+  /*
    * Checks that the `selectedIndex` has been updated; checks that the label and body have their
    * respective `active` classes
    */

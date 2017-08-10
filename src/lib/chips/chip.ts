@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -29,14 +29,14 @@ export interface MdChipEvent {
 }
 
 // Boilerplate for applying mixins to MdChip.
-/** @docs-private */
+/* @docs-private */
 export class MdChipBase {
   constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
 export const _MdChipMixinBase = mixinColor(mixinDisabled(MdChipBase), 'primary');
 
 
-/**
+/*
  * Dummy directive to add CSS class to basic chips.
  * @docs-private
  */
@@ -46,7 +46,7 @@ export const _MdChipMixinBase = mixinColor(mixinDisabled(MdChipBase), 'primary')
 })
 export class MdBasicChip { }
 
-/**
+/*
  * Material design styled Chip component. Used inside the MdChipList component.
  */
 @Directive({
@@ -71,7 +71,7 @@ export class MdChip extends _MdChipMixinBase implements Focusable, OnDestroy, Ca
 
   @ContentChild(forwardRef(() => MdChipRemove)) _chipRemove: MdChipRemove;
 
-  /** Whether the chip is selected. */
+  /* Whether the chip is selected. */
   @Input() get selected(): boolean { return this._selected; }
   set selected(value: boolean) {
     this._selected = coerceBooleanProperty(value);
@@ -79,7 +79,7 @@ export class MdChip extends _MdChipMixinBase implements Focusable, OnDestroy, Ca
   }
   protected _selected: boolean = false;
 
-  /**
+  /*
    * Whether or not the chips are selectable. When a chip is not selectable,
    * changes to it's selected state are always ignored.
    */
@@ -92,7 +92,7 @@ export class MdChip extends _MdChipMixinBase implements Focusable, OnDestroy, Ca
   }
   protected _selectable: boolean = true;
 
-  /**
+  /*
    * Determines whether or not the chip displays the remove styling and emits (remove) events.
    */
   @Input() get removable(): boolean {
@@ -104,19 +104,19 @@ export class MdChip extends _MdChipMixinBase implements Focusable, OnDestroy, Ca
   }
   protected _removable: boolean = true;
 
-  /** Whether the chip has focus. */
+  /* Whether the chip has focus. */
   _hasFocus: boolean = false;
 
-  /** Emitted when the chip is focused. */
+  /* Emitted when the chip is focused. */
   onFocus = new EventEmitter<MdChipEvent>();
 
-  /** Emitted when the chip is selected. */
+  /* Emitted when the chip is selected. */
   @Output() select = new EventEmitter<MdChipEvent>();
 
-  /** Emitted when the chip is deselected. */
+  /* Emitted when the chip is deselected. */
   @Output() deselect = new EventEmitter<MdChipEvent>();
 
-  /** Emitted when the chip is destroyed. */
+  /* Emitted when the chip is destroyed. */
   @Output() destroy = new EventEmitter<MdChipEvent>();
 
   get ariaSelected(): string {
@@ -127,26 +127,26 @@ export class MdChip extends _MdChipMixinBase implements Focusable, OnDestroy, Ca
     super(renderer, elementRef);
   }
 
-  /** Emitted when a chip is to be removed. */
+  /* Emitted when a chip is to be removed. */
   @Output('remove') onRemove = new EventEmitter<MdChipEvent>();
 
   ngOnDestroy(): void {
     this.destroy.emit({chip: this});
   }
 
-  /** Toggles the current selected state of this chip. */
+  /* Toggles the current selected state of this chip. */
   toggleSelected(): boolean {
     this.selected = !this.selected;
     return this.selected;
   }
 
-  /** Allows for programmatic focusing of the chip. */
+  /* Allows for programmatic focusing of the chip. */
   focus(): void {
     this._elementRef.nativeElement.focus();
     this.onFocus.emit({chip: this});
   }
 
-  /**
+  /*
    * Allows for programmatic removal of the chip. Called by the MdChipList when the DELETE or
    * BACKSPACE keys are pressed.
    *
@@ -158,7 +158,7 @@ export class MdChip extends _MdChipMixinBase implements Focusable, OnDestroy, Ca
     }
   }
 
-  /** Ensures events fire properly upon click. */
+  /* Ensures events fire properly upon click. */
   _handleClick(event: Event) {
     // Check disabled
     if (this.disabled) {
@@ -171,7 +171,7 @@ export class MdChip extends _MdChipMixinBase implements Focusable, OnDestroy, Ca
     this.focus();
   }
 
-  /** Handle custom key presses. */
+  /* Handle custom key presses. */
   _handleKeydown(event: KeyboardEvent) {
     if (this.disabled) {
       return;
@@ -199,7 +199,7 @@ export class MdChip extends _MdChipMixinBase implements Focusable, OnDestroy, Ca
 }
 
 
-/**
+/*
  * Applies proper (click) support and adds styling for use with the Material Design "cancel" icon
  * available at https://material.io/icons/#ic_cancel.
  *
@@ -222,7 +222,7 @@ export class MdChip extends _MdChipMixinBase implements Focusable, OnDestroy, Ca
 export class MdChipRemove {
   constructor(protected _parentChip: MdChip) {}
 
-  /** Calls the parent chip's public `remove()` method if applicable. */
+  /* Calls the parent chip's public `remove()` method if applicable. */
   _handleClick() {
     if (this._parentChip.removable) {
       this._parentChip.remove();

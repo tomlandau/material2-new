@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -26,7 +26,7 @@ import {BACKSPACE, DELETE, LEFT_ARROW, RIGHT_ARROW, UP_ARROW} from '../core/keyb
 import {coerceBooleanProperty, Directionality} from '@angular/cdk';
 import {Subscription} from 'rxjs/Subscription';
 
-/**
+/*
  * A material design chips component (named ChipList for it's similarity to the List component).
  *
  * Example:
@@ -57,27 +57,27 @@ import {Subscription} from 'rxjs/Subscription';
 })
 export class MdChipList implements AfterContentInit, OnDestroy {
 
-  /** When a chip is destroyed, we track the index so we can focus the appropriate next chip. */
+  /* When a chip is destroyed, we track the index so we can focus the appropriate next chip. */
   protected _lastDestroyedIndex: number|null = null;
 
-  /** Track which chips we're listening to for focus/destruction. */
+  /* Track which chips we're listening to for focus/destruction. */
   protected _chipSet: WeakMap<MdChip, boolean> = new WeakMap();
 
-  /** Subscription to tabbing out from the chip list. */
+  /* Subscription to tabbing out from the chip list. */
   private _tabOutSubscription: Subscription;
 
-  /** Whether or not the chip is selectable. */
+  /* Whether or not the chip is selectable. */
   protected _selectable: boolean = true;
 
   protected _inputElement: HTMLInputElement;
 
-  /** Tab index for the chip list. */
+  /* Tab index for the chip list. */
   _tabIndex = 0;
 
-  /** The FocusKeyManager which handles focus. */
+  /* The FocusKeyManager which handles focus. */
   _keyManager: FocusKeyManager;
 
-  /** The chip components contained within this chip list. */
+  /* The chip components contained within this chip list. */
   chips: QueryList<MdChip>;
 
   constructor(protected _renderer: Renderer2, protected _elementRef: ElementRef,
@@ -123,7 +123,7 @@ export class MdChipList implements AfterContentInit, OnDestroy {
     }
   }
 
-  /**
+  /*
    * Whether or not this chip is selectable. When a chip is not selectable,
    * it's selected state is always ignored.
    */
@@ -136,12 +136,12 @@ export class MdChipList implements AfterContentInit, OnDestroy {
     this._selectable = coerceBooleanProperty(value);
   }
 
-  /** Associates an HTML input element with this chip list. */
+  /* Associates an HTML input element with this chip list. */
   registerInput(inputElement: HTMLInputElement) {
     this._inputElement = inputElement;
   }
 
-  /**
+  /*
    * Focuses the the first non-disabled chip in this chip list, or the associated input when there
    * are no eligible chips.
    */
@@ -154,14 +154,14 @@ export class MdChipList implements AfterContentInit, OnDestroy {
     }
   }
 
-  /** Attempt to focus an input if we have one. */
+  /* Attempt to focus an input if we have one. */
   _focusInput() {
     if (this._inputElement) {
       this._inputElement.focus();
     }
   }
 
-  /**
+  /*
    * Pass events to the keyboard manager. Available here for tests.
    */
   _keydown(event: KeyboardEvent) {
@@ -195,7 +195,7 @@ export class MdChipList implements AfterContentInit, OnDestroy {
     }
   }
 
-  /**
+  /*
    * Iterate through the list of chips and add them to our list of
    * subscribed chips.
    *
@@ -205,7 +205,7 @@ export class MdChipList implements AfterContentInit, OnDestroy {
     chips.forEach(chip => this._addChip(chip));
   }
 
-  /**
+  /*
    * Check the tab index as you should not be allowed to focus an empty list.
    */
   protected _updateTabIndex(): void {
@@ -213,7 +213,7 @@ export class MdChipList implements AfterContentInit, OnDestroy {
     this._tabIndex = (this.chips.length === 0 ? -1 : 0);
   }
 
-  /**
+  /*
    * Add a specific chip to our subscribed list. If the chip has
    * already been subscribed, this ensures it is only subscribed
    * once.
@@ -261,7 +261,7 @@ export class MdChipList implements AfterContentInit, OnDestroy {
     this._chipSet.set(chip, true);
   }
 
-  /**
+  /*
    * Checks to see if a focus chip was recently destroyed so that we can refocus the next closest
    * one.
    */
@@ -284,7 +284,7 @@ export class MdChipList implements AfterContentInit, OnDestroy {
     this._lastDestroyedIndex = null;
   }
 
-  /**
+  /*
    * Utility to ensure all indexes are valid.
    *
    * @param index The index to be checked.

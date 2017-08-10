@@ -10,7 +10,8 @@ import {
 import {NgModule, Component, Directive, ViewChild, ViewContainerRef, Inject} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {OverlayContainer, LiveAnnouncer} from '../core';
+import {OverlayContainer} from '../core/overlay/index';
+import {LiveAnnouncer} from '@angular/cdk';
 import {
   MdSnackBarModule,
   MdSnackBar,
@@ -478,7 +479,7 @@ class ComponentWithChildViewContainer {
   }
 }
 
-/** Simple component for testing ComponentPortal. */
+/* Simple component for testing ComponentPortal. */
 @Component({template: '<p>Burritos are on the way.</p>'})
 class BurritosNotification {
   constructor(
@@ -496,7 +497,7 @@ class ComponentThatProvidesMdSnackBar {
 }
 
 
-/** Simple component to open snack bars from.
+/* Simple component to open snack bars from.
  * Create a real (non-test) NgModule as a workaround forRoot
  * https://github.com/angular/angular/issues/10760
  */

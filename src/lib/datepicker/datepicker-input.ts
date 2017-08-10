@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -53,13 +53,13 @@ export const MD_DATEPICKER_VALIDATORS: any = {
 };
 
 
-/**
+/*
  * An event used for datepicker input and change events. We don't always have access to a native
  * input or change event because the event may have been triggered by the user clicking on the
  * calendar popup. For consistency, we always use MdDatepickerInputEvent instead.
  */
 export class MdDatepickerInputEvent<D> {
-  /** The new value for the target datepicker input. */
+  /* The new value for the target datepicker input. */
   value: D | null;
 
   constructor(public target: MdDatepickerInput<D>, public targetElement: HTMLElement) {
@@ -68,7 +68,7 @@ export class MdDatepickerInputEvent<D> {
 }
 
 
-/** Directive used to connect an input to a MdDatepicker. */
+/* Directive used to connect an input to a MdDatepicker. */
 @Directive({
   selector: 'input[mdDatepicker], input[matDatepicker]',
   providers: [MD_DATEPICKER_VALUE_ACCESSOR, MD_DATEPICKER_VALIDATORS],
@@ -87,7 +87,7 @@ export class MdDatepickerInputEvent<D> {
 })
 export class MdDatepickerInput<D> implements AfterContentInit, ControlValueAccessor, OnDestroy,
     Validator {
-  /** The datepicker that this input is associated with. */
+  /* The datepicker that this input is associated with. */
   @Input()
   set mdDatepicker(value: MdDatepicker<D>) {
     if (value) {
@@ -109,7 +109,7 @@ export class MdDatepickerInput<D> implements AfterContentInit, ControlValueAcces
     this.mdDatepickerFilter = filter;
   }
 
-  /** The value of the input. */
+  /* The value of the input. */
   @Input()
   get value(): D | null {
     return this._dateAdapter.parse(this._elementRef.nativeElement.value,
@@ -125,7 +125,7 @@ export class MdDatepickerInput<D> implements AfterContentInit, ControlValueAcces
     }
   }
 
-  /** The minimum valid date. */
+  /* The minimum valid date. */
   @Input()
   get min(): D { return this._min; }
   set min(value: D) {
@@ -134,7 +134,7 @@ export class MdDatepickerInput<D> implements AfterContentInit, ControlValueAcces
   }
   private _min: D;
 
-  /** The maximum valid date. */
+  /* The maximum valid date. */
   @Input()
   get max(): D { return this._max; }
   set max(value: D) {
@@ -143,7 +143,7 @@ export class MdDatepickerInput<D> implements AfterContentInit, ControlValueAcces
   }
   private _max: D;
 
-  /** Whether the datepicker-input is disabled. */
+  /* Whether the datepicker-input is disabled. */
   @Input()
   get disabled() { return this._disabled; }
   set disabled(value: any) {
@@ -151,13 +151,13 @@ export class MdDatepickerInput<D> implements AfterContentInit, ControlValueAcces
   }
   private _disabled: boolean;
 
-  /** Emits when a `change` event is fired on this `<input>`. */
+  /* Emits when a `change` event is fired on this `<input>`. */
   @Output() dateChange = new EventEmitter<MdDatepickerInputEvent<D>>();
 
-  /** Emits when an `input` event is fired on this `<input>`. */
+  /* Emits when an `input` event is fired on this `<input>`. */
   @Output() dateInput = new EventEmitter<MdDatepickerInputEvent<D>>();
 
-  /** Emits when the value changes (either due to user input or programmatic change). */
+  /* Emits when the value changes (either due to user input or programmatic change). */
   _valueChange = new EventEmitter<D|null>();
 
   _onTouched = () => {};
@@ -168,27 +168,27 @@ export class MdDatepickerInput<D> implements AfterContentInit, ControlValueAcces
 
   private _datepickerSubscription: Subscription;
 
-  /** The form control validator for the min date. */
+  /* The form control validator for the min date. */
   private _minValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     return (!this.min || !control.value ||
         this._dateAdapter.compareDate(this.min, control.value) <= 0) ?
         null : {'mdDatepickerMin': {'min': this.min, 'actual': control.value}};
   }
 
-  /** The form control validator for the max date. */
+  /* The form control validator for the max date. */
   private _maxValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     return (!this.max || !control.value ||
         this._dateAdapter.compareDate(this.max, control.value) >= 0) ?
         null : {'mdDatepickerMax': {'max': this.max, 'actual': control.value}};
   }
 
-  /** The form control validator for the date filter. */
+  /* The form control validator for the date filter. */
   private _filterValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
     return !this._dateFilter || !control.value || this._dateFilter(control.value) ?
         null : {'mdDatepickerFilter': true};
   }
 
-  /** The combined form control validator for this input. */
+  /* The combined form control validator for this input. */
   private _validator: ValidatorFn | null =
       Validators.compose([this._minValidator, this._maxValidator, this._filterValidator]);
 
@@ -232,7 +232,7 @@ export class MdDatepickerInput<D> implements AfterContentInit, ControlValueAcces
     return this._validator ? this._validator(c) : null;
   }
 
-  /**
+  /*
    * Gets the element that the datepicker popup should be connected to.
    * @return The element to connect the popup to.
    */

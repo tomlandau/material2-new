@@ -4,7 +4,7 @@ import {By} from '@angular/platform-browser';
 import {createKeyboardEvent} from '@angular/cdk/testing';
 import {MdChipList, MdChip, MdChipEvent, MdChipsModule} from './index';
 import {SPACE, DELETE, BACKSPACE} from '../core/keyboard/keycodes';
-import {Directionality} from '../core';
+import {Directionality} from '@angular/cdk';
 
 describe('Chips', () => {
   let fixture: ComponentFixture<any>;

@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -23,26 +23,30 @@ import {
   OnDestroy,
   Inject,
 } from '@angular/core';
-import {Directionality, coerceBooleanProperty} from '../core';
-import {FocusTrapFactory, FocusTrap} from '../core/a11y/focus-trap';
+import {
+  Directionality, 
+  coerceBooleanProperty, 
+  FocusTrapFactory, 
+  FocusTrap
+} from '@angular/cdk';
 import {ESCAPE} from '../core/keyboard/keycodes';
 import {first} from '../core/rxjs/index';
 import {DOCUMENT} from '@angular/platform-browser';
 
 
-/** Throws an exception when two MdSidenav are matching the same side. */
+/* Throws an exception when two MdSidenav are matching the same side. */
 export function throwMdDuplicatedSidenavError(align: string) {
   throw Error(`A sidenav was already declared for 'align="${align}"'`);
 }
 
 
-/** Sidenav toggle promise result. */
+/* Sidenav toggle promise result. */
 export class MdSidenavToggleResult {
   constructor(public type: 'open' | 'close', public animationFinished: boolean) {}
 }
 
 
-/**
+/*
  * <md-sidenav> component.
  *
  * This component corresponds to the drawer of the sidenav.
@@ -76,10 +80,10 @@ export class MdSidenavToggleResult {
 export class MdSidenav implements AfterContentInit, OnDestroy {
   private _focusTrap: FocusTrap;
 
-  /** Alignment of the sidenav (direction neutral); whether 'start' or 'end'. */
+  /* Alignment of the sidenav (direction neutral); whether 'start' or 'end'. */
   private _align: 'start' | 'end' = 'start';
 
-  /** Direction which the sidenav is aligned in. */
+  /* Direction which the sidenav is aligned in. */
   @Input()
   get align() { return this._align; }
   set align(value) {
@@ -91,37 +95,37 @@ export class MdSidenav implements AfterContentInit, OnDestroy {
     }
   }
 
-  /** Mode of the sidenav; one of 'over', 'push' or 'side'. */
+  /* Mode of the sidenav; one of 'over', 'push' or 'side'. */
   @Input() mode: 'over' | 'push' | 'side' = 'over';
 
-  /** Whether the sidenav can be closed with the escape key or not. */
+  /* Whether the sidenav can be closed with the escape key or not. */
   @Input()
   get disableClose(): boolean { return this._disableClose; }
   set disableClose(value: boolean) { this._disableClose = coerceBooleanProperty(value); }
   private _disableClose: boolean = false;
 
-  /** Whether the sidenav is opened. */
+  /* Whether the sidenav is opened. */
   _opened: boolean = false;
 
-  /** Event emitted when the sidenav is being opened. Use this to synchronize animations. */
+  /* Event emitted when the sidenav is being opened. Use this to synchronize animations. */
   @Output('open-start') onOpenStart = new EventEmitter<void>();
 
-  /** Event emitted when the sidenav is fully opened. */
+  /* Event emitted when the sidenav is fully opened. */
   @Output('open') onOpen = new EventEmitter<void>();
 
-  /** Event emitted when the sidenav is being closed. Use this to synchronize animations. */
+  /* Event emitted when the sidenav is being closed. Use this to synchronize animations. */
   @Output('close-start') onCloseStart = new EventEmitter<void>();
 
-  /** Event emitted when the sidenav is fully closed. */
+  /* Event emitted when the sidenav is fully closed. */
   @Output('close') onClose = new EventEmitter<void>();
 
-  /** Event emitted when the sidenav alignment changes. */
+  /* Event emitted when the sidenav alignment changes. */
   @Output('align-changed') onAlignChanged = new EventEmitter<void>();
 
-  /** The current toggle animation promise. `null` if no animation is in progress. */
+  /* The current toggle animation promise. `null` if no animation is in progress. */
   private _toggleAnimationPromise: Promise<MdSidenavToggleResult> | null = null;
 
-  /**
+  /*
    * The current toggle animation promise resolution function.
    * `null` if no animation is in progress.
    */
@@ -132,7 +136,7 @@ export class MdSidenav implements AfterContentInit, OnDestroy {
     return this.opened && this.mode !== 'side';
   }
 
-  /**
+  /*
    * @param _elementRef The DOM element reference. Used for transition and width calculation.
    *     If not available we do not hook on transitions.
    */
@@ -152,7 +156,7 @@ export class MdSidenav implements AfterContentInit, OnDestroy {
     this.onClose.subscribe(() => this._restoreFocus());
   }
 
-  /**
+  /*
    * If focus is currently inside the sidenav, restores it to where it was before the sidenav
    * opened.
    */
@@ -187,7 +191,7 @@ export class MdSidenav implements AfterContentInit, OnDestroy {
     }
   }
 
-  /**
+  /*
    * Whether the sidenav is opened. We overload this because we trigger an event when it
    * starts or end.
    */
@@ -198,13 +202,13 @@ export class MdSidenav implements AfterContentInit, OnDestroy {
   }
 
 
-  /** Open this sidenav, and return a Promise that will resolve when it's fully opened (or get
+  /* Open this sidenav, and return a Promise that will resolve when it's fully opened (or get
    * rejected if it didn't). */
   open(): Promise<MdSidenavToggleResult> {
     return this.toggle(true);
   }
 
-  /**
+  /*
    * Close this sidenav, and return a Promise that will resolve when it's fully closed (or get
    * rejected if it didn't).
    */
@@ -212,7 +216,7 @@ export class MdSidenav implements AfterContentInit, OnDestroy {
     return this.toggle(false);
   }
 
-  /**
+  /*
    * Toggle this sidenav. This is equivalent to calling open() when it's already opened, or
    * close() when it's closed.
    * @param isOpen Whether the sidenav should be open.
@@ -247,7 +251,7 @@ export class MdSidenav implements AfterContentInit, OnDestroy {
     return this._toggleAnimationPromise;
   }
 
-  /**
+  /*
    * Handles the keyboard events.
    * @docs-private
    */
@@ -258,7 +262,7 @@ export class MdSidenav implements AfterContentInit, OnDestroy {
     }
   }
 
-  /**
+  /*
    * When transition has finished, set the internal state for classes and emit the proper event.
    * The event passed is actually of type TransitionEvent, but that type is not available in
    * Android so we use any.
@@ -315,7 +319,7 @@ export class MdSidenav implements AfterContentInit, OnDestroy {
   private _elementFocusedBeforeSidenavWasOpened: HTMLElement | null = null;
 }
 
-/**
+/*
  * <md-sidenav-container> component.
  *
  * This is the parent component to one or two <md-sidenav>s that validates the state internally
@@ -340,20 +344,20 @@ export class MdSidenav implements AfterContentInit, OnDestroy {
 export class MdSidenavContainer implements AfterContentInit {
   @ContentChildren(MdSidenav) _sidenavs: QueryList<MdSidenav>;
 
-  /** The sidenav child with the `start` alignment. */
+  /* The sidenav child with the `start` alignment. */
   get start() { return this._start; }
 
-  /** The sidenav child with the `end` alignment. */
+  /* The sidenav child with the `end` alignment. */
   get end() { return this._end; }
 
-  /** Event emitted when the sidenav backdrop is clicked. */
+  /* Event emitted when the sidenav backdrop is clicked. */
   @Output() backdropClick = new EventEmitter<void>();
 
-  /** The sidenav at the start/end alignment, independent of direction. */
+  /* The sidenav at the start/end alignment, independent of direction. */
   private _start: MdSidenav | null;
   private _end: MdSidenav | null;
 
-  /**
+  /*
    * The sidenav at the left/right. When direction changes, these will change as well.
    * They're used as aliases for the above to set the left/right style properly.
    * In LTR, _left == _start and _right == _end.
@@ -388,21 +392,21 @@ export class MdSidenavContainer implements AfterContentInit {
     });
   }
 
-  /** Calls `open` of both start and end sidenavs */
+  /* Calls `open` of both start and end sidenavs */
   public open() {
     return Promise.all([this._start, this._end]
       .filter(sidenav => sidenav)
       .map(sidenav => sidenav!.open()));
   }
 
-  /** Calls `close` of both start and end sidenavs */
+  /* Calls `close` of both start and end sidenavs */
   public close() {
     return Promise.all([this._start, this._end]
       .filter(sidenav => sidenav)
       .map(sidenav => sidenav!.close()));
   }
 
-  /**
+  /*
    * Subscribes to sidenav events in order to set a class on the main container element when the
    * sidenav is open and the backdrop is visible. This ensures any overflow on the container element
    * is properly hidden.
@@ -413,7 +417,7 @@ export class MdSidenavContainer implements AfterContentInit {
     sidenav.onClose.subscribe(() => this._setContainerClass(false));
   }
 
-  /**
+  /*
    * Subscribes to sidenav onAlignChanged event in order to re-validate drawers when the align
    * changes.
    */
@@ -427,7 +431,7 @@ export class MdSidenavContainer implements AfterContentInit {
         first.call(this._ngZone.onMicrotaskEmpty).subscribe(() => this._validateDrawers()));
   }
 
-  /** Toggles the 'mat-sidenav-opened' class on the main 'md-sidenav-container' element. */
+  /* Toggles the 'mat-sidenav-opened' class on the main 'md-sidenav-container' element. */
   private _setContainerClass(isAdd: boolean): void {
     if (isAdd) {
       this._renderer.addClass(this._element.nativeElement, 'mat-sidenav-opened');
@@ -436,7 +440,7 @@ export class MdSidenavContainer implements AfterContentInit {
     }
   }
 
-  /** Validate the state of the sidenav children components. */
+  /* Validate the state of the sidenav children components. */
   private _validateDrawers() {
     this._start = this._end = null;
 
@@ -490,7 +494,7 @@ export class MdSidenavContainer implements AfterContentInit {
     return side != null && side.opened;
   }
 
-  /**
+  /*
    * Return the width of the sidenav, if it's in the proper mode and opened.
    * This may relayout the view, so do not call this often.
    * @param sidenav
@@ -516,7 +520,7 @@ export class MdSidenavContainer implements AfterContentInit {
     return this._right ? this._getSidenavEffectiveWidth(this._right, 'push') : 0;
   }
 
-  /**
+  /*
    * Returns the horizontal offset for the content area.  There should never be a value for both
    * left and right, so by subtracting the right value from the left value, we should always get
    * the appropriate offset.
@@ -525,7 +529,7 @@ export class MdSidenavContainer implements AfterContentInit {
     return this._getPositionLeft() - this._getPositionRight();
   }
 
-  /**
+  /*
    * This is using [ngStyle] rather than separate [style...] properties because [style.transform]
    * doesn't seem to work right now.
    */

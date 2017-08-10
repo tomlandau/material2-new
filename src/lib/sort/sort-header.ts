@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -17,7 +17,7 @@ import {coerceBooleanProperty} from '../core';
 import {getMdSortHeaderNotContainedWithinMdSortError} from './sort-errors';
 import {Subscription} from 'rxjs/Subscription';
 
-/**
+/*
  * Applies sorting behavior (click to change sort) and styles to an element, including an
  * arrow to display the current sort direction.
  *
@@ -39,22 +39,22 @@ import {Subscription} from 'rxjs/Subscription';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MdSortHeader implements MdSortable {
-  /** @docs-private  */
+  /* @docs-private  */
   sortSubscription: Subscription;
 
-  /**
+  /*
    * ID of this sort header. If used within the context of a CdkColumnDef, this will default to
    * the column's name.
    */
   @Input('md-sort-header') id: string;
 
-  /** Sets the position of the arrow that displays when sorted. */
+  /* Sets the position of the arrow that displays when sorted. */
   @Input() arrowPosition: 'before' | 'after' = 'after';
 
-  /** Overrides the sort start value of the containing MdSort for this MdSortable. */
+  /* Overrides the sort start value of the containing MdSort for this MdSortable. */
   @Input('start') start: 'asc' | 'desc';
 
-  /** Overrides the disable clear value of the containing MdSort for this MdSortable. */
+  /* Overrides the disable clear value of the containing MdSort for this MdSortable. */
   @Input()
   get disableClear() { return this._disableClear; }
   set disableClear(v) { this._disableClear = coerceBooleanProperty(v); }
@@ -88,7 +88,7 @@ export class MdSortHeader implements MdSortable {
     this.sortSubscription.unsubscribe();
   }
 
-  /** Whether this MdSortHeader is currently sorted in either ascending or descending order. */
+  /* Whether this MdSortHeader is currently sorted in either ascending or descending order. */
   _isSorted() {
     return this._sort.active == this.id && this._sort.direction;
   }

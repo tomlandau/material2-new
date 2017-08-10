@@ -22,7 +22,7 @@ import {
 import {AnimationEvent} from '@angular/animations';
 import {By} from '@angular/platform-browser';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {Directionality, Direction} from '../core/bidi/index';
+import {Directionality, Direction} from '@angular/cdk';
 import {OverlayModule, Scrollable, OverlayContainer} from '../core/overlay/index';
 import {Platform} from '../core/platform/platform';
 import {dispatchFakeEvent} from '@angular/cdk/testing';

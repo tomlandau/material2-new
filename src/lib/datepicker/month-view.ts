@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -26,7 +26,7 @@ import {MD_DATE_FORMATS, MdDateFormats} from '../core/datetime/date-formats';
 const DAYS_PER_WEEK = 7;
 
 
-/**
+/*
  * An internal component used to display a single month in the datepicker.
  * @docs-private
  */
@@ -38,7 +38,7 @@ const DAYS_PER_WEEK = 7;
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MdMonthView<D> implements AfterContentInit {
-  /**
+  /*
    * The date to display in this month view (everything other than the month and year is ignored).
    */
   @Input()
@@ -52,7 +52,7 @@ export class MdMonthView<D> implements AfterContentInit {
   }
   private _activeDate: D;
 
-  /** The currently selected date. */
+  /* The currently selected date. */
   @Input()
   get selected(): D { return this._selected; }
   set selected(value: D) {
@@ -61,31 +61,31 @@ export class MdMonthView<D> implements AfterContentInit {
   }
   private _selected: D;
 
-  /** A function used to filter which dates are selectable. */
+  /* A function used to filter which dates are selectable. */
   @Input() dateFilter: (date: D) => boolean;
 
-  /** Emits when a new date is selected. */
+  /* Emits when a new date is selected. */
   @Output() selectedChange = new EventEmitter<D | null>();
 
-  /** The label for this month (e.g. "January 2017"). */
+  /* The label for this month (e.g. "January 2017"). */
   _monthLabel: string;
 
-  /** Grid of calendar cells representing the dates of the month. */
+  /* Grid of calendar cells representing the dates of the month. */
   _weeks: MdCalendarCell[][];
 
-  /** The number of blank cells in the first row before the 1st of the month. */
+  /* The number of blank cells in the first row before the 1st of the month. */
   _firstWeekOffset: number;
 
-  /**
+  /*
    * The date of the month that the currently selected Date falls on.
    * Null if the currently selected Date is in another month.
    */
   _selectedDate: number | null;
 
-  /** The date of the month that today falls on. Null if today is in another month. */
+  /* The date of the month that today falls on. Null if today is in another month. */
   _todayDate: number | null;
 
-  /** The names of the weekdays. */
+  /* The names of the weekdays. */
   _weekdays: {long: string, narrow: string}[];
 
   constructor(@Optional() public _dateAdapter: DateAdapter<D>,
@@ -114,7 +114,7 @@ export class MdMonthView<D> implements AfterContentInit {
     this._init();
   }
 
-  /** Handles when a new date is selected. */
+  /* Handles when a new date is selected. */
   _dateSelected(date: number) {
     if (this._selectedDate == date) {
       return;
@@ -124,7 +124,7 @@ export class MdMonthView<D> implements AfterContentInit {
         date));
   }
 
-  /** Initializes this month view. */
+  /* Initializes this month view. */
   private _init() {
     this._selectedDate = this._getDateInCurrentMonth(this.selected);
     this._todayDate = this._getDateInCurrentMonth(this._dateAdapter.today());
@@ -141,7 +141,7 @@ export class MdMonthView<D> implements AfterContentInit {
     this._createWeekCells();
   }
 
-  /** Creates MdCalendarCells for the dates in this month. */
+  /* Creates MdCalendarCells for the dates in this month. */
   private _createWeekCells() {
     let daysInMonth = this._dateAdapter.getNumDaysInMonth(this.activeDate);
     let dateNames = this._dateAdapter.getDateNames();
@@ -162,7 +162,7 @@ export class MdMonthView<D> implements AfterContentInit {
     }
   }
 
-  /**
+  /*
    * Gets the date in this month that the given Date falls on.
    * Returns null if the given Date is in another month.
    */
@@ -171,7 +171,7 @@ export class MdMonthView<D> implements AfterContentInit {
         this._dateAdapter.getDate(date) : null;
   }
 
-  /** Checks whether the 2 dates are non-null and fall within the same month of the same year. */
+  /* Checks whether the 2 dates are non-null and fall within the same month of the same year. */
   private _hasSameMonthAndYear(d1: D, d2: D): boolean {
     return !!(d1 && d2 && this._dateAdapter.getMonth(d1) == this._dateAdapter.getMonth(d2) &&
               this._dateAdapter.getYear(d1) == this._dateAdapter.getYear(d2));

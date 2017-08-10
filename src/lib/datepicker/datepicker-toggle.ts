@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -28,14 +28,14 @@ import {coerceBooleanProperty} from '@angular/cdk';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MdDatepickerToggle<D> {
-  /** Datepicker instance that the button will toggle. */
+  /* Datepicker instance that the button will toggle. */
   @Input('mdDatepickerToggle') datepicker: MdDatepicker<D>;
 
   @Input('matDatepickerToggle')
   get _datepicker() { return this.datepicker; }
   set _datepicker(v: MdDatepicker<D>) { this.datepicker = v; }
 
-  /** Whether the toggle button is disabled. */
+  /* Whether the toggle button is disabled. */
   @Input()
   get disabled() {
     return this._disabled === undefined ? this.datepicker.disabled : this._disabled;

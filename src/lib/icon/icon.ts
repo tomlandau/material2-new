@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -24,14 +24,14 @@ import {first} from '../core/rxjs/index';
 
 
 // Boilerplate for applying mixins to MdIcon.
-/** @docs-private */
+/* @docs-private */
 export class MdIconBase {
   constructor(public _renderer: Renderer2, public _elementRef: ElementRef) {}
 }
 export const _MdIconMixinBase = mixinColor(MdIconBase);
 
 
-/**
+/*
  * Component to display an icon. It can be used in the following ways:
  * - Specify the svgSrc input to load an SVG icon from a URL. The SVG content is directly inlined
  *   as a child of the <md-icon> component, so that CSS styles can easily be applied to it.
@@ -79,13 +79,13 @@ export const _MdIconMixinBase = mixinColor(MdIconBase);
 })
 export class MdIcon extends _MdIconMixinBase implements OnChanges, OnInit, CanColor {
 
-  /** Name of the icon in the SVG icon set. */
+  /* Name of the icon in the SVG icon set. */
   @Input() svgIcon: string;
 
-  /** Font set that the icon is a part of. */
+  /* Font set that the icon is a part of. */
   @Input() fontSet: string;
 
-  /** Name of an icon within a font set. */
+  /* Name of an icon within a font set. */
   @Input() fontIcon: string;
 
   private _previousFontSetClass: string;
@@ -105,7 +105,7 @@ export class MdIcon extends _MdIconMixinBase implements OnChanges, OnInit, CanCo
     }
   }
 
-  /**
+  /*
    * Splits an svgIcon binding value into its icon set and icon name components.
    * Returns a 2-element array of [(icon set), (icon name)].
    * The separator for the two fields is ':'. If there is no separator, an empty

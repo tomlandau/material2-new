@@ -1,4 +1,4 @@
-/**
+/*
  * @license
  * Copyright Google Inc. All Rights Reserved.
  *
@@ -28,7 +28,7 @@ import {
   BasePortalHost,
   ComponentPortal,
   PortalHostDirective,
-} from '../core';
+} from '@angular/cdk';
 import {MdSnackBarConfig} from './snack-bar-config';
 import {Observable} from 'rxjs/Observable';
 import {Subject} from 'rxjs/Subject';
@@ -43,7 +43,7 @@ export type SnackBarState = 'initial' | 'visible' | 'complete' | 'void';
 export const SHOW_ANIMATION = '225ms cubic-bezier(0.4,0.0,1,1)';
 export const HIDE_ANIMATION = '195ms cubic-bezier(0.0,0.0,0.2,1)';
 
-/**
+/*
  * Internal component that wraps user-provided snack bar content.
  * @docs-private
  */
@@ -70,19 +70,19 @@ export const HIDE_ANIMATION = '195ms cubic-bezier(0.0,0.0,0.2,1)';
   ],
 })
 export class MdSnackBarContainer extends BasePortalHost implements OnDestroy {
-  /** The portal host inside of this container into which the snack bar content will be loaded. */
+  /* The portal host inside of this container into which the snack bar content will be loaded. */
   @ViewChild(PortalHostDirective) _portalHost: PortalHostDirective;
 
-  /** Subject for notifying that the snack bar has exited from view. */
+  /* Subject for notifying that the snack bar has exited from view. */
   private onExit: Subject<any> = new Subject();
 
-  /** Subject for notifying that the snack bar has finished entering the view. */
+  /* Subject for notifying that the snack bar has finished entering the view. */
   private onEnter: Subject<any> = new Subject();
 
-  /** The state of the snack bar animations. */
+  /* The state of the snack bar animations. */
   animationState: SnackBarState = 'initial';
 
-  /** The snack bar configuration. */
+  /* The snack bar configuration. */
   snackBarConfig: MdSnackBarConfig;
 
   constructor(
@@ -92,7 +92,7 @@ export class MdSnackBarContainer extends BasePortalHost implements OnDestroy {
     super();
   }
 
-  /** Attach a component portal as content to this snack bar container. */
+  /* Attach a component portal as content to this snack bar container. */
   attachComponentPortal<T>(portal: ComponentPortal<T>): ComponentRef<T> {
     if (this._portalHost.hasAttached()) {
       throw Error('Attempting to attach snack bar content after content is already attached');
@@ -109,12 +109,12 @@ export class MdSnackBarContainer extends BasePortalHost implements OnDestroy {
     return this._portalHost.attachComponentPortal(portal);
   }
 
-  /** Attach a template portal as content to this snack bar container. */
+  /* Attach a template portal as content to this snack bar container. */
   attachTemplatePortal(): Map<string, any> {
     throw Error('Not yet implemented');
   }
 
-  /** Handle end of animations, updating the state of the snackbar. */
+  /* Handle end of animations, updating the state of the snackbar. */
   onAnimationEnd(event: AnimationEvent) {
     if (event.toState === 'void' || event.toState === 'complete') {
       this._completeExit();
@@ -132,36 +132,36 @@ export class MdSnackBarContainer extends BasePortalHost implements OnDestroy {
     }
   }
 
-  /** Begin animation of snack bar entrance into view. */
+  /* Begin animation of snack bar entrance into view. */
   enter(): void {
     this.animationState = 'visible';
   }
 
-  /** Returns an observable resolving when the enter animation completes.  */
+  /* Returns an observable resolving when the enter animation completes.  */
   _onEnter(): Observable<void> {
     this.animationState = 'visible';
     return this.onEnter.asObservable();
   }
 
-  /** Begin animation of the snack bar exiting from view. */
+  /* Begin animation of the snack bar exiting from view. */
   exit(): Observable<void> {
     this.animationState = 'complete';
     return this._onExit();
   }
 
-  /** Returns an observable that completes after the closing animation is done. */
+  /* Returns an observable that completes after the closing animation is done. */
   _onExit(): Observable<void> {
     return this.onExit.asObservable();
   }
 
-  /**
+  /*
    * Makes sure the exit callbacks have been invoked when the element is destroyed.
    */
   ngOnDestroy() {
     this._completeExit();
   }
 
-  /**
+  /*
    * Waits for the zone to settle before removing the element. Helps prevent
    * errors where we end up removing an element which is in the middle of an animation.
    */
