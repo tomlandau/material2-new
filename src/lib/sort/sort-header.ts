@@ -12,8 +12,7 @@ import {
 } from '@angular/core';
 import {MdSort, MdSortable} from './sort';
 import {MdSortHeaderIntl} from './sort-header-intl';
-import {CdkColumnDef} from '@angular/cdk';
-import {coerceBooleanProperty} from '../core';
+import {CdkColumnDef, coerceBooleanProperty} from '@angular/cdk';
 import {getMdSortHeaderNotContainedWithinMdSortError} from './sort-errors';
 import {Subscription} from 'rxjs/Subscription';
 

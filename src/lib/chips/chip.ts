@@ -18,8 +18,7 @@ import {
   forwardRef,
 } from '@angular/core';
 
-import {Focusable} from '../core/a11y/focus-key-manager';
-import {coerceBooleanProperty} from '@angular/cdk';
+import {coerceBooleanProperty, Focusable} from '@angular/cdk';
 import {CanColor, mixinColor} from '../core/common-behaviors/color';
 import {CanDisable, mixinDisabled} from '../core/common-behaviors/disabled';
 import {SPACE, BACKSPACE, DELETE} from '../core/keyboard/keycodes';

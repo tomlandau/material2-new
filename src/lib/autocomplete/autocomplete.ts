@@ -20,7 +20,7 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import {MdOption} from '../core/option/index';
-import {ActiveDescendantKeyManager} from '../core/a11y/activedescendant-key-manager';
+import {ActiveDescendantKeyManager} from '@angular/cdk';
 
 /*
  * Autocomplete IDs need to be unique across components, so this counter exists outside of

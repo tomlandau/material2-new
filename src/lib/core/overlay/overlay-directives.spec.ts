@@ -5,7 +5,7 @@ import {ConnectedOverlayDirective, OverlayModule, OverlayOrigin} from './index';
 import {OverlayContainer} from './overlay-container';
 import {ConnectedPositionStrategy} from './position/connected-position-strategy';
 import {ConnectedOverlayPositionChange} from './position/connected-position';
-import {Directionality} from '../bidi/index';
+import {Directionality} from '@angular/cdk';
 import {dispatchKeyboardEvent} from '@angular/cdk/testing';
 import {ESCAPE} from '../keyboard/keycodes';
 

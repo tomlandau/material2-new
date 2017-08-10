@@ -25,7 +25,7 @@ import {AnimationEvent} from '@angular/animations';
 import {MenuPositionX, MenuPositionY} from './menu-positions';
 import {throwMdMenuInvalidPositionX, throwMdMenuInvalidPositionY} from './menu-errors';
 import {MdMenuItem} from './menu-item';
-import {FocusKeyManager} from '../core/a11y/focus-key-manager';
+import {FocusKeyManager} from '@angular/cdk';
 import {MdMenuPanel} from './menu-panel';
 import {Subscription} from 'rxjs/Subscription';
 import {transformMenu, fadeInItems} from './menu-animations';

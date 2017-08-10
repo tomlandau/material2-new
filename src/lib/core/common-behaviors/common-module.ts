@@ -9,7 +9,7 @@
 import {NgModule, InjectionToken, Optional, Inject, isDevMode} from '@angular/core';
 import {DOCUMENT} from '@angular/platform-browser';
 import {CompatibilityModule} from '../compatibility/compatibility';
-import {BidiModule} from '../bidi/index';
+import {BidiModule} from '@angular/cdk';
 
 
 /** Injection token that configures whether the Material sanity checks are enabled. */
