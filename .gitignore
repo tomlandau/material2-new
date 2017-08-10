@@ -36,4 +36,4 @@ testem.log
 /.chrome
 
 #bit
-/.bit
+.bit
