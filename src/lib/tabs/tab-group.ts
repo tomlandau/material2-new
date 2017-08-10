@@ -23,14 +23,12 @@ import {
   AfterContentChecked,
   OnDestroy,
 } from '@angular/core';
-import {coerceBooleanProperty} from '@angular/cdk';
+import {map, coerceBooleanProperty} from '@angular/cdk';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 import {MdTab} from './tab';
-import {map} from '../core/rxjs/index';
 import {merge} from 'rxjs/observable/merge';
-import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/disable-ripple';
-import {CanColor, mixinColor, ThemePalette} from '../core/common-behaviors/color';
+import {CanColor, mixinColor, ThemePalette, CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/index';
 
 
 /* Used to generate unique ID's for each tab component */

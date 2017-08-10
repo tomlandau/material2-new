@@ -176,7 +176,7 @@ import {CommonModule} from '@angular/common';
 import {MdSelect, MD_SELECT_SCROLL_STRATEGY_PROVIDER} from './select';
 import {MdOptionModule} from '../core/option/index';
 import {OverlayModule} from '../core/overlay/index';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 
 
 @NgModule({

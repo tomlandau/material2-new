@@ -1,6 +1,6 @@
 import {TestBed, ComponentFixture, fakeAsync, tick, inject} from '@angular/core/testing';
 import {Component, ViewChild} from '@angular/core';
-import {ViewportRuler} from '../overlay/position/viewport-ruler';
+import {ViewportRuler} from '../overlay/index';
 import {RIPPLE_FADE_OUT_DURATION, RIPPLE_FADE_IN_DURATION} from './ripple-renderer';
 import {dispatchMouseEvent} from '@angular/cdk/testing';
 import {

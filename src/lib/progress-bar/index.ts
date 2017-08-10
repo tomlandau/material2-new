@@ -79,7 +79,7 @@
 
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {MdProgressBar} from './progress-bar';
 
 

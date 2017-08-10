@@ -31,21 +31,17 @@ import {
 import {MdOption, MdOptionSelectionChange, MdOptgroup} from '../core/option/index';
 import {ENTER, SPACE, UP_ARROW, DOWN_ARROW, HOME, END} from '../core/keyboard/keycodes';
 import {FocusKeyManager} from '../core/a11y/focus-key-manager';
-import {Directionality} from '@angular/cdk';
+import {startWith, filter, Directionality} from '@angular/cdk';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 import {transformPlaceholder, transformPanel, fadeInContent} from './select-animations';
 import {ControlValueAccessor, NgControl} from '@angular/forms';
 import {coerceBooleanProperty} from '@angular/cdk';
-import {ConnectedOverlayDirective} from '../core/overlay/overlay-directives';
-import {ViewportRuler} from '../core/overlay/position/viewport-ruler';
-import {SelectionModel} from '../core/selection/selection';
-import {Overlay} from '../core/overlay/overlay';
+import {Overlay, ViewportRuler, ConnectedOverlayDirective} from '../core/overlay/index';
+import {SelectionModel} from '../core/selection/index';
 import {getMdSelectDynamicMultipleError, getMdSelectNonArrayValueError} from './select-errors';
-import {startWith, filter} from '../core/rxjs/index';
 import {merge} from 'rxjs/observable/merge';
-import {CanColor, mixinColor} from '../core/common-behaviors/color';
-import {CanDisable, mixinDisabled} from '../core/common-behaviors/disabled';
+import {CanDisable, mixinDisabled, CanColor, mixinColor} from '../core/common-behaviors/index';
 import {
   FloatPlaceholderType,
   PlaceholderOptions,
@@ -54,7 +50,7 @@ import {
 // This import is only used to define a generic type. The current TypeScript version incorrectly
 // considers such imports as unused (https://github.com/Microsoft/TypeScript/issues/14953)
 // tslint:disable-next-line:no-unused-variable
-import {ScrollStrategy, RepositionScrollStrategy} from '../core/overlay/scroll';
+import {ScrollStrategy, RepositionScrollStrategy} from '../core/overlay/index';
 
 /*
  * The following style constants are necessary to save here in order

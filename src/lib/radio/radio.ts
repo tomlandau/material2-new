@@ -33,9 +33,7 @@ import {RippleRef, MdRipple} from '../core/ripple/index';
 import {UniqueSelectionDispatcher} from '../core/coordination/unique-selection-dispatcher';
 
 import {coerceBooleanProperty} from '@angular/cdk';
-import {mixinDisabled, CanDisable} from '../core/common-behaviors/disabled';
-import {CanColor, mixinColor} from '../core/common-behaviors/color';
-import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/disable-ripple';
+import {CanDisableRipple, mixinDisableRipple, mixinDisabled, CanDisable, CanColor, mixinColor} from '../core/common-behaviors/index';
 
 // Increasing integer for generating unique ids for radio components.
 let nextUniqueId = 0;

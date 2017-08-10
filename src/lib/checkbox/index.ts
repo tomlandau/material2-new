@@ -117,7 +117,7 @@ import {CommonModule} from '@angular/common';
 import {ObserveContentModule} from '@angular/cdk';
 import {FocusOriginMonitor} from '../core/style/index';
 import {MdRippleModule} from '../core/ripple/index';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {MdCheckbox} from './checkbox';
 
 

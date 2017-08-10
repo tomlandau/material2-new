@@ -7,7 +7,7 @@
  */
 
 import {Directive, ElementRef} from '@angular/core';
-import {CanDisable, mixinDisabled} from '../core/common-behaviors/disabled';
+import {CanDisable, mixinDisabled} from '../core/common-behaviors/index';
 
 // Boilerplate for applying mixins to MdTabLabelWrapper.
 /* @docs-private */

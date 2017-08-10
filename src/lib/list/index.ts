@@ -211,7 +211,7 @@
 import {NgModule} from '@angular/core';
 import {MdLineModule} from '../core/line/line';
 import {MdRippleModule} from '../core/ripple/index';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {
   MdList,
   MdListItem,

@@ -6,12 +6,12 @@
  * found in the LICENSE file at https://angular.io/license
  */
 
-import {TemplatePortal} from '../core/portal/portal';
+import {TemplatePortal} from '@angular/cdk';
 import {
   ViewContainerRef, Input, TemplateRef, ViewChild, OnInit, ContentChild,
   Component, ChangeDetectionStrategy, OnDestroy, OnChanges, SimpleChanges,
 } from '@angular/core';
-import {CanDisable, mixinDisabled} from '../core/common-behaviors/disabled';
+import {CanDisable, mixinDisabled} from '../core/common-behaviors/index';
 import {MdTabLabel} from './tab-label';
 import {Subject} from 'rxjs/Subject';
 

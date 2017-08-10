@@ -18,9 +18,8 @@ import {
   ViewEncapsulation
 } from '@angular/core';
 import {MdCalendarCell} from './calendar-body';
-import {DateAdapter} from '../core/datetime/index';
+import {DateAdapter, MD_DATE_FORMATS, MdDateFormats} from '../core/datetime/index';
 import {createMissingDateImplError} from './datepicker-errors';
-import {MD_DATE_FORMATS, MdDateFormats} from '../core/datetime/date-formats';
 
 
 /*

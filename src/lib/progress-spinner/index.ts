@@ -72,7 +72,7 @@
  */
 
 import {NgModule} from '@angular/core';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {
   MdProgressSpinner,
   MdSpinner,

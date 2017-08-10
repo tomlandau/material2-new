@@ -201,7 +201,7 @@
 import {NgModule} from '@angular/core';
 import {OverlayModule} from '../core/overlay/index';
 import {PortalModule, LIVE_ANNOUNCER_PROVIDER} from '@angular/cdk';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {CommonModule} from '@angular/common';
 import {MdSnackBar} from './snack-bar';
 import {MdSnackBarContainer} from './snack-bar-container';

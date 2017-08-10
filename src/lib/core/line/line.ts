@@ -13,7 +13,7 @@ import {
   ElementRef,
   QueryList,
 } from '@angular/core';
-import {MdCommonModule} from '../common-behaviors/common-module';
+import {MdCommonModule} from '../common-behaviors/index';
 
 
 /**

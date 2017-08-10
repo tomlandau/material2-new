@@ -98,9 +98,9 @@ import {NgModule} from '@angular/core';
 import {HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
 import {MdSlideToggle} from './slide-toggle';
 import {PlatformModule} from '@angular/cdk';
-import {GestureConfig} from '../core/gestures/gesture-config';
+import {GestureConfig} from '../core/gestures/index';
 import {FOCUS_ORIGIN_MONITOR_PROVIDER} from '../core/style/index';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {MdRippleModule} from '../core/ripple/index';
 
 @NgModule({

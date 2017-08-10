@@ -7,8 +7,7 @@
  */
 
 import {Injectable} from '@angular/core';
-import {GestureConfig} from '../core/gestures/gesture-config';
-import {HammerManager} from '../core/gestures/gesture-annotations';
+import {GestureConfig, HammerManager} from '../core/gestures/index';
 
 /*
  * An extension of GestureConfig that exposes the underlying HammerManager instances.

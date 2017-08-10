@@ -27,10 +27,10 @@ import {
   Directionality, 
   coerceBooleanProperty, 
   FocusTrapFactory, 
-  FocusTrap
+  FocusTrap,
+  first
 } from '@angular/cdk';
 import {ESCAPE} from '../core/keyboard/keycodes';
-import {first} from '../core/rxjs/index';
 import {DOCUMENT} from '@angular/platform-browser';
 
 

@@ -13,8 +13,7 @@ import {By} from '@angular/platform-browser';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MdInputModule} from './index';
 import {MdInputContainer, MdInputDirective} from './input-container';
-import {Platform} from '../core/platform/platform';
-import {PlatformModule} from '../core/platform/index';
+import {Platform, PlatformModule} from '@angular/cdk';
 import {wrappedErrorMessage, dispatchFakeEvent} from '@angular/cdk/testing';
 import {
   getMdInputContainerDuplicatedHintError,

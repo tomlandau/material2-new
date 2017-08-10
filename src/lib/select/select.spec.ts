@@ -11,19 +11,18 @@ import {
 } from '@angular/core';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MdSelectModule} from './index';
-import {OverlayContainer} from '../core/overlay/overlay-container';
+import {OverlayContainer} from '../core/overlay/index';
 import {MdSelect} from './select';
 import {getMdSelectDynamicMultipleError, getMdSelectNonArrayValueError} from './select-errors';
-import {MdOption} from '../core/option/option';
+import {MdOption} from '../core/option/index';
 import {Directionality} from '@angular/cdk';
 import {DOWN_ARROW, UP_ARROW, ENTER, SPACE, HOME, END, TAB} from '../core/keyboard/keycodes';
 import {
   ControlValueAccessor, FormControl, FormsModule, NG_VALUE_ACCESSOR, ReactiveFormsModule
 } from '@angular/forms';
 import {Subject} from 'rxjs/Subject';
-import {ViewportRuler} from '../core/overlay/position/viewport-ruler';
+import {ScrollDispatcher, ViewportRuler} from '../core/overlay/index';
 import {dispatchFakeEvent, dispatchKeyboardEvent, wrappedErrorMessage} from '@angular/cdk/testing';
-import {ScrollDispatcher} from '../core/overlay/scroll/scroll-dispatcher';
 import {
   FloatPlaceholderType,
   MD_PLACEHOLDER_GLOBAL_OPTIONS

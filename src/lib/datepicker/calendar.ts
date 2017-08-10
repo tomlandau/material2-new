@@ -33,9 +33,9 @@ import {
 import {DateAdapter} from '../core/datetime/index';
 import {MdDatepickerIntl} from './datepicker-intl';
 import {createMissingDateImplError} from './datepicker-errors';
-import {MD_DATE_FORMATS, MdDateFormats} from '../core/datetime/date-formats';
+import {MD_DATE_FORMATS, MdDateFormats} from '../core/datetime/index';
 import {MATERIAL_COMPATIBILITY_MODE} from '../core/compatibility/compatibility';
-import {first} from '../core/rxjs/index';
+import {first} from '@angular/cdk';
 
 
 /*

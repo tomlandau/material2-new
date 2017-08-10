@@ -24,14 +24,13 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import {MdInkBar} from '../ink-bar';
-import {CanDisable, mixinDisabled} from '../../core/common-behaviors/disabled';
+import {CanColor, mixinColor, ThemePalette, CanDisable, mixinDisabled} from '../../core/common-behaviors/index';
 import {MdRipple} from '../../core/ripple/index';
-import {ViewportRuler} from '../../core/overlay/position/viewport-ruler';
-import {Directionality, MD_RIPPLE_GLOBAL_OPTIONS, Platform, RippleGlobalOptions} from '../../core';
-import {CanColor, mixinColor, ThemePalette} from '../../core/common-behaviors/color';
+import {ViewportRuler} from '../../core/overlay/index';
+import {MD_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions} from '../../core/ripple/index'
+import {takeUntil, auditTime, Directionality, Platform} from '@angular/cdk';
 import {Subject} from 'rxjs/Subject';
 import {Subscription} from 'rxjs/Subscription';
-import {takeUntil, auditTime} from '../../core/rxjs/index';
 import {of as observableOf} from 'rxjs/observable/of';
 import {merge} from 'rxjs/observable/merge';
 import {fromEvent} from 'rxjs/observable/fromEvent';

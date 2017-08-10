@@ -100,7 +100,7 @@
 
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {OverlayModule} from '../core/overlay/index';
 import {PlatformModule} from '@angular/cdk';
 import {MdTooltip, TooltipComponent, MD_TOOLTIP_SCROLL_STRATEGY_PROVIDER} from './tooltip';

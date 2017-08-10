@@ -7,7 +7,7 @@
  */
 
 import {Component, ViewEncapsulation, Input, ChangeDetectionStrategy} from '@angular/core';
-import {mixinDisabled, CanDisable} from '../common-behaviors/disabled';
+import {mixinDisabled, CanDisable} from '../common-behaviors/index';
 
 // Boilerplate for applying mixins to MdOptgroup.
 /** @docs-private */

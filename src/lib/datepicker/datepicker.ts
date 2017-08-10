@@ -33,21 +33,16 @@ import {
   // considers such imports as unused (https://github.com/Microsoft/TypeScript/issues/14953)
   // tslint:disable-next-line:no-unused-variable
   ScrollStrategy,
+  PositionStrategy
 } from '../core/overlay/index';
-import {ComponentPortal} from '../core/portal/portal';
-import {Directionality} from '@angular/cdk';
-import {MdDialog} from '../dialog/dialog';
-import {MdDialogRef} from '../dialog/dialog-ref';
-import {PositionStrategy} from '../core/overlay/position/position-strategy';
+import {Directionality, ComponentPortal, first, coerceBooleanProperty} from '@angular/cdk';
+import {MdDialog, MdDialogRef} from '../dialog/index';
 import {MdDatepickerInput} from './datepicker-input';
 import {Subscription} from 'rxjs/Subscription';
 import {DateAdapter} from '../core/datetime/index';
 import {createMissingDateImplError} from './datepicker-errors';
 import {ESCAPE} from '../core/keyboard/keycodes';
 import {MdCalendar} from './calendar';
-import {first} from '../core/rxjs/index';
-import {coerceBooleanProperty} from '@angular/cdk';
-
 
 /* Used to generate a unique ID for each datepicker instance. */
 let datepickerUid = 0;

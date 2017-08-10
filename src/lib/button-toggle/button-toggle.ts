@@ -31,7 +31,7 @@ import {NG_VALUE_ACCESSOR, ControlValueAccessor} from '@angular/forms';
 import {coerceBooleanProperty, } from '@angular/cdk';
 import {FocusOriginMonitor} from '../core/style/index';
 import {UniqueSelectionDispatcher} from '../core/coordination/unique-selection-dispatcher';
-import {CanDisable, mixinDisabled} from '../core/common-behaviors/disabled';
+import {CanDisable, mixinDisabled} from '../core/common-behaviors/index';
 
 /* Acceptable types for a button toggle. */
 export type ToggleType = 'checkbox' | 'radio';
