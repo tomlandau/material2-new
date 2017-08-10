@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,4CAA4C;AAmC5C,sBAAsB",
+"sources": ["../core/style/_vendor-prefixes.scss"],
+"names": [],
+"file": "button-base.scss"
+}

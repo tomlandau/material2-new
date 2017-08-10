@@ -27,7 +27,7 @@ node_modules
 
 # misc
 .DS_Store
-/.sass-cache
+**/.sass-cache
 /connect.lock
 /coverage/*
 /libpeerconnection.log

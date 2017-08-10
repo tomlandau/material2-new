@@ -1,3 +1,6 @@
+// Import theme
+@import './indigo-pink.css';
+
 // Separate transitions to be able to disable them in unit tests by omitting this file.
 @import '../core/style/variables';
 

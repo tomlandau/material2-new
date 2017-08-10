@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACQ,8BAAmB;AAE3B,qBAAsB;EACpB,MAAM,EAAE,IAAI;EACZ,QAAQ,EAAE,IAAI;EAEd,mDAAgC;IAC9B,QAAQ,EAAE,MAAM",
+"sources": ["tab-body.scss"],
+"names": [],
+"file": "tab-body.css"
+}
