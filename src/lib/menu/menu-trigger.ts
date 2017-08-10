@@ -37,7 +37,9 @@ import {
   isFakeMousedownFromScreenReader,
   Directionality,
   Direction,
-  TemplatePortal
+  TemplatePortal,
+  RxChain, 
+  filter
 } from '@angular/cdk';
 import {RIGHT_ARROW, LEFT_ARROW} from '../core/keyboard/keycodes';
 import {MdMenu} from './menu-directive';
@@ -45,7 +47,6 @@ import {MdMenuItem} from './menu-item';
 import {MdMenuPanel} from './menu-panel';
 import {MenuPositionX, MenuPositionY} from './menu-positions';
 import {throwMdMenuMissingError} from './menu-errors';
-import {RxChain, filter} from '../core/rxjs/index';
 import {of as observableOf} from 'rxjs/observable/of';
 import {merge} from 'rxjs/observable/merge';
 import {Subscription} from 'rxjs/Subscription';

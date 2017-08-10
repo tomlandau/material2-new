@@ -19,7 +19,7 @@ import {
 } from '../core/keyboard/keycodes';
 import {MdDatepickerIntl} from './datepicker-intl';
 import {MdNativeDateModule} from '../core/datetime/index';
-import {NoConflictStyleCompatibilityMode} from '../core';
+import {NoConflictStyleCompatibilityMode} from '../core/compatibility/compatibility';
 import {MdButtonModule} from '../button/index';
 import {AUG, DEC, FEB, JAN, JUL, NOV, MAR, MAY, JUN, SEP} from '../core/testing/month-constants';
 

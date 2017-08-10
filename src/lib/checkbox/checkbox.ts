@@ -25,9 +25,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {coerceBooleanProperty} from '@angular/cdk';
 import {FocusOrigin, FocusOriginMonitor} from '../core/style/index';
 import {MdRipple, RippleRef} from '../core/ripple/index';
-import {mixinDisabled, CanDisable} from '../core/common-behaviors/disabled';
-import {CanColor, mixinColor} from '../core/common-behaviors/color';
-import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/disable-ripple';
+import {CanColor, mixinColor, mixinDisabled, CanDisable, CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/index';
 
 // Increasing integer for generating unique ids for checkbox components.
 let nextUniqueId = 0;

@@ -156,10 +156,15 @@
                 "relativePath": "src/lib/core/gestures/gesture-config.ts",
                 "test": false,
                 "name": "gesture-config.ts"
+            },
+            {
+                "relativePath": "src/lib/core/gestures/index.ts",
+                "test": false,
+                "name": "index.ts"
             }
         ],
         "origin": "AUTHORED",
-        "mainFile": "src/lib/core/gestures/gesture-config.ts"
+        "mainFile": "src/lib/core/gestures/index.ts"
     },
     "core/keyboard": {
         "files": [

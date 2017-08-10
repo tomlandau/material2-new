@@ -1,16 +1,9 @@
 import {inject, TestBed, async} from '@angular/core/testing';
 import {NgModule, Component} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
-import {
-  PortalModule,
-  ComponentPortal,
-  Overlay,
-  OverlayState,
-  OverlayRef,
-  OverlayModule,
-  ScrollDispatcher,
-  OverlayContainer,
-} from '../../core';
+import {PortalModule, ComponentPortal} from '@angular/cdk';
+import {ScrollDispatcher} from './scroll-dispatcher';
+import {OverlayModule, Overlay, OverlayRef, OverlayContainer, OverlayState} from '../index';
 
 
 describe('CloseScrollStrategy', () => {

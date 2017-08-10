@@ -19,8 +19,8 @@ import {
   Attribute,
 } from '@angular/core';
 import {MdIconRegistry} from './icon-registry';
-import {CanColor, mixinColor} from '../core/common-behaviors/color';
-import {first} from '../core/rxjs/index';
+import {CanColor, mixinColor} from '../core/common-behaviors/index';
+import {first} from '@angular/cdk';
 
 
 // Boilerplate for applying mixins to MdIcon.

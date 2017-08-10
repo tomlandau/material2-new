@@ -184,7 +184,7 @@
 
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {ObserveContentModule, PortalModule} from '@angular/cdk';
 import {MdRippleModule} from '../core/ripple/index';
 import {MdTab} from './tab';
@@ -194,9 +194,8 @@ import {MdTabLabelWrapper} from './tab-label-wrapper';
 import {MdTabNav, MdTabLink} from './tab-nav-bar/tab-nav-bar';
 import {MdInkBar} from './ink-bar';
 import {MdTabBody} from './tab-body';
-import {VIEWPORT_RULER_PROVIDER} from '../core/overlay/position/viewport-ruler';
+import {ScrollDispatchModule, VIEWPORT_RULER_PROVIDER} from '../core/overlay/index';
 import {MdTabHeader} from './tab-header';
-import {ScrollDispatchModule} from '../core/overlay/scroll/index';
 
 
 @NgModule({

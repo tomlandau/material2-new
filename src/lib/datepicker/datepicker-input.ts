@@ -31,11 +31,10 @@ import {
   Validators
 } from '@angular/forms';
 import {Subscription} from 'rxjs/Subscription';
-import {MdInputContainer} from '../input/input-container';
+import {MdInputContainer} from '../input/index';
 import {DOWN_ARROW} from '../core/keyboard/keycodes';
-import {DateAdapter} from '../core/datetime/index';
+import {DateAdapter, MD_DATE_FORMATS, MdDateFormats} from '../core/datetime/index';
 import {createMissingDateImplError} from './datepicker-errors';
-import {MD_DATE_FORMATS, MdDateFormats} from '../core/datetime/date-formats';
 import {coerceBooleanProperty} from '@angular/cdk';
 
 

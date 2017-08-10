@@ -26,7 +26,7 @@ import {
   FocusOrigin,
   FocusOriginMonitor,
 } from '../core/style/index';
-import {HammerInput} from '../core/gestures/gesture-annotations';
+import {HammerInput} from '../core/gestures/index';
 import {
   MdRipple,
   RippleRef
@@ -36,9 +36,7 @@ import {
   coerceBooleanProperty
 } from '@angular/cdk'
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
-import {mixinDisabled, CanDisable} from '../core/common-behaviors/disabled';
-import {CanColor, mixinColor} from '../core/common-behaviors/color';
-import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/disable-ripple';
+import {CanDisableRipple, mixinDisableRipple, CanColor, mixinColor, mixinDisabled, CanDisable} from '../core/common-behaviors/index';
 
 // Increasing integer for generating unique ids for slide-toggle components.
 let nextUniqueId = 0;

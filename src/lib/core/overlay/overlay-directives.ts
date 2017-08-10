@@ -24,7 +24,7 @@ import {
 } from '@angular/core';
 import {Overlay} from './overlay';
 import {OverlayRef} from './overlay-ref';
-import {TemplatePortal} from '../portal/portal';
+import {TemplatePortal} from '@angular/cdk';
 import {OverlayState} from './overlay-state';
 import {
     ConnectionPositionPair,
@@ -34,7 +34,7 @@ import {
     ConnectedOverlayPositionChange
 } from './position/connected-position';
 import {ConnectedPositionStrategy} from './position/connected-position-strategy';
-import {Directionality, Direction} from '../bidi/index';
+import {Directionality, Direction} from '@angular/cdk';
 import {coerceBooleanProperty} from '@angular/cdk';
 import {ScrollStrategy, RepositionScrollStrategy} from './scroll/index';
 import {ESCAPE} from '../keyboard/keycodes';

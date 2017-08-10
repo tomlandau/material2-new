@@ -265,7 +265,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {PortalModule, A11yModule} from '@angular/cdk';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {OverlayModule} from '../core/overlay/index';
 import {MdDialog, MD_DIALOG_SCROLL_STRATEGY_PROVIDER} from './dialog';
 import {MdDialogContainer} from './dialog-container';

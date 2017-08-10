@@ -7,8 +7,7 @@ import {NoopAnimationsModule, BrowserAnimationsModule} from '@angular/platform-b
 import {By} from '@angular/platform-browser';
 import {Observable} from 'rxjs/Observable';
 import {MdTab} from './tab';
-import {ViewportRuler} from '../core/overlay/position/viewport-ruler';
-import {FakeViewportRuler} from '../core/overlay/position/fake-viewport-ruler';
+import {FakeViewportRuler, ViewportRuler} from '../core/overlay/index';
 import {dispatchFakeEvent} from '@angular/cdk/testing';
 
 

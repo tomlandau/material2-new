@@ -207,7 +207,7 @@
  */
 
 import {NgModule} from '@angular/core';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {MdOptionModule} from '../core/option/index';
 import {OverlayModule} from '../core/overlay/index';
 import {CommonModule} from '@angular/common';

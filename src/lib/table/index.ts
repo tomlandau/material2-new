@@ -339,7 +339,7 @@ import {CdkTableModule} from '@angular/cdk';
 import {MdCell, MdHeaderCell} from './cell';
 import {MdHeaderRow, MdRow} from './row';
 import {CommonModule} from '@angular/common';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 
 export * from './cell';
 export * from './table';

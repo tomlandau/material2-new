@@ -7,8 +7,8 @@
  */
 
 import {Component, ElementRef, OnDestroy, ChangeDetectionStrategy} from '@angular/core';
-import {Focusable} from '../core/a11y/focus-key-manager';
-import {CanDisable, mixinDisabled} from '../core/common-behaviors/disabled';
+import {Focusable} from '@angular/cdk';
+import {CanDisable, mixinDisabled} from '../core/common-behaviors/index';
 import {Subject} from 'rxjs/Subject';
 
 // Boilerplate for applying mixins to MdMenuItem.

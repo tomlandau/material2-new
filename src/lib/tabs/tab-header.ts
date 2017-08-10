@@ -27,7 +27,9 @@ import {
 } from '@angular/core';
 import {
   Directionality,
-  Direction
+  Direction,
+  startWith,
+  auditTime
 } from '@angular/cdk';
 import {
   RIGHT_ARROW,
@@ -37,11 +39,10 @@ import {
 import {MdTabLabelWrapper} from './tab-label-wrapper';
 import {MdInkBar} from './ink-bar';
 import {Subscription} from 'rxjs/Subscription';
-import {auditTime, startWith} from '../core/rxjs/index';
 import {of as observableOf} from 'rxjs/observable/of';
 import {merge} from 'rxjs/observable/merge';
 import {fromEvent} from 'rxjs/observable/fromEvent';
-import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/disable-ripple';
+import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/index';
 
 
 /*

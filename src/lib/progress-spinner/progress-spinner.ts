@@ -18,7 +18,7 @@ import {
   Directive,
   ViewChild,
 } from '@angular/core';
-import {CanColor, mixinColor} from '../core/common-behaviors/color';
+import {CanColor, mixinColor} from '../core/common-behaviors/index';
 
 
 // TODO(josephperrott): Benchpress tests.

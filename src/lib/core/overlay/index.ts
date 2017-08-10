@@ -42,7 +42,8 @@ export {FullscreenOverlayContainer} from './fullscreen-overlay-container';
 export {OverlayRef} from './overlay-ref';
 export {OverlayState} from './overlay-state';
 export {ConnectedOverlayDirective, OverlayOrigin} from './overlay-directives';
-export {ViewportRuler} from './position/viewport-ruler';
+export {ViewportRuler, VIEWPORT_RULER_PROVIDER} from './position/viewport-ruler';
+export {FakeViewportRuler} from './position/fake-viewport-ruler';
 
 export * from './position/connected-position';
 export * from './scroll/index';

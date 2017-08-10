@@ -7,3 +7,6 @@
  */
 
 export {CanDisable, mixinDisabled} from './disabled';
+export * from './common-module';
+export * from './disable-ripple';
+export * from './color';

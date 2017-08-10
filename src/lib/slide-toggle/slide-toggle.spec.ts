@@ -6,9 +6,9 @@ import {
 } from '@angular/core/testing';
 import {NgModel, FormsModule, ReactiveFormsModule, FormControl} from '@angular/forms';
 import {MdSlideToggle, MdSlideToggleChange, MdSlideToggleModule} from './index';
-import {TestGestureConfig} from '../slider/test-gesture-config';
+import {TestGestureConfig} from '../slider/index';
 import {dispatchFakeEvent} from '@angular/cdk/testing';
-import {RIPPLE_FADE_IN_DURATION, RIPPLE_FADE_OUT_DURATION} from '../core/ripple/ripple-renderer';
+import {RIPPLE_FADE_IN_DURATION, RIPPLE_FADE_OUT_DURATION} from '../core/ripple/index';
 
 describe('MdSlideToggle without forms', () => {
   let gestureConfig: TestGestureConfig;

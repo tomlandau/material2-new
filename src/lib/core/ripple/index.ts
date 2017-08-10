@@ -8,10 +8,10 @@
 
 import {NgModule} from '@angular/core';
 import {MdRipple} from './ripple';
-import {MdCommonModule} from '../common-behaviors/common-module';
-import {VIEWPORT_RULER_PROVIDER} from '../overlay/position/viewport-ruler';
-import {ScrollDispatchModule} from '../overlay/scroll/index';
-import {PlatformModule} from '../platform/index';
+import {MdCommonModule} from '../common-behaviors/index';
+import {VIEWPORT_RULER_PROVIDER} from '../overlay/index';
+import {ScrollDispatchModule} from '../overlay/index';
+import {PlatformModule} from '@angular/cdk';
 
 export {MdRipple, RippleGlobalOptions, MD_RIPPLE_GLOBAL_OPTIONS} from './ripple';
 export {RippleRef, RippleState} from './ripple-ref';

@@ -20,7 +20,7 @@ import {
   ChangeDetectionStrategy,
 } from '@angular/core';
 import {MdLine, MdLineSetter} from '../core/line/line';
-import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/disable-ripple';
+import {CanDisableRipple, mixinDisableRipple} from '../core/common-behaviors/index';
 
 // Boilerplate for applying mixins to MdList.
 /* @docs-private */

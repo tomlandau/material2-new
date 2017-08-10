@@ -22,7 +22,7 @@ import {
 } from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {coerceBooleanProperty, coerceNumberProperty} from '@angular/cdk';
-import {HammerInput} from '../core/gestures/gesture-annotations';
+import {HammerInput} from '../core/gestures/index';
 import {Directionality} from '@angular/cdk';
 import {
   DOWN_ARROW,
@@ -34,8 +34,8 @@ import {
   RIGHT_ARROW,
   UP_ARROW
 } from '../core/keyboard/keycodes';
-import {FocusOrigin, FocusOriginMonitor} from '../core/style/focus-origin-monitor';
-import {mixinDisabled, CanDisable} from '../core/common-behaviors/disabled';
+import {FocusOrigin, FocusOriginMonitor} from '../core/style/index';
+import {mixinDisabled, CanDisable} from '../core/common-behaviors/index';
 
 
 /*

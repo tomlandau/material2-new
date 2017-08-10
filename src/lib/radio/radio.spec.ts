@@ -3,10 +3,9 @@ import {NgModel, FormsModule, ReactiveFormsModule, FormControl} from '@angular/f
 import {Component, DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
 import {MdRadioGroup, MdRadioButton, MdRadioChange, MdRadioModule} from './index';
-import {ViewportRuler} from '../core/overlay/position/viewport-ruler';
-import {FakeViewportRuler} from '../core/overlay/position/fake-viewport-ruler';
+import {ViewportRuler, FakeViewportRuler} from '../core/overlay/index';
 import {dispatchFakeEvent} from '@angular/cdk/testing';
-import {RIPPLE_FADE_IN_DURATION, RIPPLE_FADE_OUT_DURATION} from '../core/ripple/ripple-renderer';
+import {RIPPLE_FADE_IN_DURATION, RIPPLE_FADE_OUT_DURATION} from '../core/ripple/index';
 
 
 describe('MdRadio', () => {

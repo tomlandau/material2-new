@@ -18,3 +18,4 @@ export class MdSelectionModule { }
 
 
 export * from './pseudo-checkbox/pseudo-checkbox';
+export * from './selection';

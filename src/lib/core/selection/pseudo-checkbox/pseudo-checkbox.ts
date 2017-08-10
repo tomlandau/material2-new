@@ -14,7 +14,7 @@ import {
   Renderer2,
   ChangeDetectionStrategy,
 } from '@angular/core';
-import {CanColor, mixinColor} from '../../common-behaviors/color';
+import {CanColor, mixinColor} from '../../common-behaviors/index';
 
 export type MdPseudoCheckboxState = 'unchecked' | 'checked' | 'indeterminate';
 

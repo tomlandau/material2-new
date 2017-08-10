@@ -172,7 +172,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {OverlayModule} from '../core/overlay/index';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {MdMenu} from './menu-directive';
 import {MdMenuItem} from './menu-item';
 import {MdMenuTrigger, MD_MENU_SCROLL_STRATEGY_PROVIDER} from './menu-trigger';

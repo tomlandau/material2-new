@@ -2,8 +2,8 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {Component, DebugElement} from '@angular/core';
 import {By} from '@angular/platform-browser';
 import {MdButtonModule} from './index';
-import {ViewportRuler} from '../core/overlay/position/viewport-ruler';
-import {FakeViewportRuler} from '../core/overlay/position/fake-viewport-ruler';
+import {ViewportRuler} from '../core/overlay/index';
+import {FakeViewportRuler} from '../core/overlay/index';
 import {MdRipple} from '../core/ripple/index';
 
 

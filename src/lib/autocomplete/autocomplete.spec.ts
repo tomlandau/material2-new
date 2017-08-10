@@ -17,19 +17,17 @@ import {
   MdAutocomplete,
   getMdAutocompleteMissingPanelError,
 } from './index';
-import {OverlayContainer} from '../core/overlay/overlay-container';
+import {OverlayContainer} from '../core/overlay/index';
 import {MdInputModule} from '../input/index';
-import {Directionality, Direction} from '@angular/cdk';
+import {Directionality, Direction, RxChain, map, startWith} from '@angular/cdk';
 import {Subscription} from 'rxjs/Subscription';
 import {ENTER, DOWN_ARROW, SPACE, UP_ARROW, ESCAPE} from '../core/keyboard/keycodes';
-import {MdOption} from '../core/option/option';
-import {MdInputContainer} from '../input/input-container';
+import {MdOption} from '../core/option/index';
+import {MdInputContainer} from '../input/index';
 import {Observable} from 'rxjs/Observable';
 import {Subject} from 'rxjs/Subject';
 import {createKeyboardEvent, dispatchFakeEvent, typeInElement} from '@angular/cdk/testing';
-import {ScrollDispatcher} from '../core/overlay/scroll/scroll-dispatcher';
-import {RxChain, map, startWith} from '../core/rxjs/index';
-
+import {ScrollDispatcher} from '../core/overlay/index';
 
 describe('MdAutocomplete', () => {
   let overlayContainerElement: HTMLElement;

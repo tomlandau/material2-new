@@ -41,14 +41,12 @@ import {
   // considers such imports as unused (https://github.com/Microsoft/TypeScript/issues/14953)
   // tslint:disable-next-line:no-unused-variable
   ScrollStrategy,
+  ScrollDispatcher
 } from '../core/overlay/index';
 import {Observable} from 'rxjs/Observable';
 import {Subject} from 'rxjs/Subject';
 import {Directionality, ComponentPortal} from '@angular/cdk';
-import {Platform} from '../core/platform/index';
-import {first} from '../core/rxjs/index';
-import {ScrollDispatcher} from '../core/overlay/scroll/scroll-dispatcher';
-import {coerceBooleanProperty} from '@angular/cdk';
+import {first, Platform, coerceBooleanProperty} from '@angular/cdk';
 
 export type TooltipPosition = 'left' | 'right' | 'above' | 'below' | 'before' | 'after';
 

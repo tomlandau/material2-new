@@ -26,26 +26,23 @@ import {
   Overlay,
   OverlayRef,
   OverlayState,
-  TemplatePortal,
   RepositionScrollStrategy,
   // This import is only used to define a generic type. The current TypeScript version incorrectly
   // considers such imports as unused (https://github.com/Microsoft/TypeScript/issues/14953)
   // tslint:disable-next-line:no-unused-variable
   ScrollStrategy,
-} from '../core';
+} from '../core/overlay/index';
 import {MdAutocomplete} from './autocomplete';
-import {PositionStrategy} from '../core/overlay/position/position-strategy';
-import {ConnectedPositionStrategy} from '../core/overlay/position/connected-position-strategy';
+import {PositionStrategy, ConnectedPositionStrategy} from '../core/overlay/index';
 import {Observable} from 'rxjs/Observable';
-import {MdOptionSelectionChange, MdOption} from '../core/option/option';
+import {MdOptionSelectionChange, MdOption} from '../core/option/index';
 import {ENTER, UP_ARROW, DOWN_ARROW, ESCAPE} from '../core/keyboard/keycodes';
-import {Directionality} from '@angular/cdk';
-import {MdInputContainer} from '../input/input-container';
+import {Directionality, TemplatePortal, RxChain, switchMap, first, filter} from '@angular/cdk';
+import {MdInputContainer} from '../input/index';
 import {Subscription} from 'rxjs/Subscription';
 import {merge} from 'rxjs/observable/merge';
 import {fromEvent} from 'rxjs/observable/fromEvent';
 import {of as observableOf} from 'rxjs/observable/of';
-import {RxChain, switchMap, first, filter} from '../core/rxjs/index';
 
 /*
  * The following style constants are necessary to save here in order

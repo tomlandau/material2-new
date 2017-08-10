@@ -170,8 +170,8 @@ import {NgModule} from '@angular/core';
 import {HAMMER_GESTURE_CONFIG} from '@angular/platform-browser';
 import {CommonModule} from '@angular/common';
 import {StyleModule} from '../core/style/index';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
-import {GestureConfig} from '../core/gestures/gesture-config';
+import {MdCommonModule} from '../core/common-behaviors/index';
+import {GestureConfig} from '../core/gestures/index';
 import {MdSlider} from './slider';
 import {BidiModule} from '@angular/cdk';
 
@@ -186,3 +186,4 @@ export class MdSliderModule {}
 
 
 export * from './slider';
+export * from './test-gesture-config';

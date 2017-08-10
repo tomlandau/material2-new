@@ -127,10 +127,10 @@
 
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {VIEWPORT_RULER_PROVIDER} from '../core/overlay/position/viewport-ruler';
+import {VIEWPORT_RULER_PROVIDER} from '../core/overlay/index';
 import {FocusOriginMonitor} from '../core/style/index';
 import {MdRippleModule} from '../core/ripple/index';
-import {MdCommonModule} from '../core/common-behaviors/common-module';
+import {MdCommonModule} from '../core/common-behaviors/index';
 import {UNIQUE_SELECTION_DISPATCHER_PROVIDER} from '../core/coordination/unique-selection-dispatcher';
 import {MdRadioGroup, MdRadioButton} from './radio';
 

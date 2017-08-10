@@ -20,8 +20,8 @@ import {
 } from '@angular/core';
 import {RippleConfig, RippleRenderer} from './ripple-renderer';
 import {RippleRef} from './ripple-ref';
-import {ViewportRuler} from '../overlay/position/viewport-ruler';
-import {Platform} from '../platform/platform';
+import {ViewportRuler} from '../overlay/index';
+import {Platform} from '@angular/cdk';
 
 export interface RippleGlobalOptions {
   disabled?: boolean;
