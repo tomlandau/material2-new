@@ -34,8 +34,7 @@ import {
   // tslint:disable-next-line:no-unused-variable
   ScrollStrategy,
 } from '../core/overlay/index';
-import {ComponentPortal} from '../core/portal/portal';
-import {Directionality} from '@angular/cdk';
+import {Directionality. ComponentPortal} from '@angular/cdk';
 import {MdDialog} from '../dialog/dialog';
 import {MdDialogRef} from '../dialog/dialog-ref';
 import {PositionStrategy} from '../core/overlay/position/position-strategy';

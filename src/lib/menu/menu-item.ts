@@ -7,7 +7,7 @@
  */
 
 import {Component, ElementRef, OnDestroy, ChangeDetectionStrategy} from '@angular/core';
-import {Focusable} from '../core/a11y/focus-key-manager';
+import {Focusable} from '@angular/cdk';
 import {CanDisable, mixinDisabled} from '../core/common-behaviors/disabled';
 import {Subject} from 'rxjs/Subject';
 

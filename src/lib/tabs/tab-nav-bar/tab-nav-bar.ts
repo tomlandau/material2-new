@@ -27,7 +27,8 @@ import {MdInkBar} from '../ink-bar';
 import {CanDisable, mixinDisabled} from '../../core/common-behaviors/disabled';
 import {MdRipple} from '../../core/ripple/index';
 import {ViewportRuler} from '../../core/overlay/position/viewport-ruler';
-import {Directionality, MD_RIPPLE_GLOBAL_OPTIONS, Platform, RippleGlobalOptions} from '../../core';
+import {MD_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions} from '../../core/ripple/index'
+import {Directionality, Platform} from '@angular/cdk';
 import {CanColor, mixinColor, ThemePalette} from '../../core/common-behaviors/color';
 import {Subject} from 'rxjs/Subject';
 import {Subscription} from 'rxjs/Subscription';
