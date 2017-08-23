@@ -1568,6 +1568,31 @@
     "layout/tabs": {
         "files": [
             {
+                "relativePath": "src/lib/tabs/tab-nav-bar/index.ts",
+                "test": false,
+                "name": "index.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.html",
+                "test": false,
+                "name": "tab-nav-bar.html"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.scss",
+                "test": false,
+                "name": "tab-nav-bar.scss"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.spec.ts",
+                "test": true,
+                "name": "tab-nav-bar.spec.ts"
+            },
+            {
+                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.ts",
+                "test": false,
+                "name": "tab-nav-bar.ts"
+            },
+            {
                 "relativePath": "src/lib/tabs/_tabs-common.scss",
                 "test": false,
                 "name": "_tabs-common.scss"
@@ -1685,35 +1710,4 @@
         ],
         "origin": "AUTHORED",
         "mainFile": "src/lib/tabs/index.ts"
-    },
-    "layout/tab-nav-bar": {
-        "files": [
-            {
-                "relativePath": "src/lib/tabs/tab-nav-bar/index.ts",
-                "test": false,
-                "name": "index.ts"
-            },
-            {
-                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.html",
-                "test": false,
-                "name": "tab-nav-bar.html"
-            },
-            {
-                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.scss",
-                "test": false,
-                "name": "tab-nav-bar.scss"
-            },
-            {
-                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.spec.ts",
-                "test": true,
-                "name": "tab-nav-bar.spec.ts"
-            },
-            {
-                "relativePath": "src/lib/tabs/tab-nav-bar/tab-nav-bar.ts",
-                "test": false,
-                "name": "tab-nav-bar.ts"
-            }
-        ],
-        "origin": "AUTHORED",
-        "mainFile": "src/lib/tabs/tab-nav-bar/index.ts"
     }

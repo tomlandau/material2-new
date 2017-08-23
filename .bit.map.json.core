@@ -719,5 +719,16 @@
         ],
         "origin": "AUTHORED",
         "mainFile": "src/lib/core/util/object-extend.ts"
+    },
+    "core/portal-injector": {
+        "files": [
+            {
+                "relativePath": "src/lib/core/portal/portal-injector.ts",
+                "test": false,
+                "name": "portal-injector.ts"
+            }
+        ],
+        "origin": "AUTHORED",
+        "mainFile": "src/lib/core/portal/portal-injector.ts"
     }
 }
