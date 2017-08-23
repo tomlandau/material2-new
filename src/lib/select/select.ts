@@ -30,8 +30,7 @@ import {
 } from '@angular/core';
 import {MdOption, MdOptionSelectionChange, MdOptgroup} from '../core/option/index';
 import {ENTER, SPACE, UP_ARROW, DOWN_ARROW, HOME, END} from '../core/keyboard/keycodes';
-import {FocusKeyManager} from '../core/a11y/focus-key-manager';
-import {Directionality} from '@angular/cdk';
+import {Directionality, FocusKeyManager} from '@angular/cdk';
 import {Observable} from 'rxjs/Observable';
 import {Subscription} from 'rxjs/Subscription';
 import {transformPlaceholder, transformPanel, fadeInContent} from './select-animations';
@@ -54,7 +53,7 @@ import {
 // This import is only used to define a generic type. The current TypeScript version incorrectly
 // considers such imports as unused (https://github.com/Microsoft/TypeScript/issues/14953)
 // tslint:disable-next-line:no-unused-variable
-import {ScrollStrategy, RepositionScrollStrategy} from '../core/overlay/scroll';
+import {ScrollStrategy, RepositionScrollStrategy} from '../core/overlay/scroll/index';
 
 /*
  * The following style constants are necessary to save here in order
